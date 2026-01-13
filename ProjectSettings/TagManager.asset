@@ -18,6 +18,10 @@ TagManager:
   - Education
   - Culture
   - Title
+  - News Screen
+  - Flyer Wall
+  - Student Group
+  - Raya Lecture Hall
   layers:
   - Default
   - TransparentFX
