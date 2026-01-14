@@ -22,6 +22,9 @@ TagManager:
   - Flyer Wall
   - Student Group
   - Raya Lecture Hall
+  - Raya Library Hall
+  - Security Checkpoint
+  - Memorial Stickers
   layers:
   - Default
   - TransparentFX
