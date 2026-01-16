@@ -4,5 +4,7 @@
 - Active game object:
   - Name: PlayerObject (1)
   - Tag: Player
+  - Name: Music Slider
+  - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

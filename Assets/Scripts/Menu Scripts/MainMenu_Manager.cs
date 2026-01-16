@@ -38,6 +38,7 @@ public class MainMenu_Manager : MonoBehaviour
     #region Settings Menu 
     public void openSettings()
     {
+        SceneManager.LoadScene(scenes[1]);
         Settings_Menu.SetActive(true);
         
     }
