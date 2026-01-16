@@ -5,6 +5,7 @@
   - Name: PlayerObject (1)
   - Tag: Player
   - Name: Music Slider
+  - Name: Background
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
