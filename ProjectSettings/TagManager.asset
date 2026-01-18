@@ -26,6 +26,8 @@ TagManager:
   - Security Checkpoint
   - Memorial Stickers
   - TitaLiza
+  - NoticeBoard
+  - PackedBag
   layers:
   - Default
   - TransparentFX
