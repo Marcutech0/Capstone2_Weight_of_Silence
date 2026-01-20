@@ -33,15 +33,17 @@ public class PhoneInteraction : MonoBehaviour
         }
     }
 
-    public void Choice1Dorm() 
+    public void Choice1Dorm()
     {
         _LegendManager._ReputationCount++;
         _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
         _LegendManager._Reputation.SetActive(true);
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
+        StartCoroutine(ShowNewDialogueTextRaya("Good. Don’t disappear on me today, okay?"));
+        StartCoroutine(CloseUI());
+        _ChoicePanel.SetActive(false);
 
-        StartCoroutine(CloseDialogueAndChoicePanel(1f));
     }
 
     public void Choice2Dorm() 
@@ -51,37 +53,47 @@ public class PhoneInteraction : MonoBehaviour
         _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
-
-        StartCoroutine(CloseDialogueAndChoicePanel(1f));
+        StartCoroutine(ShowNewDialogueTextRaya("Later, then."));
+        StartCoroutine(CloseUI());
+        _ChoicePanel.SetActive(false);
     }
 
     public void Choice3Dorm() 
     {
         _LegendManager._AnonymityCount++;
+        _LegendManager._GuiltCount++;
+        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
         _LegendManager._AnonymityText.text = "Anonymity: " + _LegendManager._AnonymityCount;
         _LegendManager._Anonymity.SetActive(true);
+        _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
+        PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
-
-        StartCoroutine(CloseDialogueAndChoicePanel(1f));
-
+        StartCoroutine(CloseUI());
+        _ChoicePanel.SetActive(false);
     }
 
-    IEnumerator CloseDialogueAndChoicePanel(float delay) 
+    IEnumerator CloseUI() 
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(2f);
 
         _DialoguePanel.SetActive(false);
-        _ChoicePanel.SetActive(false);
         _LegendManager._Reputation.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
         _LegendManager._Anonymity.SetActive(false);
 
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
-
-        //_LegendTracker._Cutscene2.Play();
-
+    }
+    IEnumerator ShowNewDialogueTextRaya(string _NewLine)
+    {
+        _StoryText.text = "";
+        _NpcName.text = "Raya";
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 
     public void OnTriggerEnter(Collider other)

@@ -15,6 +15,8 @@ public class MirrorInteraction : MonoBehaviour
     public PlayerMovement _PlayerControls;
     public bool _IsInRange;
     public bool _HasInteracted;
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
 
     public void Update()
     {
@@ -22,8 +24,24 @@ public class MirrorInteraction : MonoBehaviour
         {
             _HasInteracted = true;
             StartCoroutine(ShowDialogueMirror());
-            _NpcName.text = string.Empty;
         }
+
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        {
+            _CanContinue = false;
+            _DialogueIndex++;
+
+            if (_DialogueIndex == 1)
+                StartCoroutine(ShowNewDialogueTextLiam("That’s the problem."));
+            else
+                EndDialogue();
+        }
+    }
+    public void EndDialogue()
+    {
+        _DialoguePanel.SetActive(false);
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
     IEnumerator ShowDialogueMirror()
@@ -35,18 +53,27 @@ public class MirrorInteraction : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
-
+        _NpcName.text = string.Empty;
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
+        _CanContinue = true;
 
-        yield return new WaitForSeconds(1f);
-        _DialoguePanel.SetActive(false);
+    }
 
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+    IEnumerator ShowNewDialogueTextLiam(string _NewLine)
+    {
+        _StoryText.text = "";
+        _NpcName.text = "Liam";
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
+
     }
 
     public void OnTriggerEnter(Collider other)

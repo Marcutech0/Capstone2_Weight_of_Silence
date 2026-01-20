@@ -751,7 +751,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 801057278}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice7Dorm
         m_Mode: 1
@@ -1914,7 +1914,7 @@ Transform:
   m_GameObject: {fileID: 531624130}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.85, y: 0.52, z: -0.84067}
+  m_LocalPosition: {x: 2.8, y: 0.52, z: -0.84067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 801057278}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice4Dorm
         m_Mode: 1
@@ -3204,7 +3204,7 @@ GameObject:
   - component: {fileID: 801057275}
   - component: {fileID: 801057276}
   - component: {fileID: 801057277}
-  - component: {fileID: 801057278}
+  - component: {fileID: 801057279}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -3388,7 +3388,7 @@ Transform:
   m_GameObject: {fileID: 801057266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.5, z: -1.23}
+  m_LocalPosition: {x: -1.1, y: 0.5, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3413,11 +3413,13 @@ MonoBehaviour:
   _NpcName: {fileID: 1585660187}
   _StoryText: {fileID: 426961219}
   _InteractText: {fileID: 2018770461}
-  _Storyline: Report Due Today
+  _Storyline: Stacks of notes, half-highlighted.
   _PlayerController: {fileID: 801057272}
   _PlayerControls: {fileID: 801057271}
   _IsInRange: 0
   _HasInteracted: 0
+  _DialogueIndex: 0
+  _CanContinue: 0
 --- !u!114 &801057276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3435,11 +3437,13 @@ MonoBehaviour:
   _NpcName: {fileID: 1585660187}
   _StoryText: {fileID: 426961219}
   _InteractText: {fileID: 2018770461}
-  _Storyline: 6767676767
+  _Storyline: You look fine. You always do.
   _PlayerController: {fileID: 801057272}
   _PlayerControls: {fileID: 801057271}
   _IsInRange: 0
   _HasInteracted: 0
+  _DialogueIndex: 0
+  _CanContinue: 0
 --- !u!114 &801057277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3464,7 +3468,7 @@ MonoBehaviour:
   _PlayerControls: {fileID: 801057271}
   _IsInRange: 0
   _HasInteracted: 0
---- !u!114 &801057278
+--- !u!114 &801057279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3473,21 +3477,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 801057266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f0e71abad0db24f90fcec2d7ed4c5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 73ae33397cde46f40804009dd7148585, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RayaInteractionDorem
+  m_EditorClassIdentifier: Assembly-CSharp::CutScene1
   _DialoguePanel: {fileID: 1303695137}
-  _InteractIndicator: {fileID: 552709714}
-  _Choice2Panel: {fileID: 1218878243}
-  _Choice3Panel: {fileID: 1120959567}
   _NpcName: {fileID: 1585660187}
   _StoryText: {fileID: 426961219}
-  _InteractText: {fileID: 2018770461}
-  _Storyline: Liam, you look like you slept three hours.
+  _Storyline: Morning again. Another day pretending things are normal.
   _PlayerController: {fileID: 801057272}
   _PlayerControls: {fileID: 801057271}
   _IsInRange: 0
   _HasInteracted: 0
+  _DialogueIndex: 0
+  _CanContinue: 0
   _LegendManager: {fileID: 129593260}
 --- !u!1 &962218582
 GameObject:
@@ -3995,7 +3997,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 801057278}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice8Dorm
         m_Mode: 1
@@ -6927,7 +6929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 801057278}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice9Dorm
         m_Mode: 1
@@ -8437,7 +8439,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 801057278}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice6Dorm
         m_Mode: 1
@@ -8940,7 +8942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1737766158
 Transform:
   m_ObjectHideFlags: 0
@@ -10251,7 +10253,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 801057278}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice5Dorm
         m_Mode: 1
