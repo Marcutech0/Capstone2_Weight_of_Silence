@@ -5,4 +5,7 @@
   - Name: Raya
   - Tag: RayaDorm
   - Layer: Default
+  - Name: Audio_Manager
+  - Tag: Untagged
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
