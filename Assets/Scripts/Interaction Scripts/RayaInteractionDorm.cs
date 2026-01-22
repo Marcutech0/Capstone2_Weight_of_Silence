@@ -18,16 +18,51 @@ public class RayaInteractionDorem : MonoBehaviour
     public PlayerMovement _PlayerControls;
     public bool _IsInRange;
     public bool _HasInteracted;
-
+    
     public GameFlowLegendManager _LegendManager;
-
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
+            _DialogueIndex = 0;
             StartCoroutine(ShowDialogueRaya());
             _NpcName.text = "Raya";
+        }
+
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E)) 
+        {
+            _CanContinue = false;
+            _DialogueIndex++;
+
+            if (_DialogueIndex == 2)
+            {
+                StartCoroutine(ShowNewDialogueText("Hey… can we talk later? Just us."));
+            }
+
+            else if (_DialogueIndex == 3)
+            {
+                _Choice3Panel.SetActive(true);
+
+            }
+
+            else if (_DialogueIndex == 5)
+            {
+                StartCoroutine(ShowNewDialogueTextRayaTaho("Let’s get taho first."));
+                _NpcName.text = "Liam";
+
+            }
+
+            else if (_DialogueIndex == 6)
+            {
+                StartCoroutine(ShowNewDialogueTextRayaTaho("Yeah. Before the day ruins it."));
+                _NpcName.text = "Raya";
+                StartCoroutine(TahoMinigame());
+            }
+            else
+                StartCoroutine(EndDialogueLoadScene());
         }
     }
 
@@ -46,12 +81,7 @@ public class RayaInteractionDorem : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
-
-        if (_StoryText.text == _Storyline) 
-        {
             _Choice2Panel.SetActive(true);
-        }
-
     }
 
     IEnumerator ShowNewDialogueText(string _NewLine) 
@@ -64,10 +94,26 @@ public class RayaInteractionDorem : MonoBehaviour
             yield return new WaitForSeconds(0.03f);
         }
 
-        if (_StoryText.text == _NewLine) 
+        _CanContinue = true;
+    }
+
+    IEnumerator ShowNewDialogueTextRayaTaho(string _NewLine)
+    {
+        _StoryText.text = "";
+
+        foreach (char c in _NewLine)
         {
-            _Choice3Panel.SetActive(true);
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.03f);
         }
+
+        _CanContinue = true;
+    }
+
+    IEnumerator TahoMinigame() 
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Taho!");
     }
 
     IEnumerator EndDialogueLoadScene() 
@@ -81,10 +127,8 @@ public class RayaInteractionDorem : MonoBehaviour
         _LegendManager._Fear.SetActive(false);
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
-
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("CampusHall");
     }
+
 
     public void Choice4Dorm() 
     {
@@ -94,7 +138,10 @@ public class RayaInteractionDorem : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
-        StartCoroutine(ShowNewDialogueText("Can we talk later? Just us."));
+        _DialogueIndex = 1;
+        _CanContinue = false;
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowNewDialogueText("Wow. New record."));
     }
 
     public void Choice5Dorm() 
@@ -105,7 +152,10 @@ public class RayaInteractionDorem : MonoBehaviour
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
-        StartCoroutine(ShowNewDialogueText("Can we talk later? Just us."));
+        _DialogueIndex = 1;
+        _CanContinue = false;
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowNewDialogueText("You and that paper. One day it’s gonna thank you back."));
     }
 
     public void Choice6Dorm() 
@@ -116,26 +166,37 @@ public class RayaInteractionDorem : MonoBehaviour
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
-        StartCoroutine(ShowNewDialogueText("Can we talk later? Just us."));
+        _DialogueIndex = 1;
+        _CanContinue = false;
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowNewDialogueText("Didn’t sleep much."));
     }
 
     public void Choice7Dorm()
-    {
-        _LegendManager._FearCount++;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._Fear.SetActive(true);
-        PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
-        PlayerPrefs.Save();
-        StartCoroutine(EndDialogueLoadScene());
-    }
-    public void Choice8Dorm()
     {
         _LegendManager._CourageCount++;
         _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
         _LegendManager._Courage.SetActive(true);
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.Save();
-        StartCoroutine(EndDialogueLoadScene());
+        _DialogueIndex++;
+        _CanContinue = false;
+        _Choice3Panel.SetActive(false);
+        _NpcName.text = "Liam";
+        StartCoroutine(ShowNewDialogueText("Later. I promise."));
+    }
+    public void Choice8Dorm()
+    {
+        _LegendManager._FearCount++;
+        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
+        _LegendManager._Fear.SetActive(true);
+        PlayerPrefs.SetInt("Courage Count", _LegendManager._FearCount);
+        PlayerPrefs.Save();
+        _DialogueIndex++;
+        _CanContinue = false;
+        _Choice3Panel.SetActive(false);
+        _NpcName.text = "Liam";
+        StartCoroutine(ShowNewDialogueText("Yeah. After class."));
     }
     public void Choice9Dorm()
     {
@@ -144,7 +205,11 @@ public class RayaInteractionDorem : MonoBehaviour
         _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
-        StartCoroutine(EndDialogueLoadScene());
+        _DialogueIndex++;
+        _CanContinue = false;
+        _Choice3Panel.SetActive(false);
+        _NpcName.text = "Liam";
+        StartCoroutine(ShowNewDialogueText("Sorry. I didn’t mean to."));
     }
 
 

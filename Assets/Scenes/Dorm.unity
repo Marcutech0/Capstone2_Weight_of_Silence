@@ -929,7 +929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 801057280}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice7Dorm
         m_Mode: 1
@@ -3096,7 +3096,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 801057280}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice4Dorm
         m_Mode: 1
@@ -3953,6 +3953,7 @@ GameObject:
   - component: {fileID: 801057276}
   - component: {fileID: 801057277}
   - component: {fileID: 801057279}
+  - component: {fileID: 801057280}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -4223,7 +4224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801057266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73ae33397cde46f40804009dd7148585, type: 3}
   m_Name: 
@@ -4239,6 +4240,33 @@ MonoBehaviour:
   _DialogueIndex: 0
   _CanContinue: 0
   _LegendManager: {fileID: 129593260}
+--- !u!114 &801057280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801057266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f0e71abad0db24f90fcec2d7ed4c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RayaInteractionDorem
+  _DialoguePanel: {fileID: 1303695137}
+  _InteractIndicator: {fileID: 552709714}
+  _Choice2Panel: {fileID: 1218878243}
+  _Choice3Panel: {fileID: 1120959567}
+  _NpcName: {fileID: 1585660187}
+  _StoryText: {fileID: 426961219}
+  _InteractText: {fileID: 2018770461}
+  _Storyline: Liam! Over here!
+  _PlayerController: {fileID: 801057272}
+  _PlayerControls: {fileID: 801057271}
+  _IsInRange: 0
+  _HasInteracted: 0
+  _LegendManager: {fileID: 129593260}
+  _DialogueIndex: 0
+  _CanContinue: 0
 --- !u!1 &962218582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4745,7 +4773,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 801057280}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice8Dorm
         m_Mode: 1
@@ -7919,7 +7947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 801057280}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice9Dorm
         m_Mode: 1
@@ -9464,7 +9492,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 801057280}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice6Dorm
         m_Mode: 1
@@ -10078,7 +10106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1737766158
 Transform:
   m_ObjectHideFlags: 0
@@ -11724,7 +11752,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 801057280}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice5Dorm
         m_Mode: 1
