@@ -16,46 +16,79 @@ public class FlyerWallInteraction : MonoBehaviour
     public bool _IsInRange;
     public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
-
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
-            StartCoroutine(ShowDialogueDesk());
-            _NpcName.text = string.Empty;
+            StartCoroutine(ShowDialogueFlyerWall());
+        }
+
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        {
+            _CanContinue = false;
+            _DialogueIndex++;
+
+            if (_DialogueIndex == 1)
+            {
+                StartCoroutine(ShowNewDialogueLiam("Missing sounds nicer than gone."));
+                _LegendManager._ReputationCount++;
+                _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
+                _LegendManager._Reputation.SetActive(true);
+                PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
+                PlayerPrefs.Save();
+            }
+            else if (_DialogueIndex == 2) 
+            {
+                StartCoroutine(ShowNewDialogueLiam("They said someone got tagged last night."));
+                _NpcName.text = "Overheard Students";
+                _LegendManager._FearCount++;
+                _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
+                _LegendManager._Fear.SetActive(true);
+                PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
+                PlayerPrefs.Save();
+            } 
+            else
+                EndDialogue();
         }
     }
-
-    IEnumerator ShowDialogueDesk()
+    public void EndDialogue()
+    {
+        _DialoguePanel.SetActive(false);
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
+        _LegendManager._Reputation.SetActive(false);
+        _LegendManager._Fear.SetActive(false);
+    }
+    IEnumerator ShowDialogueFlyerWall()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
-
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+       
 
         _StoryText.text = "";
-
-        _LegendManager._ReputationCount++;
-        _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
-        _LegendManager._Reputation.SetActive(true);
-
-        PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
-        PlayerPrefs.Save();
-
+        _NpcName.text = string.Empty;
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
-
-        yield return new WaitForSeconds(1f);
-        _DialoguePanel.SetActive(false);
-        _LegendManager._Reputation.SetActive(false);
-
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+        _CanContinue = true;
+    }
+    IEnumerator ShowNewDialogueLiam(string _NewLine)
+    {
+        _StoryText.text = "";
+        _NpcName.text = "Liam";
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
     }
 
     public void OnTriggerEnter(Collider other)

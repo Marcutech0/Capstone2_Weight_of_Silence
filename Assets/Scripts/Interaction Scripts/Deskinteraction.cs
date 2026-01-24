@@ -47,7 +47,6 @@ public class Deskinteraction : MonoBehaviour
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
-
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
 

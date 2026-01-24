@@ -16,46 +16,68 @@ public class NewsScreenInteract : MonoBehaviour
     public bool _IsInRange;
     public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
-
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
             StartCoroutine(ShowDialogueDesk());
-            _NpcName.text = string.Empty;
         }
+
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        {
+            _CanContinue = false;
+            _DialogueIndex++;
+
+            if (_DialogueIndex == 1)
+                StartCoroutine(ShowNewDialogueLiam("Missing sounds nicer than gone."));
+            else
+                EndDialogue();
+        }
+    }
+    public void EndDialogue()
+    {
+        _DialoguePanel.SetActive(false);
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
+        _LegendManager._Guilt.SetActive(false);
     }
 
     IEnumerator ShowDialogueDesk()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
-
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
-
-        _StoryText.text = "";
-
         _LegendManager._GuiltCount++;
         _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
         _LegendManager._Guilt.SetActive(true);
-
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
 
+        _StoryText.text = "";
+        _NpcName.text = string.Empty;
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
+        _CanContinue = true;
 
-        yield return new WaitForSeconds(1f);
-        _DialoguePanel.SetActive(false);
-        _LegendManager._Guilt.SetActive(false);
+    }
 
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+    IEnumerator ShowNewDialogueLiam(string _NewLine) 
+    {
+        _StoryText.text = "";
+        _NpcName.text = "Liam";
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
     }
 
     public void OnTriggerEnter(Collider other)
