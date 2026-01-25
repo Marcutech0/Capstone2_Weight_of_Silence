@@ -16,18 +16,29 @@ public class MemorialStickersInteraction : MonoBehaviour
     public bool _IsInRange;
     public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
 
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
-            StartCoroutine(ShowDialogueDesk());
-            _NpcName.text = string.Empty;
+            StartCoroutine(ShowDialogueMemorialStickers());
+        }
+
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        {
+            _CanContinue = false;
+            _DialogueIndex++;
+            if (_DialogueIndex == 1)
+            {
+                EndDialogue();
+            }
         }
     }
 
-    IEnumerator ShowDialogueDesk()
+    IEnumerator ShowDialogueMemorialStickers()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
@@ -36,16 +47,18 @@ public class MemorialStickersInteraction : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
+        _NpcName.text = string.Empty;
 
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
-
-        yield return new WaitForSeconds(1f);
+        _CanContinue = true;
+    }
+    public void EndDialogue()
+    {
         _DialoguePanel.SetActive(false);
-
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
     }
