@@ -17,18 +17,29 @@ public class SecurityCheckpointInteraction : MonoBehaviour
     public bool _IsInRange;
     public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
 
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
-            StartCoroutine(ShowDialogueDesk());
-            _NpcName.text = string.Empty;
+            StartCoroutine(ShowDialogueSecurityCheck());
+        }
+
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        {
+            _CanContinue = false;
+            _DialogueIndex++;
+            if (_DialogueIndex == 1) 
+            {
+                EndDialogue();
+            }
         }
     }
 
-    IEnumerator ShowDialogueDesk()
+    IEnumerator ShowDialogueSecurityCheck()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
@@ -37,7 +48,7 @@ public class SecurityCheckpointInteraction : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
-
+        _NpcName.text = string.Empty;
         _LegendManager._FearCount++;
         _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
         _LegendManager._Fear.SetActive(true);
@@ -50,13 +61,16 @@ public class SecurityCheckpointInteraction : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
+        _CanContinue = true;
+    }
 
-        yield return new WaitForSeconds(1f);
+
+    public void EndDialogue()
+    {
         _DialoguePanel.SetActive(false);
-        _LegendManager._Fear.SetActive(false);
-
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _LegendManager._Fear.SetActive(false);
     }
 
     public void OnTriggerEnter(Collider other)
