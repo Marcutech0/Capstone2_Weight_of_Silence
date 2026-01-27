@@ -16,46 +16,18 @@ public class NoticeBoardInteractionRayaDorm : MonoBehaviour
     public bool _IsInRange;
     public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
-    [SerializeField] private int _DialogueIndex;
-    [SerializeField] bool _CanContinue;
 
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
-            StartCoroutine(ShowDialogueNoticeBoard());
-        }
-
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
-        {
-            _CanContinue = false;
-            _DialogueIndex++;
-
-            if (_DialogueIndex == 1) 
-            {
-                StartCoroutine(ShowNewDialogueTextLiam("They don’t even use names."));
-                _LegendManager._FearCount++;
-                _LegendManager._Fear.SetActive(true);
-                _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-                PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
-                PlayerPrefs.Save();
-            }
-            else 
-            {
-                EndDialogue();
-            }
+            StartCoroutine(ShowDialogueDesk());
+            _NpcName.text = string.Empty;
         }
     }
-    public void EndDialogue()
-    {
-        _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
-        _LegendManager._Fear.SetActive(false);
-    }
 
-    IEnumerator ShowDialogueNoticeBoard()
+    IEnumerator ShowDialogueDesk()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
@@ -64,24 +36,29 @@ public class NoticeBoardInteractionRayaDorm : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
-        _NpcName.text = string.Empty;
+
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
-        _CanContinue = true;
-    }
-    IEnumerator ShowNewDialogueTextLiam(string _NewLine)
-    {
-        _StoryText.text = "";
-        _NpcName.text = "Liam";
-        foreach (char c in _NewLine)
+
+        if (_StoryText.text == _Storyline)
         {
-            _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(2f);
+            StartCoroutine(ShowNewDialogueTextLiam("They don’t even use names."));
+            _LegendManager._FearCount++;
+            _LegendManager._Fear.SetActive(true);
+            _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
+            PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
+            PlayerPrefs.Save();
         }
-        _CanContinue = true;
+
+        yield return new WaitForSeconds(2f);
+        _DialoguePanel.SetActive(false);
+        _LegendManager._Fear.SetActive(false);
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -104,6 +81,16 @@ public class NoticeBoardInteractionRayaDorm : MonoBehaviour
         {
             _IsInRange = false;
             _InteractIndicator.SetActive(false);
+        }
+    }
+    IEnumerator ShowNewDialogueTextLiam(string _NewLine)
+    {
+        _StoryText.text = "";
+        _NpcName.text = "Liam";
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.03f);
         }
     }
 }

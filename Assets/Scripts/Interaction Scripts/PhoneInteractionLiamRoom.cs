@@ -18,37 +18,18 @@ public class PhoneInteractionLiamRoom : MonoBehaviour
     public bool _IsInRange;
     public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
-    [SerializeField] private int _DialogueIndex;
-    [SerializeField] bool _CanContinue;
 
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
-            StartCoroutine(ShowDialoguePhone());
-        }
-
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
-        {
-            _CanContinue = false;
-            _DialogueIndex++;
-
-            if (_DialogueIndex == 1) 
-            {
-                EndDialogue();
-            }
+            StartCoroutine(ShowDialogueDesk());
+            _NpcName.text = string.Empty;
         }
     }
-    public void EndDialogue()
-    {
-        _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
-        _LegendManager._Guilt.SetActive(false);
-    }
 
-    IEnumerator ShowDialoguePhone()
+    IEnumerator ShowDialogueDesk()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
@@ -57,7 +38,6 @@ public class PhoneInteractionLiamRoom : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
-        _NpcName.text = "Liam";
         _LegendManager._GuiltCount += 2;
         _LegendManager._Guilt.SetActive(true);
         _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
@@ -69,7 +49,13 @@ public class PhoneInteractionLiamRoom : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
-        _CanContinue = true;
+
+        yield return new WaitForSeconds(1f);
+        _DialoguePanel.SetActive(false);
+        _LegendManager._Guilt.SetActive(false);
+
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
     public void OnTriggerEnter(Collider other)

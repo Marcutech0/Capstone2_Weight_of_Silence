@@ -6849,7 +6849,7 @@ Transform:
   m_GameObject: {fileID: 1603584302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.96, y: 0.5, z: -1.23}
+  m_LocalPosition: {x: -6.85, y: 0.5, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6880,8 +6880,6 @@ MonoBehaviour:
   _PlayerControls: {fileID: 1603584311}
   _IsInRange: 0
   _HasInteracted: 0
-  _DialogueIndex: 0
-  _CanContinue: 0
   _LegendManager: {fileID: 1283036059}
 --- !u!114 &1603584316
 MonoBehaviour:
@@ -6906,8 +6904,6 @@ MonoBehaviour:
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 1283036059}
-  _DialogueIndex: 0
-  _CanContinue: 0
 --- !u!114 &1603584317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6931,8 +6927,6 @@ MonoBehaviour:
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 1283036059}
-  _DialogueIndex: 0
-  _CanContinue: 0
 --- !u!114 &1603584318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6956,8 +6950,6 @@ MonoBehaviour:
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 1283036059}
-  _DialogueIndex: 0
-  _CanContinue: 0
 --- !u!43 &1623088426
 Mesh:
   m_ObjectHideFlags: 0

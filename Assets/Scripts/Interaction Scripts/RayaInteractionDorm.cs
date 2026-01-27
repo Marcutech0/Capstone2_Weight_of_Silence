@@ -115,7 +115,7 @@ public class RayaInteractionDorem : MonoBehaviour
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("Taho!");
     }
-    
+
     IEnumerator EndDialogueLoadScene() 
     {
         yield return new WaitForSeconds(1f);

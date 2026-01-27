@@ -20,8 +20,6 @@ public class RayaInteractionLectureHall : MonoBehaviour
     public bool _HasInteracted;
 
     public GameFlowLegendManager _LegendManager;
-    [SerializeField] private int _DialogueIndex;
-    [SerializeField] bool _CanContinue;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Update()
     {
@@ -31,27 +29,6 @@ public class RayaInteractionLectureHall : MonoBehaviour
             StartCoroutine(ShowDialogueRaya());
             _NpcName.text = " ";
         }
-
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E)) 
-        {
-            _CanContinue = false;
-            _DialogueIndex++;
-
-            if (_DialogueIndex == 2) 
-            {
-                EndDialogue();
-                StartCoroutine(SharedNotesMinigame());
-            }
-        }
-    }
-    public void EndDialogue()
-    {
-        _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
-        _LegendManager._Courage.SetActive(false);
-        _LegendManager._Fear.SetActive(false);
-        _LegendManager._Anonymity.SetActive(false);
     }
 
     IEnumerator ShowDialogueRaya()
@@ -69,26 +46,12 @@ public class RayaInteractionLectureHall : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
-        _Choice1Panel.SetActive(true);
-    }
 
-    IEnumerator ShowNewDialogueText(string _NewLine)
-    {
-        _StoryText.text = "";
-
-        foreach (char c in _NewLine)
+        if (_StoryText.text == _Storyline)
         {
-            _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            _Choice1Panel.SetActive(true);
         }
 
-        _CanContinue = true;
-    }
-
-    IEnumerator SharedNotesMinigame()
-    {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Shared Notes");
     }
 
     public void Choice1LectureHall()
@@ -99,11 +62,10 @@ public class RayaInteractionLectureHall : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialogueIndex = 1;
-        _CanContinue = false;
-        _NpcName.text = "Raya";
-        StartCoroutine(ShowNewDialogueText("That’s what they always call them."));
-
+        _DialoguePanel.SetActive(false);
+        StartCoroutine(CloseLegendIndicator());
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
     public void Choice2LectureHall()
@@ -114,10 +76,10 @@ public class RayaInteractionLectureHall : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialogueIndex = 1;
-        _CanContinue = false;
-        _NpcName.text = "Raya";
-        StartCoroutine(ShowNewDialogueText("Yeah. It has.."));
+        _DialoguePanel.SetActive(false);
+        StartCoroutine(CloseLegendIndicator());
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
     public void Choice3LectureHall()
@@ -128,10 +90,10 @@ public class RayaInteractionLectureHall : MonoBehaviour
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialogueIndex = 1;
-        _CanContinue = false;
-        _NpcName.text = "Raya";
-        StartCoroutine(ShowNewDialogueText("Okay."));
+        _DialoguePanel.SetActive(false);
+        StartCoroutine(CloseLegendIndicator());
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -155,5 +117,13 @@ public class RayaInteractionLectureHall : MonoBehaviour
             _IsInRange = false;
             _InteractIndicator.SetActive(false);
         }
+    }
+
+    IEnumerator CloseLegendIndicator() 
+    {
+        yield return new WaitForSeconds(1f);
+        _LegendManager._Fear.SetActive(false);
+        _LegendManager._Anonymity.SetActive(false);
+        _LegendManager._Reputation.SetActive(false);
     }
 }
