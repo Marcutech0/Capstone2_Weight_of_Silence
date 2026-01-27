@@ -35,9 +35,9 @@ public class CutScene1 : MonoBehaviour
             if (_DialogueIndex == 1)
                 StartCoroutine(ShowNewDialogueRaya("Don’t forget the paper, sleepyhead."));
             else if (_DialogueIndex == 2)
-                StartCoroutine(ShowNewDialogueRaya("Also… can we talk later."));
+                StartCoroutine(ShowNewDialogueRaya("Also… can we talk later?"));
             else if (_DialogueIndex == 3)
-                StartCoroutine(ShowNewInnerDialogue("Later keeps getting further away."));
+                StartCoroutine(ShowNewInnerDialogue("Later keeps getting further away..."));
             else
                 EndDialogue();
         }

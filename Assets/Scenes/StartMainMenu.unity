@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 246972120}
   - component: {fileID: 246972119}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,6 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
   Music_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
   Music_Slider: {fileID: 1542086301}
+  SFX_Slider: {fileID: 0}
 --- !u!1 &411876493
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460282827}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: Audio Sources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1626,7 +1627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 535.3, y: 976.8}
+  m_AnchoredPosition: {x: 535.3, y: 967.8}
   m_SizeDelta: {x: 140.9541, y: 92.6817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &805670488
@@ -2585,8 +2586,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -322.0155, y: 542.49963}
-  m_SizeDelta: {x: 37.0005, y: 38.2115}
+  m_AnchoredPosition: {x: -330.92474, y: 535.81775}
+  m_SizeDelta: {x: 39.7501, y: 43.7758}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258029969
 MonoBehaviour:

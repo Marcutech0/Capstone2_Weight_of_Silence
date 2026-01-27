@@ -18,4 +18,10 @@ public class PlayerKeybinds : MonoBehaviour
             Time.timeScale = settingsMenu.activeSelf ? 0f : 1f;
         }
     }
+
+    public void ExitSettings()
+    {
+        settingsMenu.SetActive(false);
+        Time.timeScale = settingsMenu.activeSelf ? 0f : 1f;
+    }
 }
