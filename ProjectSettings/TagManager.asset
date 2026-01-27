@@ -28,6 +28,7 @@ TagManager:
   - TitaLiza
   - NoticeBoard
   - PackedBag
+  - Raya'sDoor
   layers:
   - Default
   - TransparentFX
