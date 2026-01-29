@@ -2517,7 +2517,6 @@ GameObject:
   - component: {fileID: 433403466}
   - component: {fileID: 433403474}
   - component: {fileID: 433403475}
-  - component: {fileID: 433403476}
   - component: {fileID: 433403477}
   m_Layer: 0
   m_Name: PlayerObject (1)
@@ -2702,7 +2701,7 @@ Transform:
   m_GameObject: {fileID: 433403461}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.85, y: 0.5, z: -1.23}
+  m_LocalPosition: {x: -0.74, y: 0.5, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2733,6 +2732,8 @@ MonoBehaviour:
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 1010474727}
+  _DialogueIndex: 0
+  _CanContinue: 0
 --- !u!114 &433403475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,32 +2757,8 @@ MonoBehaviour:
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 1010474727}
---- !u!114 &433403476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433403461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0b53049e0dc52479f16eae38c4bd18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StudentGroupInteraction
-  _DialoguePanel: {fileID: 1661364515}
-  _InteractIndicator: {fileID: 1529521619}
-  _NpcName: {fileID: 825631230}
-  _StoryText: {fileID: 992697795}
-  _InteractText: {fileID: 1414369781}
-  _Storyline: They said someone got tagged last night
-  _PlayerController: {fileID: 433403471}
-  _PlayerControls: {fileID: 433403470}
-  _IsInRange: 0
-  _HasInteracted: 0
-  _LegendManager: {fileID: 1010474727}
-  _RayaNpc: {fileID: 1000892645}
-  Flyer: {fileID: 2126074253}
-  _Speed: 2
+  _DialogueIndex: 0
+  _CanContinue: 0
 --- !u!114 &433403477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2805,6 +2782,8 @@ MonoBehaviour:
   _PlayerControls: {fileID: 433403470}
   _IsInRange: 0
   _HasInteracted: 0
+  _DialogueIndex: 0
+  _CanContinue: 0
   _LegendManager: {fileID: 1010474727}
 --- !u!1 &447394243
 GameObject:

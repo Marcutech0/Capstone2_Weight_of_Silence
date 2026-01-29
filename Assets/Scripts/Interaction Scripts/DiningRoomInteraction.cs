@@ -18,43 +18,54 @@ public class DiningRoomInteraction : MonoBehaviour
     public PlayerMovement _PlayerControls;
     public bool _IsInRange;
     public bool _HasInteracted;
-
     public GameFlowLegendManager _LegendManager;
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     // Update is called once per frame
+
+    public void Start()
+    {
+        _NpcName.text = "Tita Liza";
+        StartCoroutine(ShowDialogueTitaLiza());
+    }
+
     public void Update()
     {
-        if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
+        if (_CanContinue && Input.GetKeyDown(KeyCode.E)) 
         {
-            _HasInteracted = true;
-            StartCoroutine(ShowDialogueRaya());
-            _NpcName.text = "Tita Liza";
-        }
-    }
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("TitaLiza") && !_HasInteracted)
-        {
-            _IsInRange = true;
-            _InteractIndicator.SetActive(true);
+            _CanContinue = false;
+            _DialogueIndex++;
 
-            if (_HasInteracted)
-                _InteractText.text = "Interacted!";
+            if (_DialogueIndex == 1)
+            {
+                StartCoroutine(ShowNewDialogueLiam("They're just asking questions."));
+                _NpcName.text = "Liam";
+            }
+            else if (_DialogueIndex == 2)
+            {
+                StartCoroutine(ShowNewDialogueTextTitaLiza("Questions get people hurt."));
+                _Choice1Panel.SetActive(true);
+            }
             else
-                _InteractText.text = "Press F to Interact";
+            {
+                EndDialogue();
+            }
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    public void EndDialogue() 
     {
-        if (other.CompareTag("TitaLiza"))
-        {
-            _IsInRange = false;
-            _InteractIndicator.SetActive(false);
-        }
+        _DialoguePanel.SetActive(false);
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
+        _LegendManager._Courage.SetActive(false);
+        _LegendManager._Fear.SetActive(false);
+        _LegendManager._Guilt.SetActive(false);
     }
-    IEnumerator ShowDialogueRaya()
+
+    IEnumerator ShowDialogueTitaLiza()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
@@ -67,21 +78,12 @@ public class DiningRoomInteraction : MonoBehaviour
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
-
-        if (_StoryText.text == _Storyline)
-        {
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(ShowNewDialogueText("They’re just asking questions."));
-
-            yield return new WaitForSeconds(2f);
-            StartCoroutine(ShowNewDialogueTextTitaLiza("Questions get people hurt."));
-            _Choice1Panel.SetActive(true);
-        }
+        _CanContinue = true;
     }
 
-    IEnumerator ShowNewDialogueText(string _NewLine)
+    IEnumerator ShowNewDialogueLiam(string _NewLine)
     {
         _StoryText.text = "";
         _NpcName.text = "Liam";
@@ -90,6 +92,8 @@ public class DiningRoomInteraction : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
+        _CanContinue = true;
+
     }
 
     IEnumerator ShowNewDialogueTextTitaLiza(string _NewLine)
@@ -101,20 +105,8 @@ public class DiningRoomInteraction : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
+        _CanContinue = true;
     }
-
-    IEnumerator CloseUI() 
-    {
-        yield return new WaitForSeconds(1);
-        _DialoguePanel.SetActive(false);
-        _LegendManager._Courage.SetActive(false);
-        _LegendManager._Fear.SetActive(false);
-        _LegendManager._Guilt.SetActive(false);
-        _Choice1Panel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
-    }
-
 
     public void Choice1DiningRoom() 
     {
@@ -131,7 +123,8 @@ public class DiningRoomInteraction : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
-        StartCoroutine(CloseUI());
+        _Choice1Panel.SetActive(false);
+
     }
 
     public void Choice2DiningRoom() 
@@ -149,7 +142,8 @@ public class DiningRoomInteraction : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
-        StartCoroutine(CloseUI());
+        _Choice1Panel.SetActive(false);
+
     }
 
     public void Choice3DiningRoom() 
@@ -163,7 +157,7 @@ public class DiningRoomInteraction : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
-        StartCoroutine(CloseUI());
-    }
+        _Choice1Panel.SetActive(false);
 
+    }
 }

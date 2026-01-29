@@ -473,7 +473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &86635844
 Transform:
   m_ObjectHideFlags: 0
@@ -1663,8 +1663,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1816495089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1756,6 +1756,7 @@ GameObject:
   - component: {fileID: 286007443}
   - component: {fileID: 286007451}
   - component: {fileID: 286007452}
+  - component: {fileID: 286007453}
   m_Layer: 0
   m_Name: PlayerObject (1)
   m_TagString: Player
@@ -1939,7 +1940,7 @@ Transform:
   m_GameObject: {fileID: 286007438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.85, y: 0.5, z: -1.23}
+  m_LocalPosition: {x: -4.46, y: 0.5, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1970,7 +1971,31 @@ MonoBehaviour:
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 147575305}
+  _DialogueIndex: 0
+  _CanContinue: 0
 --- !u!114 &286007452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286007438}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af954559a56d324bb4954d4758b0f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PackedBagInteractionRayaDorm
+  _DialoguePanel: {fileID: 1530190638}
+  _Choice1Panel: {fileID: 732517223}
+  _NpcName: {fileID: 966067611}
+  _StoryText: {fileID: 103785953}
+  _Storyline: "Liam, if anything happens\u2014"
+  _PlayerController: {fileID: 286007448}
+  _PlayerControls: {fileID: 286007447}
+  _DialogueIndex: 0
+  _CanContinue: 0
+  _LegendManager: {fileID: 147575305}
+--- !u!114 &286007453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1979,21 +2004,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 286007438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af954559a56d324bb4954d4758b0f9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 19199cfa2a6fc544e82bb9abdc325afe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PackedBagInteractionRayaDorm
-  _DialoguePanel: {fileID: 1530190638}
+  m_EditorClassIdentifier: Assembly-CSharp::RayasDoorInteraction
   _InteractIndicator: {fileID: 1730006217}
-  _Choice1Panel: {fileID: 732517223}
-  _NpcName: {fileID: 966067611}
-  _StoryText: {fileID: 103785953}
   _InteractText: {fileID: 895856021}
-  _Storyline: "Liam, if anything happens\u2014"
-  _PlayerController: {fileID: 286007448}
-  _PlayerControls: {fileID: 286007447}
   _IsInRange: 0
   _HasInteracted: 0
-  _LegendManager: {fileID: 147575305}
+  _Cutscene6: {fileID: 286007452}
 --- !u!43 &305250838
 Mesh:
   m_ObjectHideFlags: 0
@@ -2185,7 +2203,7 @@ GameObject:
   - component: {fileID: 339740172}
   m_Layer: 0
   m_Name: Packed Bag
-  m_TagString: PackedBag
+  m_TagString: RayasDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3010,8 +3028,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 875727810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6307,7 +6325,7 @@ RectTransform:
   m_Father: {fileID: 1319577612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6589,7 +6607,7 @@ RectTransform:
   m_Father: {fileID: 1470916292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7009,7 +7027,7 @@ Transform:
   m_GameObject: {fileID: 1681411164}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4907694, y: 0.52, z: -0.76777}
+  m_LocalPosition: {x: -7.76, y: 0.52, z: -0.76777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

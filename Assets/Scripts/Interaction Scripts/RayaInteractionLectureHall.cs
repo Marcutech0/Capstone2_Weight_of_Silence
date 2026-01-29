@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
@@ -18,6 +18,8 @@ public class RayaInteractionLectureHall : MonoBehaviour
     public PlayerMovement _PlayerControls;
     public bool _IsInRange;
     public bool _HasInteracted;
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] bool _CanContinue;
 
     public GameFlowLegendManager _LegendManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +31,27 @@ public class RayaInteractionLectureHall : MonoBehaviour
             StartCoroutine(ShowDialogueRaya());
             _NpcName.text = " ";
         }
+
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        {
+            _CanContinue = false;
+            _DialogueIndex++;
+
+            if (_DialogueIndex == 2)
+            {
+                EndDialogue();
+                StartCoroutine(SharedNotesMinigame());
+            }
+        }
+    }
+    public void EndDialogue()
+    {
+        _DialoguePanel.SetActive(false);
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
+        _LegendManager._Courage.SetActive(false);
+        _LegendManager._Fear.SetActive(false);
+        _LegendManager._Anonymity.SetActive(false);
     }
 
     IEnumerator ShowDialogueRaya()
@@ -46,14 +69,26 @@ public class RayaInteractionLectureHall : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
-
-        if (_StoryText.text == _Storyline)
-        {
-            _Choice1Panel.SetActive(true);
-        }
-
+        _Choice1Panel.SetActive(true);
     }
 
+    IEnumerator ShowNewDialogueText(string _NewLine)
+    {
+        _StoryText.text = "";
+
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
+
+    }
+    IEnumerator SharedNotesMinigame()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Shared Notes");
+    }
     public void Choice1LectureHall()
     {
         _LegendManager._FearCount++;
@@ -62,10 +97,10 @@ public class RayaInteractionLectureHall : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialoguePanel.SetActive(false);
-        StartCoroutine(CloseLegendIndicator());
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+        _DialogueIndex = 1;
+        _CanContinue = false;
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowNewDialogueText("That�s what they always call them."));
     }
 
     public void Choice2LectureHall()
@@ -76,10 +111,10 @@ public class RayaInteractionLectureHall : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialoguePanel.SetActive(false);
-        StartCoroutine(CloseLegendIndicator());
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+        _DialogueIndex = 1;
+        _CanContinue = false;
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowNewDialogueText("Yeah. It has..."));
     }
 
     public void Choice3LectureHall()
@@ -90,10 +125,10 @@ public class RayaInteractionLectureHall : MonoBehaviour
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialoguePanel.SetActive(false);
-        StartCoroutine(CloseLegendIndicator());
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+        _DialogueIndex = 1;
+        _CanContinue = false;
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowNewDialogueText("Okay."));
     }
 
     public void OnTriggerEnter(Collider other)
@@ -117,13 +152,5 @@ public class RayaInteractionLectureHall : MonoBehaviour
             _IsInRange = false;
             _InteractIndicator.SetActive(false);
         }
-    }
-
-    IEnumerator CloseLegendIndicator() 
-    {
-        yield return new WaitForSeconds(1f);
-        _LegendManager._Fear.SetActive(false);
-        _LegendManager._Anonymity.SetActive(false);
-        _LegendManager._Reputation.SetActive(false);
     }
 }
