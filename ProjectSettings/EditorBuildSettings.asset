@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMainMenu.unity
     guid: 7946d9d876e7e0d41aeb9ae232f261a6
   - enabled: 1
-    path: Assets/Scenes/Dorm.unity
+    path: Assets/Scenes/Chapter 1/Dorm.unity
     guid: 22f996bd2f2d72d40ac6627c22cccaf0
   - enabled: 1
-    path: Assets/Scenes/CampusHall.unity
+    path: Assets/Scenes/Chapter 1/CampusHall.unity
     guid: 70b39f06ffb50264cb19b2db943778e9
   - enabled: 1
     path: Assets/Scenes/Research Panic.unity
