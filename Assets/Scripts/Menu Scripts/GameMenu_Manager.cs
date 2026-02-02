@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 public class GameMenu_Manager : MonoBehaviour
 {
     [SerializeField] private GameObject Game_Settings;
+    [SerializeField] private GameObject Menu_UI;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+       Game_Settings.SetActive(false);
+        Menu_UI.SetActive(false);
     }
 
     void Update()

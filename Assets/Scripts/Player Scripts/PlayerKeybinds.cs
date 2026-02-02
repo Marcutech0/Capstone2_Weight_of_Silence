@@ -7,8 +7,6 @@ public class PlayerKeybinds : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        Tutorial_and_Menu.SetActive(false);
     }
 
     // Update is called once per frame
