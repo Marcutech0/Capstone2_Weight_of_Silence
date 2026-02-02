@@ -2,26 +2,25 @@ using UnityEngine;
 
 public class PlayerKeybinds : MonoBehaviour
 {
-    [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject Tutorial_and_Menu;
+    [SerializeField] private GameObject Game_Settings;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        settingsMenu.SetActive(false);
+        
+        Tutorial_and_Menu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Open and close Menu with Escape Key
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            settingsMenu.SetActive(!settingsMenu.activeSelf);
-            Time.timeScale = settingsMenu.activeSelf ? 0f : 1f;
+            //Ensures Settings Menu is closed when opening and closing the main menu
+            Game_Settings.SetActive(false);
+            Tutorial_and_Menu.SetActive(!Tutorial_and_Menu.activeSelf);
+            Time.timeScale = Tutorial_and_Menu.activeSelf ? 0f : 1f;
         }
-    }
-
-    public void ExitSettings()
-    {
-        settingsMenu.SetActive(false);
-        Time.timeScale = settingsMenu.activeSelf ? 0f : 1f;
     }
 }
