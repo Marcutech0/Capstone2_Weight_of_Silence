@@ -4140,12 +4140,12 @@ MonoBehaviour:
   - Deleted
   - Fabricated
   - Rumor
-  redHerringKeywords:
-  - Variable
-  - Simulation
+  wrongKeywords:
+  - Uncertainty
+  - Pressure
   - Report
-  - Warning
-  - Evidence
+  - Record
+  - Spectrum
   textFragmentPrefab: {fileID: 7327779927008810999, guid: 64cb3fb50785eab4aab00fbc3624ed36, type: 3}
   fragmentsParent: {fileID: 1020513446}
   layoutRows: 5
@@ -4161,8 +4161,6 @@ MonoBehaviour:
   - {fileID: 1080090214}
   - {fileID: 2101118510}
   statusText: {fileID: 0}
-  winMessage: Correct notes! You understood the lecture.
-  failMessage: Wrong keyword selected. Your notes are incorrect.
   winScreen: {fileID: 122870885}
   loseScreen: {fileID: 497598792}
   moveToSlotSeconds: 0.35
