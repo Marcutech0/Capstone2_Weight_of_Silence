@@ -5,4 +5,7 @@
   - Name: Game Manager
   - Tag: Untagged
   - Layer: Default
+  - Name: Tutorial Panel
+  - Tag: Untagged
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
