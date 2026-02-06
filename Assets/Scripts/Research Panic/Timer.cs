@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI _TimerText;
     public float _MinigameDuration;
     public bool _StopTimer;
+    public float _TimeRemaining;
 
     [Header("Points System")]
     public int _CorrectPoints;
@@ -20,11 +21,14 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI _GameStatus;
     public GameObject _GameStatusObject;
     public ResearchTitleSpawner _CurrentTitleActivePolitics, _CurrentTitleActiveCulture, _CurrentTitleActiveEducation;
+
+    public GameObject _TutorialPanel;
     void Start()
     {
         _StopTimer = false;
         _TimerSlider.maxValue = _MinigameDuration;
-        _TimerSlider.value = _MinigameDuration;
+        _TimeRemaining = _MinigameDuration;
+        _TimerSlider.value = _TimeRemaining;
         _CorrectPoints = 0;
         _WrongPoints = 0;
     }
@@ -32,12 +36,16 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float _Time = _MinigameDuration - Time.time;
-        int _Minutes = Mathf.FloorToInt(_Time / 60);
-        int _Seconds = Mathf.FloorToInt(_Time - _Minutes * 60f);
+        if (!_StopTimer) 
+        {
+            _TimeRemaining -= Time.deltaTime;
+        }
+        int _Minutes = Mathf.FloorToInt(_TimeRemaining / 60);
+        int _Seconds = Mathf.FloorToInt(_TimeRemaining - _Minutes * 60f);
         string _TextTime = string.Format("{0:0}:{1:00}", _Minutes, _Seconds);
+        _TimerSlider.value = _TimeRemaining;
 
-        if (_Time <= 0)
+        if (_TimeRemaining <= 0)
         {
             _StopTimer = true;
         }
@@ -45,8 +53,15 @@ public class Timer : MonoBehaviour
         if (_StopTimer == false)
         {
             _TimerText.text = _TextTime;
-            _TimerSlider.value = _Time;
+            _TimerSlider.value = _TimeRemaining;
         }
+
+        if (_StopTimer == true && IsPaused()) 
+        {
+            _TimerText.text = _TextTime;
+            _TimerSlider.value = _TimeRemaining;
+        }
+
     }
     
     public void AddCorrectPoints() 
@@ -95,5 +110,22 @@ public class Timer : MonoBehaviour
             _GameStatusObject.SetActive(true);
             SceneManager.LoadScene("SampleScene");
         }
+    }
+
+    public void OpenTutorialPanel()
+    {
+        _TutorialPanel.SetActive(true);
+        IsPaused();
+        _StopTimer = true;
+    }
+
+    public void CloseTutorialPanel()
+    {
+        _TutorialPanel.SetActive(false);
+        _StopTimer = false;
+    }
+    bool IsPaused() 
+    {
+        return _TutorialPanel != null && _TutorialPanel.activeSelf;
     }
 }
