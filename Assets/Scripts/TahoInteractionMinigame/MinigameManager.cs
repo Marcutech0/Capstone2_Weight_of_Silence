@@ -12,6 +12,7 @@ public class MinigameManager : MonoBehaviour
     public TextMeshProUGUI _ReleasedText;
     public TextMeshProUGUI _GameStatusText;
     public CanvasGroup _TahoPanel;
+    public GameObject _TutorialPanel;
 
     [Header("MinigameSettings")]
     public float _GameDuration = 20f;
@@ -25,7 +26,6 @@ public class MinigameManager : MonoBehaviour
     public float _MaxSpillDelay;
     public float _MinSpillAmount;
     public float _MaxSpillAmount;
-
 
     public void Awake()
     {
@@ -49,6 +49,12 @@ public class MinigameManager : MonoBehaviour
 
         while (_GameActive) 
         {
+            if (IsPaused()) 
+            {
+                yield return null;
+                continue;
+            }
+
            _RemainingTime -= Time.deltaTime;
            _TimerText.text = $"{Mathf.Max(_RemainingTime, 0f):0}s";
 
@@ -69,6 +75,12 @@ public class MinigameManager : MonoBehaviour
         // during minigame spill the currently selected cup based on random spill amount with respect to time to spill 
         while (_GameActive)
         {
+            if (IsPaused())
+            {
+                yield return null;
+                continue;
+            }
+
             float _WaitTime = Random.Range(_MinSpillDelay, _MaxSpillDelay);
             yield return new WaitForSeconds(_WaitTime);
 
@@ -116,5 +128,21 @@ public class MinigameManager : MonoBehaviour
     {
         // if active return minigame is active
         return _GameActive;
+    }
+
+    public  void OpenTutorialPanel() 
+    {
+        _TutorialPanel.SetActive(true);
+        IsPaused();
+    }
+
+    public void CloseTutorialPanel()
+    {
+        _TutorialPanel.SetActive(false);
+    }
+
+    bool IsPaused() 
+    {
+        return _TutorialPanel != null && _TutorialPanel.activeSelf;
     }
 }
