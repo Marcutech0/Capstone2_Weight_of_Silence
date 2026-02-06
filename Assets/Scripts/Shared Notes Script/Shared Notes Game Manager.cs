@@ -51,6 +51,16 @@ public class Shared_Notes_Manager : MonoBehaviour
 
     private readonly List<TextFragment> spawnedFragments = new();
     private readonly List<TextFragment> placedFragments = new();
+
+    // Tracks original layout info and whether a fragment is currently on the notebook.
+    private class FragmentState
+    {
+        public RectTransform originalParent;
+        public Vector2 originalPosition;
+        public bool isOnNotebook;
+    }
+
+    private readonly Dictionary<TextFragment, FragmentState> fragmentStates = new();
     private int selectedCount = 0;
     private bool isLocked = false;
 
@@ -152,6 +162,7 @@ public class Shared_Notes_Manager : MonoBehaviour
             if (frag != null) Destroy(frag.gameObject);
         }
         spawnedFragments.Clear();
+        fragmentStates.Clear();
 
         var words = new List<(string word, bool isCorrect)>(10);
         for (int i = 0; i < 5; i++)
@@ -198,6 +209,17 @@ public class Shared_Notes_Manager : MonoBehaviour
             fragment.Initialize(words[i].word, words[i].isCorrect, OnFragmentClicked);
             fragment.SetInteractable(false);
             spawnedFragments.Add(fragment);
+
+            // Remember the original parent/position so we can return it from the notebook.
+            if (rt != null)
+            {
+                fragmentStates[fragment] = new FragmentState
+                {
+                    originalParent = rt.parent as RectTransform,
+                    originalPosition = rt.anchoredPosition,
+                    isOnNotebook = false
+                };
+            }
         }
     }
 
@@ -206,7 +228,15 @@ public class Shared_Notes_Manager : MonoBehaviour
         if (isLocked || fragment == null)
             return;
 
-        // Prevent double-picks of the same fragment.
+        // If this fragment is already on the notebook, send it back to the blackboard.
+        if (fragmentStates.TryGetValue(fragment, out FragmentState state) && state.isOnNotebook)
+        {
+            fragment.SetInteractable(false);
+            StartCoroutine(MoveFragmentBackToBlackboard(fragment));
+            return;
+        }
+
+        // Otherwise, move it from the blackboard into the next available notebook slot.
         fragment.SetInteractable(false);
 
         if (selectedCount >= 5)
@@ -311,6 +341,81 @@ public class Shared_Notes_Manager : MonoBehaviour
         {
             fragmentText.color = Color.black;
         }
+
+        // Mark this fragment as being on the notebook and allow it to be clicked again.
+        if (fragmentStates.TryGetValue(fragment, out FragmentState state))
+        {
+            state.isOnNotebook = true;
+        }
+        fragment.SetInteractable(true);
+    }
+
+    /// <summary>
+    /// Animates a fragment from the notebook back to its original position on the blackboard.
+    /// </summary>
+    private IEnumerator MoveFragmentBackToBlackboard(TextFragment fragment)
+    {
+        if (fragment == null)
+            yield break;
+
+        if (!fragmentStates.TryGetValue(fragment, out FragmentState state) ||
+            state.originalParent == null)
+            yield break;
+
+        RectTransform fragRT = fragment.GetComponent<RectTransform>();
+        if (fragRT == null)
+            yield break;
+
+        // Work in the original parent's local space.
+        RectTransform targetParent = state.originalParent;
+
+        // Convert current position into the target parent's local space.
+        Vector3 worldPos = fragRT.TransformPoint(Vector3.zero);
+        Vector2 startLocal;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            targetParent,
+            RectTransformUtility.WorldToScreenPoint(null, worldPos),
+            null,
+            out startLocal
+        );
+
+        Vector2 start = startLocal;
+        Vector2 end = state.originalPosition;
+
+        // Temporarily parent to the original parent so we animate in the correct space.
+        fragRT.SetParent(targetParent, false);
+        fragRT.anchoredPosition = start;
+
+        float duration = Mathf.Max(0.01f, moveToSlotSeconds);
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.SmoothStep(0f, 1f, elapsed / duration);
+            fragRT.anchoredPosition = Vector2.Lerp(start, end, t);
+            yield return null;
+        }
+
+        // Snap back to original position.
+        fragRT.anchoredPosition = end;
+
+        // Mark as back on the blackboard.
+        state.isOnNotebook = false;
+
+        // Remove from placed list and reduce selected count.
+        placedFragments.Remove(fragment);
+        selectedCount = Mathf.Max(0, selectedCount - 1);
+
+        // Restore its default text color if desired (optional).
+        TMP_Text fragmentText = fragment.GetComponentInChildren<TMP_Text>();
+        if (fragmentText != null)
+        {
+            fragmentText.color = Color.white;
+        }
+
+        // Allow interaction again.
+        fragment.SetInteractable(true);
     }
 
     private void Win()

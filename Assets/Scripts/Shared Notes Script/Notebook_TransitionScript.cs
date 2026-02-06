@@ -13,13 +13,6 @@ public class Notebook_TransitionScript : MonoBehaviour
     [Header("Animator Controls")]
     [Tooltip("Trigger parameter that plays the 'show/slide in' transition. Leave empty to use Play(showStateName).")]
     [SerializeField] private string showTrigger = "Show";
-    [Tooltip("Trigger parameter that plays the 'hide/slide out' transition. Leave empty if you don't support hiding.")]
-    [SerializeField] private string hideTrigger = "Hide";
-
-    [Tooltip("Optional: state name to play for show when showTrigger is empty. Example: 'Notebook_Show'.")]
-    [SerializeField] private string showStateName = "";
-    [Tooltip("Optional: state name to play for hide when hideTrigger is empty. Example: 'Notebook_Hide'.")]
-    [SerializeField] private string hideStateName = "";
 
     [Header("Auto Play")]
     [Tooltip("If true, calls Hide() in Awake (uses hideTrigger/hideStateName).")]
@@ -65,14 +58,8 @@ public class Notebook_TransitionScript : MonoBehaviour
 
         if (!string.IsNullOrWhiteSpace(showTrigger))
         {
-            notebookAnimator.ResetTrigger(hideTrigger);
             notebookAnimator.SetTrigger(showTrigger);
             return;
-        }
-
-        if (!string.IsNullOrWhiteSpace(showStateName))
-        {
-            notebookAnimator.Play(showStateName, 0, 0f);
         }
     }
 
@@ -82,17 +69,6 @@ public class Notebook_TransitionScript : MonoBehaviour
 
         isShown = false;
 
-        if (!string.IsNullOrWhiteSpace(hideTrigger))
-        {
-            notebookAnimator.ResetTrigger(showTrigger);
-            notebookAnimator.SetTrigger(hideTrigger);
-            return;
-        }
-
-        if (!string.IsNullOrWhiteSpace(hideStateName))
-        {
-            notebookAnimator.Play(hideStateName, 0, 0f);
-        }
     }
 
     public void Toggle()

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Volume_Setting : MonoBehaviour
 {
-    [SerializeField] private AudioMixer Music_Mixer;
+    [SerializeField] private AudioMixer Main_Mixer;
     [SerializeField] private Slider Music_Slider, SFX_Slider;
 
     private void Start()
@@ -23,14 +23,14 @@ public class Volume_Setting : MonoBehaviour
     public void Set_Music_Volume()
     {
         float volume = Music_Slider.value;
-        Music_Mixer.SetFloat("Music", Mathf.Log10(volume)*20);
+        Main_Mixer.SetFloat("Music", Mathf.Log10(volume)*20);
         PlayerPrefs.SetFloat("Music_Volume", volume);
     }
 
     public void Set_SFX_Volume()
     {
         float volume = SFX_Slider.value;
-        Music_Mixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        Main_Mixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFX_Volume", volume);
     }
 
