@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CutScene1 : MonoBehaviour
 {
@@ -10,14 +11,10 @@ public class CutScene1 : MonoBehaviour
     public TextMeshProUGUI _StoryText;
 
     [TextArea] public string _Storyline;
-    public CharacterController _PlayerController;
-    public PlayerMovement _PlayerControls;
-    public bool _IsInRange;
-    public bool _HasInteracted;
 
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
-    public GameFlowLegendManager _LegendManager;
+    public Fade _FadeTransition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,29 +30,44 @@ public class CutScene1 : MonoBehaviour
             _DialogueIndex++;
 
             if (_DialogueIndex == 1)
+            {
                 StartCoroutine(ShowNewDialogueRaya("Don’t forget the paper, sleepyhead."));
+            }
+
             else if (_DialogueIndex == 2)
+            {
                 StartCoroutine(ShowNewDialogueRaya("Also… can we talk later?"));
+            }
+
             else if (_DialogueIndex == 3)
-                StartCoroutine(ShowNewInnerDialogue("Later keeps getting further away..."));
+            {
+                StartCoroutine(ShowNewDialogueRaya("hey, are you there?"));
+            }
+
+            else if (_DialogueIndex == 4)
+            {
+                StartCoroutine(ShowNewInnerDialogue("Later keeps getting further away."));
+            }
             else
+            {
                 EndDialogue();
+               _FadeTransition.FadeOut();
+                StartCoroutine(CallNextScene());
+            }
+
         }
     }
 
     public void EndDialogue() 
     {
         _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+        
     }
 
     IEnumerator ShowDialogue()
     {
         _DialoguePanel.SetActive(true);
 
-        _PlayerController.enabled = false;
-        _PlayerControls.enabled = false;
 
         _StoryText.text = "";
 
@@ -90,6 +102,11 @@ public class CutScene1 : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
                 _CanContinue = true;
+    }
 
+    IEnumerator CallNextScene() 
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Exploration 1.1");
     }
 }

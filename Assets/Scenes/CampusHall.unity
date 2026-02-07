@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &52134317
 Transform:
   m_ObjectHideFlags: 0
@@ -1392,7 +1392,7 @@ RectTransform:
   m_Father: {fileID: 96287705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1660,7 +1660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb26fb19daf764c8798aca255bfec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerKeybinds
-  settingsMenu: {fileID: 1388464637}
+  Tutorial_and_Menu: {fileID: 0}
+  Game_Settings: {fileID: 0}
 --- !u!64 &433403468
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1811,7 +1812,7 @@ Transform:
   m_GameObject: {fileID: 433403461}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.163, y: 0.5, z: -1.23}
+  m_LocalPosition: {x: -2.53, y: 0.5, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2466,7 +2467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779432668
 Transform:
   m_ObjectHideFlags: 0
@@ -3027,8 +3028,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 448141891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3114,7 +3115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e23701adb75f1439493c96f775f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
-  Music_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
+  Main_Mixer: {fileID: 0}
   Music_Slider: {fileID: 1925652262}
   SFX_Slider: {fileID: 198911519}
 --- !u!1 &955669540
@@ -3537,9 +3538,6 @@ MonoBehaviour:
   _ReputationCount: 0
   _AnonymityCount: 0
   _GuiltCount: 0
-  _CutscenePanel: {fileID: 2032129162}
-  _Cutscene1: {fileID: 92851407}
-  _Cutscene2: {fileID: 35845593}
   _Courage: {fileID: 1787133628}
   _Fear: {fileID: 667465735}
   _Reputation: {fileID: 1794178539}
@@ -4230,8 +4228,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 282891584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4497,7 +4495,7 @@ RectTransform:
   m_Father: {fileID: 375119459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5675,7 +5673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1509400967
 Transform:
   m_ObjectHideFlags: 0

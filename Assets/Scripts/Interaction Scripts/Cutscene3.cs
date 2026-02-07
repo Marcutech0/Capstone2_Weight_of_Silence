@@ -2,43 +2,39 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-public class RayaLibraryInteraction : MonoBehaviour
+public class Cutscene3 : MonoBehaviour
 {
     [Header("UI")]
     public GameObject _DialoguePanel;
-    public GameObject _InteractIndicator;
     public GameObject _Choice1Panel;
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
-    public TextMeshProUGUI _InteractText;
 
     [TextArea] public string _Storyline;
-    public CharacterController _PlayerController;
-    public PlayerMovement _PlayerControls;
-    public bool _IsInRange;
-    public bool _HasInteracted;
+
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
 
+    public Fade _FadeTransition;
     public GameFlowLegendManager _LegendManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void Start()
+    {
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowDialogueRaya());
+    }
     public void Update()
     {
-        if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
-        {
-            _HasInteracted = true;
-            StartCoroutine(ShowDialogueRaya());
-            _NpcName.text = " ";
-        }
-
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_CanContinue && Input.GetKeyDown(KeyCode.E))
         {
             _CanContinue = false;
             _DialogueIndex++;
 
             if (_DialogueIndex == 2)
             {
-                StartCoroutine(ResearchPanicMinigame());
+                _FadeTransition.FadeOut();
+                StartCoroutine(CallNextScene());
                 EndDialogue();
             }
         }
@@ -46,8 +42,7 @@ public class RayaLibraryInteraction : MonoBehaviour
     public void EndDialogue()
     {
         _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
+        
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Anonymity.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
@@ -56,11 +51,7 @@ public class RayaLibraryInteraction : MonoBehaviour
     IEnumerator ShowDialogueRaya()
     {
         _DialoguePanel.SetActive(true);
-        _InteractIndicator.SetActive(false);
-
-        _PlayerController.enabled = false;
-        _PlayerControls.enabled = false;
-
+        
         _StoryText.text = "";
         _NpcName.text = "Raya";
         foreach (char c in _Storyline)
@@ -82,13 +73,13 @@ public class RayaLibraryInteraction : MonoBehaviour
         }
         _CanContinue = true;
     }
-    IEnumerator ResearchPanicMinigame() 
+    IEnumerator CallNextScene()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Research Panic");
     }
 
-    
+
     public void Choice1Library() 
     {
         _LegendManager._CourageCount++;
@@ -98,6 +89,7 @@ public class RayaLibraryInteraction : MonoBehaviour
         PlayerPrefs.Save();
         _DialogueIndex = 1;
         _CanContinue = false;
+        _Choice1Panel.SetActive(false);
         StartCoroutine(ShowNewDialogueTextRaya("I thought so."));
     }
 
@@ -114,6 +106,7 @@ public class RayaLibraryInteraction : MonoBehaviour
         PlayerPrefs.Save();
         _DialogueIndex = 1;
         _CanContinue = false;
+        _Choice1Panel.SetActive(false);
         StartCoroutine(ShowNewDialogueTextRaya("That's what most people do."));
     }
 
@@ -126,29 +119,7 @@ public class RayaLibraryInteraction : MonoBehaviour
         PlayerPrefs.Save();
         _DialogueIndex = 1;
         _CanContinue = false;
+        _Choice1Panel.SetActive(false);
         StartCoroutine(ShowNewDialogueTextRaya("Someone has to."));
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Raya Library Hall") && !_HasInteracted)
-        {
-            _IsInRange = true;
-            _InteractIndicator.SetActive(true);
-
-            if (_HasInteracted)
-                _InteractText.text = "Interacted!";
-            else
-                _InteractText.text = "Press F to Interact";
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Raya Library Hall"))
-        {
-            _IsInRange = false;
-            _InteractIndicator.SetActive(false);
-        }
     }
 }

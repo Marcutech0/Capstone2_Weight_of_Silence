@@ -29,6 +29,8 @@ TagManager:
   - NoticeBoard
   - PackedBag
   - RayasDoor
+  - LiamsDoor
+  - DuskDoor
   layers:
   - Default
   - TransparentFX

@@ -3,39 +3,35 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class PhoneInteractionLiamRoom : MonoBehaviour
+public class Cutscene5 : MonoBehaviour
 {
     [Header("UI")]
     public GameObject _DialoguePanel;
-    public GameObject _InteractIndicator;
     public TextMeshProUGUI _NpcName; // since this is a object npc name is empty
     public TextMeshProUGUI _StoryText;
-    public TextMeshProUGUI _InteractText;
     [TextArea] public string _Storyline;
 
-    public CharacterController _PlayerController;
-    public PlayerMovement _PlayerControls;
-    public bool _IsInRange;
-    public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
+    public Fade _FadeTransition;
+    void Start()
+    {
+        _NpcName.text = "Liam";
+        StartCoroutine(ShowDialoguePhone());
+    }
 
     public void Update()
     {
-        if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
-        {
-            _HasInteracted = true;
-            StartCoroutine(ShowDialoguePhone());
-        }
-
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_CanContinue && Input.GetKeyDown(KeyCode.E))
         {
             _CanContinue = false;
             _DialogueIndex++;
 
             if (_DialogueIndex == 1)
             {
+                _FadeTransition.FadeOut();
+                StartCoroutine(CallNextScene());
                 EndDialogue();
             }
         }
@@ -44,21 +40,14 @@ public class PhoneInteractionLiamRoom : MonoBehaviour
     public void EndDialogue()
     {
         _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
         _LegendManager._Guilt.SetActive(false);
     }
 
     IEnumerator ShowDialoguePhone()
     {
         _DialoguePanel.SetActive(true);
-        _InteractIndicator.SetActive(false);
-
-        _PlayerController.enabled = false;
-        _PlayerControls.enabled = false;
 
         _StoryText.text = "";
-        _NpcName.text = "Liam";
         _LegendManager._GuiltCount += 2;
         _LegendManager._Guilt.SetActive(true);
         _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
@@ -73,26 +62,9 @@ public class PhoneInteractionLiamRoom : MonoBehaviour
         _CanContinue = true;
     }
 
-    public void OnTriggerEnter(Collider other)
+    IEnumerator CallNextScene()
     {
-        if (other.CompareTag("Phone") && !_HasInteracted)
-        {
-            _IsInRange = true;
-            _InteractIndicator.SetActive(true);
-
-            if (_HasInteracted)
-                _InteractText.text = "Interacted!";
-            else
-                _InteractText.text = "Press F to Interact";
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Phone"))
-        {
-            _IsInRange = false;
-            _InteractIndicator.SetActive(false);
-        }
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Exploration 1.4");
     }
 }

@@ -10,11 +10,7 @@ public class GameFlowLegendManager : MonoBehaviour
     public int _ReputationCount;
     public int _AnonymityCount;
     public int _GuiltCount;
-    [Header("Cutscenes")]
-    public GameObject _CutscenePanel;
-    public VideoPlayer _Cutscene1;
-    public VideoPlayer _Cutscene2;
-
+    
     [Header("UI")]
     public GameObject _Courage;
     public GameObject _Fear;
@@ -64,13 +60,5 @@ public class GameFlowLegendManager : MonoBehaviour
         if (_GuiltText != null)
             _GuiltText.text = "Guilt: " + _GuiltCount;
 
-    }
-
-    public void OnVideoEnd(VideoPlayer cs1) 
-    {
-        /*
-        _CutscenePanel.SetActive(false);
-        Time.timeScale = 1f;
-        */
     }
 }

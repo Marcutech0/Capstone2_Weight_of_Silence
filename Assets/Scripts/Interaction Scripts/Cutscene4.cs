@@ -3,24 +3,20 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class DiningRoomInteraction : MonoBehaviour
+public class Cutscene4 : MonoBehaviour
 {
     [Header("UI")]
     public GameObject _DialoguePanel;
-    public GameObject _InteractIndicator;
     public GameObject _Choice1Panel;
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
-    public TextMeshProUGUI _InteractText;
 
     [TextArea] public string _Storyline;
-    public CharacterController _PlayerController;
-    public PlayerMovement _PlayerControls;
-    public bool _IsInRange;
-    public bool _HasInteracted;
+
     public GameFlowLegendManager _LegendManager;
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
+    public Fade _FadeTransition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     // Update is called once per frame
@@ -51,6 +47,8 @@ public class DiningRoomInteraction : MonoBehaviour
             else
             {
                 EndDialogue();
+                _FadeTransition.FadeOut();
+                StartCoroutine(CallNextScene());
             }
         }
     }
@@ -58,8 +56,6 @@ public class DiningRoomInteraction : MonoBehaviour
     public void EndDialogue() 
     {
         _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Fear.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
@@ -68,10 +64,6 @@ public class DiningRoomInteraction : MonoBehaviour
     IEnumerator ShowDialogueTitaLiza()
     {
         _DialoguePanel.SetActive(true);
-        _InteractIndicator.SetActive(false);
-
-        _PlayerController.enabled = false;
-        _PlayerControls.enabled = false;
 
         _StoryText.text = "";
 
@@ -105,11 +97,19 @@ public class DiningRoomInteraction : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
-        _CanContinue = true;
+        _CanContinue = false;
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Cutscene1.5");
     }
 
     public void Choice1DiningRoom() 
     {
+        _DialogueIndex++;
+        _CanContinue = true;
         _LegendManager._CourageCount += 3;
         _LegendManager._FearCount += 4;
         _LegendManager._GuiltCount--;
@@ -127,8 +127,10 @@ public class DiningRoomInteraction : MonoBehaviour
 
     }
 
-    public void Choice2DiningRoom() 
+    public void Choice2DiningRoom()
     {
+        _DialogueIndex++;
+        _CanContinue = true;
         _LegendManager._CourageCount--;
         _LegendManager._FearCount--;
         _LegendManager._GuiltCount++;
@@ -146,8 +148,10 @@ public class DiningRoomInteraction : MonoBehaviour
 
     }
 
-    public void Choice3DiningRoom() 
+    public void Choice3DiningRoom()
     {
+        _DialogueIndex++;
+        _CanContinue = true;
         _LegendManager._FearCount++;
         _LegendManager._GuiltCount++;
         _LegendManager._Fear.SetActive(true);

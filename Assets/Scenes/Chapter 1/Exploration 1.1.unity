@@ -151,8 +151,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1388925756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice6Dorm
         m_Mode: 1
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice5Dorm
         m_Mode: 1
@@ -2205,7 +2205,7 @@ RectTransform:
   m_Father: {fileID: 1410696559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3169,7 +3169,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4890,7 +4890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &699473861
 Transform:
   m_ObjectHideFlags: 0
@@ -4990,7 +4990,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice8Dorm
         m_Mode: 1
@@ -5227,7 +5227,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice7Dorm
         m_Mode: 1
@@ -6609,7 +6609,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6988,7 +6988,7 @@ RectTransform:
   m_Father: {fileID: 1536230039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7426,8 +7426,7 @@ GameObject:
   - component: {fileID: 1283513764}
   - component: {fileID: 1283513763}
   - component: {fileID: 1283513761}
-  - component: {fileID: 1283513762}
-  - component: {fileID: 1283513757}
+  - component: {fileID: 1283513770}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -7435,33 +7434,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1283513757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283513756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f0e71abad0db24f90fcec2d7ed4c5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RayaInteractionDorem
-  _DialoguePanel: {fileID: 1613662449}
-  _InteractIndicator: {fileID: 1401476552}
-  _Choice2Panel: {fileID: 755131254}
-  _Choice3Panel: {fileID: 129716757}
-  _NpcName: {fileID: 1014614096}
-  _StoryText: {fileID: 520454683}
-  _InteractText: {fileID: 772411354}
-  _Storyline: Liam! Over here!
-  _PlayerController: {fileID: 1283513760}
-  _PlayerControls: {fileID: 1283513758}
-  _IsInRange: 0
-  _HasInteracted: 0
-  _LegendManager: {fileID: 414652652}
-  _DialogueIndex: 0
-  _CanContinue: 0
 --- !u!114 &1283513758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7547,29 +7519,6 @@ MonoBehaviour:
   _PlayerControls: {fileID: 1283513758}
   _IsInRange: 0
   _HasInteracted: 0
---- !u!114 &1283513762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283513756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ae33397cde46f40804009dd7148585, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CutScene1
-  _DialoguePanel: {fileID: 1613662449}
-  _NpcName: {fileID: 1014614096}
-  _StoryText: {fileID: 520454683}
-  _Storyline: Morning again. Another day pretending things are normal.
-  _PlayerController: {fileID: 1283513760}
-  _PlayerControls: {fileID: 1283513758}
-  _IsInRange: 0
-  _HasInteracted: 0
-  _DialogueIndex: 0
-  _CanContinue: 0
-  _LegendManager: {fileID: 414652652}
 --- !u!114 &1283513763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7734,7 +7683,7 @@ Transform:
   m_GameObject: {fileID: 1283513756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.228, y: 0.5, z: 1.03}
+  m_LocalPosition: {x: -4.61, y: 0.5, z: 1.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7742,6 +7691,18 @@ Transform:
   - {fileID: 1102320913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1283513770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283513756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0913c63c9dfcc45a5b97aa6fdb012e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiamsDoorInteraction
 --- !u!1 &1380633817
 GameObject:
   m_ObjectHideFlags: 0
@@ -8696,6 +8657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1668399356}
   - {fileID: 1164435736}
   - {fileID: 457781173}
   - {fileID: 2126236282}
@@ -8785,7 +8747,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1613662453
 RectTransform:
@@ -8910,6 +8872,59 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1668399355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668399356}
+  - component: {fileID: 1668399357}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: LiamsDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668399356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668399355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1, y: 0.01, z: 1.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1542447492}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1668399357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668399355}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3.1042717, z: 1}
+  m_Center: {x: 0, y: 1.0521356, z: 0}
 --- !u!1 &1739492110
 GameObject:
   m_ObjectHideFlags: 0
@@ -9344,7 +9359,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice4Dorm
         m_Mode: 1
@@ -9916,7 +9931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e23701adb75f1439493c96f775f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
-  Music_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
+  Main_Mixer: {fileID: 0}
   Music_Slider: {fileID: 194586706}
   SFX_Slider: {fileID: 451656988}
 --- !u!4 &1896778300
@@ -10678,8 +10693,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 594007424}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10804,7 +10819,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513757}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionDorem, Assembly-CSharp
         m_MethodName: Choice9Dorm
         m_Mode: 1

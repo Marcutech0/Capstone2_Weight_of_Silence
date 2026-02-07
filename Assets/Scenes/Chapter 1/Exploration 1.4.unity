@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 290191249}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PackedBagInteractionRayaDorm, Assembly-CSharp
         m_MethodName: Choice1RayaDorm
         m_Mode: 1
@@ -1256,7 +1256,6 @@ GameObject:
   - component: {fileID: 290191256}
   - component: {fileID: 290191255}
   - component: {fileID: 290191254}
-  - component: {fileID: 290191249}
   - component: {fileID: 290191253}
   m_Layer: 0
   m_Name: PlayerObject (1)
@@ -1265,28 +1264,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &290191249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 290191248}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af954559a56d324bb4954d4758b0f9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PackedBagInteractionRayaDorm
-  _DialoguePanel: {fileID: 746234362}
-  _Choice1Panel: {fileID: 3678385}
-  _NpcName: {fileID: 1547083051}
-  _StoryText: {fileID: 1180963213}
-  _Storyline: "Liam, if anything happens\u2014"
-  _PlayerController: {fileID: 290191252}
-  _PlayerControls: {fileID: 290191250}
-  _DialogueIndex: 0
-  _CanContinue: 0
-  _LegendManager: {fileID: 1416299615}
 --- !u!114 &290191250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,7 +1341,6 @@ MonoBehaviour:
   _InteractText: {fileID: 1644712788}
   _IsInRange: 0
   _HasInteracted: 0
-  _Cutscene6: {fileID: 290191249}
 --- !u!114 &290191254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1415,7 +1391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb26fb19daf764c8798aca255bfec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerKeybinds
-  settingsMenu: {fileID: 1795582740}
+  Tutorial_and_Menu: {fileID: 0}
+  Game_Settings: {fileID: 0}
 --- !u!64 &290191257
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2456,7 +2433,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 290191249}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PackedBagInteractionRayaDorm, Assembly-CSharp
         m_MethodName: Choice2RayaDorm
         m_Mode: 1
@@ -2684,6 +2661,59 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &581343619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581343621}
+  - component: {fileID: 581343620}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: RayasDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &581343620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581343619}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3.1042717, z: 1}
+  m_Center: {x: 0, y: 1.0521356, z: 0}
+--- !u!4 &581343621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581343619}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.61, y: 0.01, z: -1.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 701487345}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &644573113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3262,6 +3292,7 @@ Transform:
   - {fileID: 1621052225}
   - {fileID: 1258250414}
   - {fileID: 1664748724}
+  - {fileID: 581343621}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &730251481
@@ -5389,7 +5420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1238199159
 Transform:
   m_ObjectHideFlags: 0
@@ -5861,9 +5892,6 @@ MonoBehaviour:
   _ReputationCount: 0
   _AnonymityCount: 0
   _GuiltCount: 0
-  _CutscenePanel: {fileID: 1729790228}
-  _Cutscene1: {fileID: 1899452065}
-  _Cutscene2: {fileID: 1468181467}
   _Courage: {fileID: 45384958}
   _Fear: {fileID: 471018162}
   _Reputation: {fileID: 2062516640}
@@ -6397,7 +6425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e23701adb75f1439493c96f775f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
-  Music_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
+  Main_Mixer: {fileID: 0}
   Music_Slider: {fileID: 240501856}
   SFX_Slider: {fileID: 1626910551}
 --- !u!4 &1510871658
@@ -8045,7 +8073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 290191249}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PackedBagInteractionRayaDorm, Assembly-CSharp
         m_MethodName: Choice3RayaDorm
         m_Mode: 1

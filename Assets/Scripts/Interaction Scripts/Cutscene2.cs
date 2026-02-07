@@ -2,37 +2,29 @@ using TMPro;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-public class RayaInteractionDorem : MonoBehaviour
+public class Cutscene2 : MonoBehaviour
 {
     [Header("UI")]
     public GameObject _DialoguePanel;
-    public GameObject _InteractIndicator;
     public GameObject _Choice2Panel;
     public GameObject _Choice3Panel;
     public TextMeshProUGUI _NpcName; 
     public TextMeshProUGUI _StoryText;
-    public TextMeshProUGUI _InteractText;
 
-    [TextArea] public string _Storyline;
-    public CharacterController _PlayerController;
-    public PlayerMovement _PlayerControls;
-    public bool _IsInRange;
-    public bool _HasInteracted;
-    
+    [TextArea] public string _Storyline;   
     public GameFlowLegendManager _LegendManager;
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
+    public Fade _FadeTransition;
+
+    private void Start()
+    {
+        _NpcName.text = "Raya";
+        StartCoroutine(ShowDialogueRaya());
+    }
     public void Update()
     {
-        if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
-        {
-            _HasInteracted = true;
-            _DialogueIndex = 0;
-            StartCoroutine(ShowDialogueRaya());
-            _NpcName.text = "Raya";
-        }
-
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E)) 
+        if ( _CanContinue && Input.GetKeyDown(KeyCode.E)) 
         {
             _CanContinue = false;
             _DialogueIndex++;
@@ -59,7 +51,8 @@ public class RayaInteractionDorem : MonoBehaviour
             {
                 StartCoroutine(ShowNewDialogueTextRayaTaho("Yeah. Before the day ruins it."));
                 _NpcName.text = "Raya";
-                StartCoroutine(TahoMinigame());
+                _FadeTransition.FadeOut();
+                StartCoroutine(CallNextScene());
             }
             else
                 StartCoroutine(EndDialogueLoadScene());
@@ -69,10 +62,6 @@ public class RayaInteractionDorem : MonoBehaviour
     IEnumerator ShowDialogueRaya()
     {
         _DialoguePanel.SetActive(true);
-        _InteractIndicator.SetActive(false);
-
-        _PlayerController.enabled = false;
-        _PlayerControls.enabled = false;
 
         _StoryText.text = "";
 
@@ -110,11 +99,6 @@ public class RayaInteractionDorem : MonoBehaviour
         _CanContinue = true;
     }
 
-    IEnumerator TahoMinigame() 
-    {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("Taho!");
-    }
 
     IEnumerator EndDialogueLoadScene() 
     {
@@ -129,6 +113,11 @@ public class RayaInteractionDorem : MonoBehaviour
         _LegendManager._Guilt.SetActive(false);
     }
 
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Taho!");
+    }
 
     public void Choice4Dorm() 
     {
@@ -182,7 +171,7 @@ public class RayaInteractionDorem : MonoBehaviour
         _DialogueIndex++;
         _CanContinue = false;
         _Choice3Panel.SetActive(false);
-        _NpcName.text = "Liam";
+        _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Later. I promise."));
     }
     public void Choice8Dorm()
@@ -195,7 +184,7 @@ public class RayaInteractionDorem : MonoBehaviour
         _DialogueIndex++;
         _CanContinue = false;
         _Choice3Panel.SetActive(false);
-        _NpcName.text = "Liam";
+        _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Yeah. After class."));
     }
     public void Choice9Dorm()
@@ -208,32 +197,7 @@ public class RayaInteractionDorem : MonoBehaviour
         _DialogueIndex++;
         _CanContinue = false;
         _Choice3Panel.SetActive(false);
-        _NpcName.text = "Liam";
+        _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Sorry. I didn’t mean to."));
-    }
-
-
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("RayaDorm") && !_HasInteracted)
-        {
-            _IsInRange = true;
-            _InteractIndicator.SetActive(true);
-
-            if (_HasInteracted)
-                _InteractText.text = "Interacted!";
-            else
-                _InteractText.text = "Press F to Interact";
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("RayaDorm"))
-        {
-            _IsInRange = false;
-            _InteractIndicator.SetActive(false);
-        }
     }
 }

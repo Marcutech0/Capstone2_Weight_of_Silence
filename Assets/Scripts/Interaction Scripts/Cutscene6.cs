@@ -1,7 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-public class PackedBagInteractionRayaDorm : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class Cutscene6 : MonoBehaviour
 {
     [Header("UI")]
     public GameObject _DialoguePanel;
@@ -10,11 +11,11 @@ public class PackedBagInteractionRayaDorm : MonoBehaviour
     public TextMeshProUGUI _StoryText;
 
     [TextArea] public string _Storyline;
-    public CharacterController _PlayerController;
-    public PlayerMovement _PlayerControls;
+    
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
     public GameFlowLegendManager _LegendManager;
+    public Fade _FadeTransition;
 
 
     public void Start()
@@ -37,6 +38,8 @@ public class PackedBagInteractionRayaDorm : MonoBehaviour
 
             else 
             {
+                _FadeTransition.FadeOut();
+                StartCoroutine(CallNextScene());
                 EndDialogue();
             }
         }
@@ -45,22 +48,16 @@ public class PackedBagInteractionRayaDorm : MonoBehaviour
     public void EndDialogue() 
     {
         _DialoguePanel.SetActive(false);
-        _PlayerController.enabled = true;
-        _PlayerControls.enabled = true;
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Fear.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
         _LegendManager._Reputation.SetActive(false);
         _LegendManager._Anonymity.SetActive(false);
-        _Choice1Panel.SetActive(false);
     }
 
     IEnumerator ShowDialogueRaya()
     {
-        _DialoguePanel.SetActive(true);
-
-        _PlayerController.enabled = false;
-        _PlayerControls.enabled = false;
+        _DialoguePanel.SetActive(true);  
 
         _StoryText.text = "";
 
@@ -88,6 +85,7 @@ public class PackedBagInteractionRayaDorm : MonoBehaviour
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
+        _Choice1Panel.SetActive(false);
         _CanContinue = true;
 
     }
@@ -103,6 +101,7 @@ public class PackedBagInteractionRayaDorm : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
+        _Choice1Panel.SetActive(false);
         _CanContinue = true;
     }
     public void Choice3RayaDorm()
@@ -120,6 +119,13 @@ public class PackedBagInteractionRayaDorm : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
+        _Choice1Panel.SetActive(false);
         _CanContinue = true;
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Exploration 1.1");
     }
 }

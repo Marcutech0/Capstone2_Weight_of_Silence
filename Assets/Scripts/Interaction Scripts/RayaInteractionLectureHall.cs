@@ -39,8 +39,13 @@ public class RayaInteractionLectureHall : MonoBehaviour
 
             if (_DialogueIndex == 2)
             {
+                StartCoroutine(ShowNewDialogueText("Let’s just get in class"));
+                _NpcName.text = "Raya";
+            }
+            else 
+            {
+                StartCoroutine(CallNextScene());
                 EndDialogue();
-                StartCoroutine(SharedNotesMinigame());
             }
         }
     }
@@ -84,7 +89,7 @@ public class RayaInteractionLectureHall : MonoBehaviour
         _CanContinue = true;
 
     }
-    IEnumerator SharedNotesMinigame()
+    IEnumerator CallNextScene()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Shared Notes");
