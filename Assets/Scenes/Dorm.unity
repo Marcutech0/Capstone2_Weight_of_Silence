@@ -697,9 +697,6 @@ MonoBehaviour:
   _ReputationCount: 0
   _AnonymityCount: 0
   _GuiltCount: 0
-  _CutscenePanel: {fileID: 1148274847}
-  _Cutscene1: {fileID: 1202278921}
-  _Cutscene2: {fileID: 214883210}
   _Courage: {fileID: 422472580}
   _Fear: {fileID: 518691572}
   _Reputation: {fileID: 1590302710}
@@ -1381,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e23701adb75f1439493c96f775f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
-  Music_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
+  Main_Mixer: {fileID: 0}
   Music_Slider: {fileID: 157968257}
   SFX_Slider: {fileID: 1963959615}
 --- !u!43 &315207607
@@ -4450,7 +4447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb26fb19daf764c8798aca255bfec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerKeybinds
-  Tutorial_and_Menu: {fileID: 802001323}
+  Menu_UI: {fileID: 802001323}
   Game_Settings: {fileID: 1423694649}
 --- !u!64 &801057269
 MeshCollider:
@@ -4698,13 +4695,9 @@ MonoBehaviour:
   _NpcName: {fileID: 1585660187}
   _StoryText: {fileID: 426961219}
   _Storyline: Morning again. Another day pretending things are normal.
-  _PlayerController: {fileID: 801057272}
-  _PlayerControls: {fileID: 801057271}
-  _IsInRange: 0
-  _HasInteracted: 0
   _DialogueIndex: 0
   _CanContinue: 0
-  _LegendManager: {fileID: 129593260}
+  _FadeTransition: {fileID: 0}
 --- !u!114 &801057280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4718,20 +4711,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RayaInteractionDorem
   _DialoguePanel: {fileID: 1303695137}
-  _InteractIndicator: {fileID: 552709714}
   _Choice2Panel: {fileID: 1218878243}
   _Choice3Panel: {fileID: 1120959567}
   _NpcName: {fileID: 1585660187}
   _StoryText: {fileID: 426961219}
-  _InteractText: {fileID: 2018770461}
   _Storyline: Liam! Over here!
-  _PlayerController: {fileID: 801057272}
-  _PlayerControls: {fileID: 801057271}
-  _IsInRange: 0
-  _HasInteracted: 0
   _LegendManager: {fileID: 129593260}
   _DialogueIndex: 0
   _CanContinue: 0
+  _FadeTransition: {fileID: 0}
 --- !u!1 &802001323
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerKeybinds : MonoBehaviour
 {
-    [SerializeField] private GameObject Tutorial_and_Menu;
+    [SerializeField] private GameObject Menu_UI;
     [SerializeField] private GameObject Game_Settings;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,8 +17,8 @@ public class PlayerKeybinds : MonoBehaviour
         {
             //Ensures Settings Menu is closed when opening and closing the main menu
             Game_Settings.SetActive(false);
-            Tutorial_and_Menu.SetActive(!Tutorial_and_Menu.activeSelf);
-            Time.timeScale = Tutorial_and_Menu.activeSelf ? 0f : 1f;
+            Menu_UI.SetActive(!Menu_UI.activeSelf);
+            Time.timeScale = Menu_UI.activeSelf ? 0f : 1f;
         }
     }
 }
