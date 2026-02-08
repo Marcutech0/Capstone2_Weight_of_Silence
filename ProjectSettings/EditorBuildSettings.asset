@@ -56,6 +56,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter 1/Cutscene1.6.unity
     guid: 6b2b06219c5623c49ba19ec17f37ec32
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Cutscene2.1.unity
+    guid: d1e6b4c8fa05b6b41883f12159383b44
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Exploration 2.1.unity
+    guid: a7310af088b064944baff20daf1d1c81
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Exploration 2.2.unity
+    guid: 6dee9fbbc9dc8b94db664a955506d63d
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Exploration 2.3.unity
+    guid: 7889bcd9c32a832498e9e4050ec5c297
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Cutscene2.2.unity
+    guid: c64dcd5e28fcf774ca0c3ab2448693f2
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2/Cutscene2.3.unity
+    guid: c1e412b83619b6f4794c302ea923764c
+  - enabled: 1
+    path: Assets/Scenes/Chapter 3/Cutscene3.1.unity
+    guid: f81cdd647b5609245b56912e2daaa8f7
+  - enabled: 1
+    path: Assets/Scenes/Chapter 3/Exploration 3.1.unity
+    guid: bb0fe84c7ad66bf4c8af930e75844db5
+  - enabled: 1
+    path: Assets/Scenes/Research Panic Chapter 2.unity
+    guid: 6714c6f36aa782a4d8bce928b2bbb866
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

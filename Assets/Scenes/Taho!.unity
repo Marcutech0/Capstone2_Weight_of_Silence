@@ -1163,7 +1163,7 @@ MonoBehaviour:
   _GameStatusText: {fileID: 1923670021}
   _TahoPanel: {fileID: 709456562}
   _TutorialPanel: {fileID: 2083980677}
-  _GameDuration: 15
+  _GameDuration: 5
   _OverfillManager: {fileID: 876018541}
   _ReleaseManager: {fileID: 876018541}
   _MinSpillDelay: 0.5

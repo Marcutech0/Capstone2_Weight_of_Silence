@@ -1439,7 +1439,7 @@ GameObject:
   - component: {fileID: 309325788}
   - component: {fileID: 309325787}
   m_Layer: 0
-  m_Name: "\u201CYes.\u201D"
+  m_Name: Ignore message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1510,8 +1510,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1603584315}
-        m_TargetAssemblyTypeName: RayaLibraryInteraction, Assembly-CSharp
-        m_MethodName: Choice1Library
+        m_TargetAssemblyTypeName: Exploration2_3Narrator, Assembly-CSharp
+        m_MethodName: Choice1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1737,139 +1737,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &384663611
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 384663612}
-  - component: {fileID: 384663615}
-  - component: {fileID: 384663614}
-  - component: {fileID: 384663613}
-  m_Layer: 0
-  m_Name: "\u201CI keep my head down.\u201D"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &384663612
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384663611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3786, y: 2.3786, z: 2.3786}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1500061017}
-  m_Father: {fileID: 1982753681}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26, y: 177}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &384663613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384663611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 384663614}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1603584315}
-        m_TargetAssemblyTypeName: RayaLibraryInteraction, Assembly-CSharp
-        m_MethodName: Choice2Library
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &384663614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384663611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &384663615
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384663611}
-  m_CullTransparentMesh: 1
 --- !u!1 &440837103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,7 +2138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &544600448
 Transform:
   m_ObjectHideFlags: 0
@@ -2658,7 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e23701adb75f1439493c96f775f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
-  Music_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
+  Main_Mixer: {fileID: 0}
   Music_Slider: {fileID: 1860077411}
   SFX_Slider: {fileID: 2054923975}
 --- !u!43 &660252526
@@ -3030,7 +2897,7 @@ GameObject:
   - component: {fileID: 756954485}
   - component: {fileID: 756954484}
   m_Layer: 0
-  m_Name: "\u201CYou think about this a lot.\u201D"
+  m_Name: Read without replying
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3101,8 +2968,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1603584315}
-        m_TargetAssemblyTypeName: RayaLibraryInteraction, Assembly-CSharp
-        m_MethodName: Choice3Library
+        m_TargetAssemblyTypeName: Exploration2_3Narrator, Assembly-CSharp
+        m_MethodName: Choice2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4318,7 +4185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u201CYou think about this a lot.\u201D"
+  m_text: Read without replying
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4490,7 +4357,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 497125359}
+  m_Mesh: {fileID: 660252526}
 --- !u!33 &1162458963
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -4790,7 +4657,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 209898994}
+  m_Mesh: {fileID: 720019105}
 --- !u!33 &1170800763
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -5135,7 +5002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1211450873
 Transform:
   m_ObjectHideFlags: 0
@@ -5749,9 +5616,6 @@ MonoBehaviour:
   _ReputationCount: 0
   _AnonymityCount: 0
   _GuiltCount: 0
-  _CutscenePanel: {fileID: 619274726}
-  _Cutscene1: {fileID: 55921557}
-  _Cutscene2: {fileID: 1843267588}
   _Courage: {fileID: 1461284702}
   _Fear: {fileID: 1950995609}
   _Reputation: {fileID: 860579455}
@@ -5834,7 +5698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u201CYes.\u201D"
+  m_text: Ignore message
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6451,142 +6315,6 @@ RectTransform:
   m_AnchoredPosition: {x: -829, y: 122}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1500061016
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1500061017}
-  - component: {fileID: 1500061019}
-  - component: {fileID: 1500061018}
-  m_Layer: 0
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1500061017
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500061016}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 384663612}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 16}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1500061018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500061016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "\u201CI keep my head down.\u201D"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -88.61183, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1500061019
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500061016}
-  m_CullTransparentMesh: 1
 --- !u!1 &1557945447
 GameObject:
   m_ObjectHideFlags: 0
@@ -6786,9 +6514,6 @@ GameObject:
   - component: {fileID: 1603584308}
   - component: {fileID: 1603584307}
   - component: {fileID: 1603584315}
-  - component: {fileID: 1603584316}
-  - component: {fileID: 1603584317}
-  - component: {fileID: 1603584318}
   m_Layer: 0
   m_Name: PlayerObject (1)
   m_TagString: Player
@@ -6821,7 +6546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb26fb19daf764c8798aca255bfec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerKeybinds
-  settingsMenu: {fileID: 1945698851}
+  Tutorial_and_Menu: {fileID: 0}
+  Game_Settings: {fileID: 0}
 --- !u!64 &1603584309
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6989,98 +6715,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603584302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31319d4adca59c44594634385e252e6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d593c2a66c03a343b884ae0ac5cba27, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RayaLibraryInteraction
+  m_EditorClassIdentifier: Assembly-CSharp::Exploration2_3Narrator
   _DialoguePanel: {fileID: 89662313}
-  _InteractIndicator: {fileID: 1783728532}
-  _Choice1Panel: {fileID: 1982753680}
   _NpcName: {fileID: 2045445904}
   _StoryText: {fileID: 66958100}
-  _InteractText: {fileID: 1969702294}
-  _Storyline: "If you could change something here\u2026 would you?"
-  _PlayerController: {fileID: 1603584312}
-  _PlayerControls: {fileID: 1603584311}
-  _IsInRange: 0
-  _HasInteracted: 0
+  _ChoicePanel1: {fileID: 1982753680}
+  _Storyline: 'You leave the room alone.
+
+'
   _DialogueIndex: 0
   _CanContinue: 0
-  _LegendManager: {fileID: 1283036059}
---- !u!114 &1603584316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603584302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faa9eeb2c6a3fb247bf5807b73022237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SecurityCheckpointInteraction
-  _DialoguePanel: {fileID: 89662313}
-  _InteractIndicator: {fileID: 1783728532}
-  _NpcName: {fileID: 2045445904}
-  _StoryText: {fileID: 66958100}
-  _InteractText: {fileID: 1969702294}
-  _Storyline: Hesitation
   _PlayerController: {fileID: 1603584312}
   _PlayerControls: {fileID: 1603584311}
-  _IsInRange: 0
-  _HasInteracted: 0
   _LegendManager: {fileID: 1283036059}
-  _DialogueIndex: 0
-  _CanContinue: 0
---- !u!114 &1603584317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603584302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e475a5cbb309a49a279540bd6a05f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MemorialStickersInteraction
-  _DialoguePanel: {fileID: 89662313}
-  _InteractIndicator: {fileID: 1783728532}
-  _NpcName: {fileID: 2045445904}
-  _StoryText: {fileID: 66958100}
-  _InteractText: {fileID: 1969702294}
-  _Storyline: Memory line
-  _PlayerController: {fileID: 1603584312}
-  _PlayerControls: {fileID: 1603584311}
-  _IsInRange: 0
-  _HasInteracted: 0
-  _LegendManager: {fileID: 1283036059}
-  _DialogueIndex: 0
-  _CanContinue: 0
---- !u!114 &1603584318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603584302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13660fc621589248a5d433b1195fff3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhoneInteractionLibrary
-  _DialoguePanel: {fileID: 89662313}
-  _InteractIndicator: {fileID: 1783728532}
-  _NpcName: {fileID: 2045445904}
-  _StoryText: {fileID: 66958100}
-  _InteractText: {fileID: 1969702294}
-  _Storyline: No reply from Raya
-  _PlayerController: {fileID: 1603584312}
-  _PlayerControls: {fileID: 1603584311}
-  _IsInRange: 0
-  _HasInteracted: 0
-  _LegendManager: {fileID: 1283036059}
-  _DialogueIndex: 0
-  _CanContinue: 0
 --- !u!1 &1639506495
 GameObject:
   m_ObjectHideFlags: 0
@@ -7523,7 +7172,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 720019105}
+  m_Mesh: {fileID: 354023679}
 --- !u!33 &1783372897
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -8553,7 +8202,7 @@ GameObject:
   - component: {fileID: 1982753683}
   - component: {fileID: 1982753682}
   m_Layer: 0
-  m_Name: ChoicePanel 1 (Library)
+  m_Name: ChoicePanel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8572,7 +8221,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 309325786}
-  - {fileID: 384663612}
   - {fileID: 756954483}
   m_Father: {fileID: 2058173043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &52134317
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 433403477}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionLectureHall, Assembly-CSharp
         m_MethodName: Choice1LectureHall
         m_Mode: 1
@@ -1392,7 +1392,7 @@ RectTransform:
   m_Father: {fileID: 96287705}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1627,6 +1627,7 @@ GameObject:
   - component: {fileID: 433403466}
   - component: {fileID: 433403474}
   - component: {fileID: 433403475}
+  - component: {fileID: 433403476}
   - component: {fileID: 433403477}
   m_Layer: 0
   m_Name: PlayerObject (1)
@@ -1660,7 +1661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb26fb19daf764c8798aca255bfec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerKeybinds
-  settingsMenu: {fileID: 1388464637}
+  Tutorial_and_Menu: {fileID: 0}
+  Game_Settings: {fileID: 0}
 --- !u!64 &433403468
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1811,7 +1813,7 @@ Transform:
   m_GameObject: {fileID: 433403461}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.163, y: 0.5, z: -1.23}
+  m_LocalPosition: {x: -5.35, y: 0.5, z: -1.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1828,20 +1830,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 433403461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5675721b2fb0b44ba0cc442ff721eb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9539e02f0c39c7447a1c2948fa914bdb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewsScreenInteract
+  m_EditorClassIdentifier: Assembly-CSharp::Exploration2_1Narrator
   _DialoguePanel: {fileID: 1661364515}
-  _InteractIndicator: {fileID: 1529521619}
   _NpcName: {fileID: 825631230}
   _StoryText: {fileID: 992697795}
-  _InteractText: {fileID: 1414369781}
-  _Storyline: Reports of missing student activists circulate online
+  _Storyline: You step out into campus.
   _PlayerController: {fileID: 433403471}
   _PlayerControls: {fileID: 433403470}
-  _IsInRange: 0
-  _HasInteracted: 0
-  _LegendManager: {fileID: 1010474727}
   _DialogueIndex: 0
   _CanContinue: 0
 --- !u!114 &433403475
@@ -1853,20 +1850,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 433403461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d048aba25c370e7418476c2cf1efa87f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cf08bd321f27624baca006b6e8f270b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FlyerWallInteraction
+  m_EditorClassIdentifier: Assembly-CSharp::Exploration2_1BulletinBoardInteraction
   _DialoguePanel: {fileID: 1661364515}
   _InteractIndicator: {fileID: 1529521619}
   _NpcName: {fileID: 825631230}
   _StoryText: {fileID: 992697795}
   _InteractText: {fileID: 1414369781}
-  _Storyline: Torn protest flyer with a red mark
+  _Storyline: "Someone peeled these off carefully. Someone else didn\u2019t."
   _PlayerController: {fileID: 433403471}
   _PlayerControls: {fileID: 433403470}
   _IsInRange: 0
   _HasInteracted: 0
-  _LegendManager: {fileID: 1010474727}
+  _DialogueIndex: 0
+  _CanContinue: 0
+--- !u!114 &433403476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433403461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f472a45627c874c94271654634b531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Exploration2_2TwoStudentsInteraction
+  _DialoguePanel: {fileID: 1661364515}
+  _InteractIndicator: {fileID: 1529521619}
+  _NpcName: {fileID: 825631230}
+  _StoryText: {fileID: 992697795}
+  _InteractText: {fileID: 1414369781}
+  _Storyline: "Let\u2019s not do that."
+  _PlayerController: {fileID: 433403471}
+  _PlayerControls: {fileID: 433403470}
+  _IsInRange: 0
+  _HasInteracted: 0
   _DialogueIndex: 0
   _CanContinue: 0
 --- !u!114 &433403477
@@ -1878,23 +1898,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 433403461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773035b2ad93cdb4aa7257bfdb44e2d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 20e38885033e7a24fb28ef79d2683a48, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RayaInteractionLectureHall
-  _DialoguePanel: {fileID: 1661364515}
-  _InteractIndicator: {fileID: 1529521619}
-  _Choice1Panel: {fileID: 1086985777}
-  _NpcName: {fileID: 825631230}
-  _StoryText: {fileID: 992697795}
-  _InteractText: {fileID: 1414369781}
-  _Storyline: 
-  _PlayerController: {fileID: 433403471}
-  _PlayerControls: {fileID: 433403470}
-  _IsInRange: 0
-  _HasInteracted: 0
-  _DialogueIndex: 0
-  _CanContinue: 0
-  _LegendManager: {fileID: 1010474727}
+  m_EditorClassIdentifier: Assembly-CSharp::Exploration2_1CourtyardDoorInteraction
 --- !u!1 &447394243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,9 +2253,10 @@ GameObject:
   m_Component:
   - component: {fileID: 607023605}
   - component: {fileID: 607023604}
+  - component: {fileID: 607023606}
   m_Layer: 0
   m_Name: Bulletin Board
-  m_TagString: Untagged
+  m_TagString: BulletinBoard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2327,6 +2334,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &607023606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607023603}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!43 &632748106
 Mesh:
   m_ObjectHideFlags: 0
@@ -2556,7 +2584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &779432668
 Transform:
   m_ObjectHideFlags: 0
@@ -3117,8 +3145,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 448141891}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3204,7 +3232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e23701adb75f1439493c96f775f51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
-  Music_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
+  Main_Mixer: {fileID: 0}
   Music_Slider: {fileID: 1925652262}
   SFX_Slider: {fileID: 198911519}
 --- !u!1 &955669540
@@ -3513,9 +3541,6 @@ MonoBehaviour:
   _ReputationCount: 0
   _AnonymityCount: 0
   _GuiltCount: 0
-  _CutscenePanel: {fileID: 2032129162}
-  _Cutscene1: {fileID: 92851407}
-  _Cutscene2: {fileID: 35845593}
   _Courage: {fileID: 1787133628}
   _Fear: {fileID: 667465735}
   _Reputation: {fileID: 1794178539}
@@ -4206,8 +4231,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 282891584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4399,7 +4424,7 @@ GameObject:
   - component: {fileID: 1192789261}
   m_Layer: 0
   m_Name: Collider (1)
-  m_TagString: Untagged
+  m_TagString: CourtyardDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4434,7 +4459,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4473,7 +4498,7 @@ RectTransform:
   m_Father: {fileID: 375119459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5651,7 +5676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1509400967
 Transform:
   m_ObjectHideFlags: 0
@@ -5902,7 +5927,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 433403477}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionLectureHall, Assembly-CSharp
         m_MethodName: Choice3LectureHall
         m_Mode: 1
@@ -6155,9 +6180,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1695934852}
   - component: {fileID: 1695934851}
+  - component: {fileID: 1695934853}
   m_Layer: 0
   m_Name: Two Students
-  m_TagString: Untagged
+  m_TagString: TwoStudents
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6229,12 +6255,33 @@ Transform:
   m_GameObject: {fileID: 1695934850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.83, y: 1.43169, z: -1.196}
+  m_LocalPosition: {x: -1.83, y: 1.12, z: -1.196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1695934853
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695934850}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0.21133333, z: 0}
 --- !u!1 &1708378400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6318,7 +6365,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 433403477}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RayaInteractionLectureHall, Assembly-CSharp
         m_MethodName: Choice2LectureHall
         m_Mode: 1

@@ -6310,8 +6310,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   _TimerSlider: {fileID: 1966028428}
   _TimerText: {fileID: 1804311688}
-  _MinigameDuration: 45
+  _MinigameDuration: 5
   _StopTimer: 0
+  _TimeRemaining: 0
   _CorrectPoints: 0
   _WrongPoints: 0
   _CorrectPointsText: {fileID: 1426565550}

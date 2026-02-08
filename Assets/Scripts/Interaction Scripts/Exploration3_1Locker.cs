@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-public class FlyerWallInteraction : MonoBehaviour
+public class Exploration3_1Locker : MonoBehaviour
 {
     [Header("UI")]
     public GameObject _DialoguePanel;
@@ -15,16 +15,14 @@ public class FlyerWallInteraction : MonoBehaviour
     public PlayerMovement _PlayerControls;
     public bool _IsInRange;
     public bool _HasInteracted;
-    public GameFlowLegendManager _LegendManager;
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
-
     public void Update()
     {
         if (_IsInRange && !_HasInteracted && Input.GetKeyDown(KeyCode.F))
         {
             _HasInteracted = true;
-            StartCoroutine(ShowDialogueFlyerWall());
+            StartCoroutine(ShowDialogueLocker());
         }
 
         if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
@@ -34,25 +32,13 @@ public class FlyerWallInteraction : MonoBehaviour
 
             if (_DialogueIndex == 1)
             {
-                StartCoroutine(ShowNewDialogueLiam("Someone didn’t want this seen."));
-                _LegendManager._ReputationCount++;
-                _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
-                _LegendManager._Reputation.SetActive(true);
-                PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
-                PlayerPrefs.Save();
+                StartCoroutine(ShowNewDialogueNarrator("You remember standing here together, waiting for class to start."));
             }
-            else if (_DialogueIndex == 2)
-            {
-                StartCoroutine(ShowNewDialogueLiam("They said someone got tagged last night."));
-                _NpcName.text = "Overheard Students";
-                _LegendManager._FearCount++;
-                _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-                _LegendManager._Fear.SetActive(true);
-                PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
-                PlayerPrefs.Save();
-            }
+
             else
+            {
                 EndDialogue();
+            }
         }
     }
     public void EndDialogue()
@@ -60,11 +46,9 @@ public class FlyerWallInteraction : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
-        _LegendManager._Reputation.SetActive(false);
-        _LegendManager._Fear.SetActive(false);
     }
 
-    IEnumerator ShowDialogueFlyerWall()
+    IEnumerator ShowDialogueLocker()
     {
         _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
@@ -73,34 +57,37 @@ public class FlyerWallInteraction : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
-
         _NpcName.text = string.Empty;
-
-
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
             yield return new WaitForSeconds(0.01f);
         }
-
         _CanContinue = true;
+
     }
 
-    IEnumerator ShowNewDialogueLiam(string _NewLine)
+    IEnumerator ShowNewDialogueNarrator(string _NewLine)
     {
+        _DialoguePanel.SetActive(true);
+        _InteractIndicator.SetActive(false);
+
+        _PlayerController.enabled = false;
+        _PlayerControls.enabled = false;
+
         _StoryText.text = "";
-        _NpcName.text = "Liam";
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
             yield return new WaitForSeconds(0.01f);
         }
         _CanContinue = true;
+
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Flyer Wall") && !_HasInteracted)
+        if (other.CompareTag("Locker") && !_HasInteracted)
         {
             _IsInRange = true;
             _InteractIndicator.SetActive(true);
@@ -114,7 +101,7 @@ public class FlyerWallInteraction : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Flyer Wall"))
+        if (other.CompareTag("Locker"))
         {
             _IsInRange = false;
             _InteractIndicator.SetActive(false);

@@ -31,6 +31,13 @@ TagManager:
   - RayasDoor
   - LiamsDoor
   - DuskDoor
+  - BulletinBoard
+  - TwoStudents
+  - CourtyardDoor
+  - PhoneExploration2.3
+  - Locker
+  - Ending1
+  - Ending2
   layers:
   - Default
   - TransparentFX
