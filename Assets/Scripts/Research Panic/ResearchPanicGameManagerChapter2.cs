@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-public class Timer : MonoBehaviour
+public class ResearchPanicGameManagerChapter2 : MonoBehaviour
 {
     [Header("Timer")]
     public Slider _TimerSlider;
     public TextMeshProUGUI _TimerText;
     public float _MinigameDuration;
-    public bool _StopTimer;
     public float _CurrentTime;
+    public bool _StopTimer;
     [Header("Points System")]
     public int _CorrectPoints;
     public int _WrongPoints;
@@ -25,9 +25,9 @@ public class Timer : MonoBehaviour
     void Start()
     {
         _StopTimer = false;
+        _CurrentTime = _MinigameDuration;
         _TimerSlider.maxValue = _MinigameDuration;
         _TimerSlider.value = _MinigameDuration;
-        _CurrentTime = _MinigameDuration;
         _CorrectPoints = 0;
         _WrongPoints = 0;
     }
@@ -52,15 +52,15 @@ public class Timer : MonoBehaviour
             WinAndFailCon();
         }
     }
-    
-    public void AddCorrectPoints() 
+
+    public void AddCorrectPoints()
     {
         _CorrectPoints++;
         _CorrectPointsText.text = " Correct Categorized Title: " + _CorrectPoints;
         WinAndFailCon();
     }
 
-    public void AddWrongPoints() 
+    public void AddWrongPoints()
     {
         _WrongPoints++;
         _WrongPointsText.text = " Incorrect Categorized Title: " + _WrongPoints;
@@ -77,7 +77,7 @@ public class Timer : MonoBehaviour
             _StopTimer = true;
             _GameStatus.text = "You failed! too many miscategorized titles";
             _GameStatusObject.SetActive(true);
-            SceneManager.LoadScene("Exploration 1.3");
+            SceneManager.LoadScene("Exploration 2.3");
         }
 
         else if (_StopTimer && _CorrectPoints == 0)
@@ -87,7 +87,7 @@ public class Timer : MonoBehaviour
             _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
             _GameStatus.text = "You failed! no titles were categorized";
             _GameStatusObject.SetActive(true);
-            SceneManager.LoadScene("Exploration 1.3");
+            SceneManager.LoadScene("Exploration 2.3");
         }
 
         else if (_StopTimer && _WrongPoints < 3)
@@ -97,7 +97,7 @@ public class Timer : MonoBehaviour
             _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
             _GameStatus.text = "You won! titles were categorized!";
             _GameStatusObject.SetActive(true);
-            SceneManager.LoadScene("Exploration 1.3");
+            SceneManager.LoadScene("Exploration 2.3");
         }
     }
 
@@ -113,7 +113,7 @@ public class Timer : MonoBehaviour
         _TutorialPanel.SetActive(false);
         _StopTimer = false;
     }
-    bool IsPaused() 
+    bool IsPaused()
     {
         return _TutorialPanel != null && _TutorialPanel.activeSelf;
     }

@@ -126,6 +126,6 @@ public class Cutscene6 : MonoBehaviour
     IEnumerator CallNextScene()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Exploration 1.1");
+        SceneManager.LoadScene("Cutscene2.1");
     }
 }

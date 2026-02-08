@@ -24,9 +24,9 @@ public class GameMenu_Manager : MonoBehaviour
         Game_Settings.SetActive(true);
     }
 
-    public void BacktoMainMenu()
+    public void CallNextScene()
     {
-        SceneManager.LoadScene("StartMainMenu");
+        SceneManager.LoadScene("Cutscene1.3");
     }
 
     public void ExitGame()
