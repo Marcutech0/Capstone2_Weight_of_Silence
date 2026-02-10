@@ -7,7 +7,12 @@ public class MainMenu_Manager : MonoBehaviour
     [SerializeField] string[] scenes;
     public GameObject Settings_Menu;
     public GameObject CreditsPanel;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
+    //Audio Section
+    [SerializeField] private AudioClip ClickSfx;
+    [SerializeField] private AudioSource AudioSource;
+
     void Start()
     {
         Settings_Menu.SetActive(false);
