@@ -6,37 +6,31 @@ public class GameMenu_Manager : MonoBehaviour
 {
     [SerializeField] private GameObject Game_Settings;
     [SerializeField] private GameObject Menu_UI;
-
-    //Audio Section
-    [SerializeField] private AudioClip ClickSfx;
-    [SerializeField] private AudioSource AudioSource;
-
+    
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        Game_Settings.SetActive(false);
         Menu_UI.SetActive(false);
     }
 
-    private void PlayClickSFX()
+    void Update()
     {
-        AudioSource.PlayOneShot(ClickSfx);
+        
     }
-
 
     public void OpenSettings()
     {
-        PlayClickSFX();
         Game_Settings.SetActive(true);
     }
 
-    public void BacktoMainMenu()
+    public void CallNextScene()
     {
-        SceneManager.LoadScene("StartMainMenu");
+        SceneManager.LoadScene("Cutscene1.3");
     }
+
     public void ExitGame()
     {
-        PlayClickSFX();
-
 #if UNITY_EDITOR
         // stop Play Mode in the Editor
         EditorApplication.isPlaying = false;
@@ -44,9 +38,5 @@ public class GameMenu_Manager : MonoBehaviour
         // quit in a build
         Application.Quit();
 #endif
-    }
-    public void CallNextScene()
-    {
-        SceneManager.LoadScene("Cutscene1.3");
     }
 }

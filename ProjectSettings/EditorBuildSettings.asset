@@ -83,9 +83,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MinigameScenes/Research Panic Chapter 2.unity
     guid: 6714c6f36aa782a4d8bce928b2bbb866
-  - enabled: 1
-    path: Assets/Scenes/Chapter 1/PrologueScene.unity
-    guid: 5fc366f39a317fd4c87acea0bb8a1dbb
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
