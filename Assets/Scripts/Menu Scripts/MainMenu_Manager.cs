@@ -6,10 +6,12 @@ public class MainMenu_Manager : MonoBehaviour
 {
     [SerializeField] string[] scenes;
     public GameObject Settings_Menu;
+    public GameObject CreditsPanel;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Settings_Menu.SetActive(false);
+        CreditsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class MainMenu_Manager : MonoBehaviour
 
     public void PlayGame()
     {
-            SceneManager.LoadScene(scenes[0]);
+            SceneManager.LoadScene("PrologueScene");
     }
 
     public void ExitGame()
@@ -49,6 +51,17 @@ public class MainMenu_Manager : MonoBehaviour
     }
 
     #endregion
+
+    public void openCreditsPanel()
+    {
+        CreditsPanel.SetActive(true);
+    }
+
+    public void closeCreditsPanel()
+    {
+        CreditsPanel.SetActive(false);
+
+    }
 
 }
 
