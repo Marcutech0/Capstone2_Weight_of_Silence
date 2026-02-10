@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggingText : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DraggingTextChapter2 : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private RectTransform _TextTransform;
     public Canvas _MinigameScreen;
@@ -71,17 +71,17 @@ public class DraggingText : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     private void CheckTextTagAndScore(string _FolderType)
     {
-        ResearchPanicMinigame _ResearchPanic = FindAnyObjectByType<ResearchPanicMinigame>();
-        if (_ResearchPanic == null) return;
+        ResearchPanicGameManagerChapter2 _ResearchPanicChapter2 = FindAnyObjectByType<ResearchPanicGameManagerChapter2>();
+        if (_ResearchPanicChapter2 == null) return;
 
         // Compare the tag of the text with folder type
         if (gameObject.CompareTag(_FolderType))
         {
-            _ResearchPanic.AddCorrectPoints();
+            _ResearchPanicChapter2.AddCorrectPoints();
         }
         else
         {
-            _ResearchPanic.AddWrongPoints();
+            _ResearchPanicChapter2.AddWrongPoints();
         }
     }
 }
