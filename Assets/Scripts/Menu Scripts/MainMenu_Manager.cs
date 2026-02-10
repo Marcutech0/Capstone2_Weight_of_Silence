@@ -6,25 +6,36 @@ public class MainMenu_Manager : MonoBehaviour
 {
     [SerializeField] string[] scenes;
     public GameObject Settings_Menu;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject CreditsPanel;
+
+
+    //Audio Section
+    [SerializeField] private AudioClip ClickSfx;
+    [SerializeField] private AudioSource AudioSource;
+
     void Start()
     {
         Settings_Menu.SetActive(false);
+        CreditsPanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    //For playing Sfx
+    private void PlayClickSFX()
     {
-        
+        AudioSource.PlayOneShot(ClickSfx);
     }
+
 
     public void PlayGame()
     {
-            SceneManager.LoadScene(scenes[0]);
+        PlayClickSFX();
+            SceneManager.LoadScene("PrologueScene");
     }
 
     public void ExitGame()
     {
+            PlayClickSFX();
+
 #if UNITY_EDITOR
         // stop Play Mode in the Editor
         EditorApplication.isPlaying = false;
@@ -38,17 +49,32 @@ public class MainMenu_Manager : MonoBehaviour
     #region Settings Menu 
     public void openSettings()
     {
-       Settings_Menu.SetActive(true);
+        PlayClickSFX();
+        Settings_Menu.SetActive(true);
 
     }
 
     public void closeSettings()
     {
+        PlayClickSFX();
         Settings_Menu.SetActive(false);
 
     }
 
     #endregion
+
+    public void openCreditsPanel()
+    {
+        PlayClickSFX();
+        CreditsPanel.SetActive(true);
+    }
+
+    public void closeCreditsPanel()
+    {
+        PlayClickSFX();
+        CreditsPanel.SetActive(false);
+
+    }
 
 }
 
