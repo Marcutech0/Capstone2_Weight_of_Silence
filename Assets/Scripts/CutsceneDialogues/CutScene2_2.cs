@@ -8,6 +8,13 @@ public class CutScene2_2 : MonoBehaviour
     public GameObject _DialoguePanel;
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
+    public GameObject _NotifPanel1;
+    public GameObject _NotifPanel2;
+    public GameObject _NotifPanel3;
+    public TextMeshProUGUI _NotifText1;
+    public TextMeshProUGUI _NotifText2;
+    public TextMeshProUGUI _NotifText3;
+    public GameObject _PhonePanel;
     [TextArea] public string _Storyline;
 
     [SerializeField] private int _DialogueIndex;
@@ -30,32 +37,26 @@ public class CutScene2_2 : MonoBehaviour
 
             if (_DialogueIndex == 1) 
             {
-                StartCoroutine(ShowNarratorNewDialogue("CAPSTONE PROGRESS REVIEW"));
-            }
-
-            else if (_DialogueIndex == 2)
-            {
-                StartCoroutine(ShowNarratorNewDialogue("Midterm submission required."));
+                _DialoguePanel.SetActive(false);
+                StartCoroutine(PhoneNotifRoutine());
             }
 
             else if (_DialogueIndex == 3)
             {
-                StartCoroutine(ShowNarratorNewDialogue("All groups must present updated scope and documentation."));
+                StartCoroutine(ShowNarratorNewDialogue("You scroll."));
+                _PhonePanel.SetActive(false);
             }
 
             else if (_DialogueIndex == 4)
             {
-                StartCoroutine(ShowNarratorNewDialogue("You scroll."));
+                StartCoroutine(ShowNarratorNewDialogue("Raya’s name is still there."));
+                _PhonePanel.SetActive(false);
             }
 
             else if (_DialogueIndex == 5)
             {
-                StartCoroutine(ShowNarratorNewDialogue("Raya’s name is still there."));
-            }
-
-            else if (_DialogueIndex == 6)
-            {
                 StartCoroutine(ShowNarratorNewDialogue("No explanation. Just a deadline."));
+                _PhonePanel.SetActive(false);
             }
 
             else 
@@ -102,5 +103,26 @@ public class CutScene2_2 : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Exploration 2.2");
+    }
+
+    IEnumerator PhoneNotifRoutine()
+    {
+        _PhonePanel.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        _NotifPanel1.SetActive(true);
+        _NotifText1.text = "CAPSTONE PROGRESS REVIEW";
+
+        yield return new WaitForSeconds(1f);
+        _NotifPanel1.SetActive(false);
+        _NotifPanel2.SetActive(true);
+        _NotifText2.text = "Midterm submission required.";
+
+        yield return new WaitForSeconds(1f);
+        _NotifPanel1.SetActive(false);
+        _NotifPanel2.SetActive(false);
+        _NotifPanel3.SetActive(true);
+        _NotifText3.text = "All groups must present updated scope and documentation.";
+        _DialogueIndex = 2;
+        _CanContinue = true;
     }
 }
