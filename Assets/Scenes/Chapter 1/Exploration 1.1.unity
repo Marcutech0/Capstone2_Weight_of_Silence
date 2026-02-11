@@ -2727,10 +2727,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 369002586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d718abcae7d6b499ba51c3d54249a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 433b345454d4af7459b4a6f1250ae1c3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiamsMessages
-  _LiamsMessages: []
+  m_EditorClassIdentifier: Assembly-CSharp::RayasMessages
+  _RayasMessages: []
 --- !u!1 &375608932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,7 +3364,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1458365484}
-        m_TargetAssemblyTypeName: UniversalPhone, Assembly-CSharp
+        m_TargetAssemblyTypeName: PhoneExploration1_1, Assembly-CSharp
         m_MethodName: OpenPhone
         m_Mode: 1
         m_Arguments:
@@ -5216,7 +5216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &591968039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9981,7 +9981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1041947477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9999,8 +9999,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.98, y: 81}
-  m_SizeDelta: {x: 306.03, y: 57.144}
+  m_AnchoredPosition: {x: -89.32454, y: 81}
+  m_SizeDelta: {x: 487.3408, y: 57.144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041947478
 MonoBehaviour:
@@ -11873,7 +11873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LiamsDoorInteraction
   _PhoneNotif: {fileID: 772411354}
-  _InteractIndicator: {fileID: 0}
+  _InteractIndicator: {fileID: 1401476552}
 --- !u!1 &1320153702
 GameObject:
   m_ObjectHideFlags: 0
@@ -13228,16 +13228,19 @@ MonoBehaviour:
   _PhonePanel: {fileID: 1458365483}
   _MessagesUI: {fileID: 172454008}
   _HomeUI: {fileID: 820809220}
-  _LegendManager: {fileID: 0}
+  _LegendManager: {fileID: 414652652}
   _ReplyChoice1: {fileID: 222659321}
   _ReplyText: {fileID: 1701041210}
   _RayaReplyText: {fileID: 1700821293}
   _RayaMessageBox: {fileID: 1041947476}
   _LiamMessageBox: {fileID: 591968038}
   _SeenText: {fileID: 1478865076}
-  _DormDoor: {fileID: 0}
-  _PlayerController: {fileID: 0}
-  _PlayerControls: {fileID: 0}
+  _DormDoor: {fileID: 1283513770}
+  _PlayerController: {fileID: 1283513760}
+  _PlayerControls: {fileID: 1283513758}
+  _LiamsMessages: {fileID: 1653689713}
+  _RayasMessages: {fileID: 369002588}
+  _ChoiceResult: 0
 --- !u!224 &1458365485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13394,7 +13397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -227, y: -215}
+  m_AnchoredPosition: {x: -227, y: 179}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1498336730
@@ -14353,10 +14356,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1653689711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 433b345454d4af7459b4a6f1250ae1c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 05d718abcae7d6b499ba51c3d54249a3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RayasMessages
-  _RayasMessages: []
+  m_EditorClassIdentifier: Assembly-CSharp::LiamsMessages
+  _LiamMessages: []
 --- !u!1 &1655064576
 GameObject:
   m_ObjectHideFlags: 0
@@ -14855,7 +14858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129, y: 0}
+  m_AnchoredPosition: {x: -206, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1700821292
@@ -14951,7 +14954,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -534.1284, w: 0}
+  m_margin: {x: 60.45779, y: 0, z: -895.7995, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

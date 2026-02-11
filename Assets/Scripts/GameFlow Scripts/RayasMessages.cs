@@ -1,17 +1,14 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RayasMessages : MonoBehaviour
 {
-    public string[] _RayasMessages;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public List<string> _RayasMessages = new List<string>();
 
-    // Update is called once per frame
-    void Update()
+    public void AddMessage(string _Message)
     {
-        
+        _RayasMessages.Add(_Message);
+        Debug.Log("Liams message saved was: " + _Message);
     }
 }
