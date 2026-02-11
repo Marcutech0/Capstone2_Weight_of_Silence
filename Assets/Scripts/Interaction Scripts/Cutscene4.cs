@@ -14,90 +14,124 @@ public class Cutscene4 : MonoBehaviour
     [TextArea] public string _Storyline;
 
     public GameFlowLegendManager _LegendManager;
-    [SerializeField] private int _DialogueIndex;
-    [SerializeField] bool _CanContinue;
     public Fade _FadeTransition;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    // Update is called once per frame
+    private int _DialogueIndex;
+    private bool _CanContinue;
 
-    public void Start()
+    // NEW
+    private string[] _CurrentLines;
+    private string[] _CurrentSpeakers;
+    private int _CurrentLineIndex;
+
+    void Start()
     {
-        _NpcName.text = "Tita Liza";
-        StartCoroutine(ShowDialogueTitaLiza());
+        _NpcName.text = "Liam";
+
+        // First dialogue only
+        _CurrentLines = new string[] { _Storyline };
+        _CurrentSpeakers = new string[] { "Liam" };
+        _CurrentLineIndex = 0;
+
+        StartCoroutine(TypeLine(_CurrentLines[_CurrentLineIndex], _CurrentSpeakers[_CurrentLineIndex]));
     }
 
-    public void Update()
+    void Update()
     {
-        if (_CanContinue && Input.GetKeyDown(KeyCode.E)) 
+        if (_CanContinue && Input.GetKeyDown(KeyCode.E))
         {
             _CanContinue = false;
-            _DialogueIndex++;
+            _CurrentLineIndex++;
 
-            if (_DialogueIndex == 1)
+            if (_CurrentLineIndex < _CurrentLines.Length)
             {
-                StartCoroutine(ShowNewDialogueLiam("They're just asking questions."));
-                _NpcName.text = "Liam";
-            }
-            else if (_DialogueIndex == 2)
-            {
-                StartCoroutine(ShowNewDialogueTextTitaLiza("Questions get people hurt."));
-                _Choice1Panel.SetActive(true);
+                StartCoroutine(TypeLine(
+                    _CurrentLines[_CurrentLineIndex],
+                    _CurrentSpeakers[_CurrentLineIndex]
+                ));
             }
             else
             {
-                EndDialogue();
-                _FadeTransition.FadeOut();
-                StartCoroutine(CallNextScene());
+                // If we reached dialogue index 4 before choices
+                if (_DialogueIndex < 4)
+                {
+                    ContinueMainDialogue();
+                }
+                else
+                {
+                    EndDialogue();
+                }
             }
         }
     }
 
-    public void EndDialogue() 
+    void ContinueMainDialogue()
+    {
+        _DialogueIndex++;
+
+        if (_DialogueIndex == 1)
+        {
+            StartDialogueSet(
+                new string[] { "Advocates warn that so-called red-tagging puts students at risk, but authorities insist these measures are for public safety." },
+                new string[] { "News TV" }
+            );
+        }
+        else if (_DialogueIndex == 2)
+        {
+            StartDialogueSet(
+                new string[] { "Students like that bring danger." },
+                new string[] { "Tita Liza" }
+            );
+        }
+        else if (_DialogueIndex == 3)
+        {
+            StartDialogueSet(
+                new string[] { "They’re just asking for answers." },
+                new string[] { "Liam" }
+            );
+        }
+        else if (_DialogueIndex == 4)
+        {
+            StartDialogueSet(
+                new string[] { "Questions get people hurt." },
+                new string[] { "Tita Liza" }
+            );
+
+            _Choice1Panel.SetActive(true);
+        }
+    }
+
+    void StartDialogueSet(string[] lines, string[] speakers)
+    {
+        _CurrentLines = lines;
+        _CurrentSpeakers = speakers;
+        _CurrentLineIndex = 0;
+
+        StartCoroutine(TypeLine(_CurrentLines[_CurrentLineIndex], _CurrentSpeakers[_CurrentLineIndex]));
+    }
+
+    IEnumerator TypeLine(string line, string speaker)
+    {
+        _StoryText.text = "";
+        _NpcName.text = speaker;
+
+        foreach (char c in line)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        _CanContinue = true;
+    }
+
+    public void EndDialogue()
     {
         _DialoguePanel.SetActive(false);
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Fear.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
-    }
-
-    IEnumerator ShowDialogueTitaLiza()
-    {
-        _DialoguePanel.SetActive(true);
-
-        _StoryText.text = "";
-
-        foreach (char c in _Storyline)
-        {
-            _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
-        }
-        _CanContinue = true;
-    }
-
-    IEnumerator ShowNewDialogueLiam(string _NewLine)
-    {
-        _StoryText.text = "";
-        _NpcName.text = "Liam";
-        foreach (char c in _NewLine)
-        {
-            _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
-        }
-        _CanContinue = true;
-
-    }
-
-    IEnumerator ShowNewDialogueTextTitaLiza(string _NewLine)
-    {
-        _StoryText.text = "";
-        _NpcName.text = "Tita Liza";
-        foreach (char c in _NewLine)
-        {
-            _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
-        }
-        _CanContinue = false;
+        _FadeTransition.FadeOut();
+        StartCoroutine(CallNextScene());
     }
 
     IEnumerator CallNextScene()
@@ -106,62 +140,99 @@ public class Cutscene4 : MonoBehaviour
         SceneManager.LoadScene("Cutscene1.5");
     }
 
-    public void Choice1DiningRoom() 
+    // =========================
+    // CHOICES
+    // =========================
+
+    public void Choice1DiningRoom()
     {
-        _DialogueIndex++;
-        _CanContinue = true;
+        // Stats
         _LegendManager._CourageCount += 3;
         _LegendManager._FearCount += 4;
         _LegendManager._GuiltCount--;
-        _LegendManager._Courage.SetActive(true);
-        _LegendManager._Fear.SetActive(true);
-        _LegendManager._Guilt.SetActive(true);
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
-        PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
-        PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
-        PlayerPrefs.Save();
+
+        UpdateStatsUI();
+
         _Choice1Panel.SetActive(false);
 
+        StartDialogueSet(
+            new string[]
+            {
+                "That’s how they make it sound. But asking questions isn’t a crime.",
+                "You think the people on TV will protect you if something happens?",
+                "I’m just trying to keep you safe."
+            },
+            new string[]
+            {
+                "Liam",
+                "Tita Liza",
+                "Tita Liza"
+            }
+        );
     }
 
     public void Choice2DiningRoom()
     {
-        _DialogueIndex++;
-        _CanContinue = true;
         _LegendManager._CourageCount--;
         _LegendManager._FearCount--;
         _LegendManager._GuiltCount++;
-        _LegendManager._Courage.SetActive(true);
-        _LegendManager._Fear.SetActive(true);
-        _LegendManager._Guilt.SetActive(true);
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
-        PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
-        PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
-        PlayerPrefs.Save();
+
+        UpdateStatsUI();
+
         _Choice1Panel.SetActive(false);
 
+        StartDialogueSet(
+            new string[]
+            {
+                "I know… it’s dangerous.",
+                "Good. You’re smart. You know when to stay out of things."
+            },
+            new string[]
+            {
+                "Liam",
+                "Tita Liza"
+            }
+        );
     }
 
     public void Choice3DiningRoom()
     {
-        _DialogueIndex++;
-        _CanContinue = true;
         _LegendManager._FearCount++;
         _LegendManager._GuiltCount++;
+
+        UpdateStatsUI();
+
+        _Choice1Panel.SetActive(false);
+
+        StartDialogueSet(
+            new string[]
+            {
+                "I have class.",
+                "Tita Liza watches you go.",
+                "Just… be careful, ha?"
+            },
+            new string[]
+            {
+                "Liam",
+                "Narration",
+                "Tita Liza"
+            }
+        );
+    }
+
+    void UpdateStatsUI()
+    {
+        _LegendManager._Courage.SetActive(true);
         _LegendManager._Fear.SetActive(true);
         _LegendManager._Guilt.SetActive(true);
+
+        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
         _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
         _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
+
+        PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
-        _Choice1Panel.SetActive(false);
-
     }
 }
