@@ -122,7 +122,7 @@ public class MinigameManager : MonoBehaviour
             _GameStatusText.text = "Time's up, good job!";
         }
 
-        SceneManager.LoadScene("CampusHall");
+        SceneManager.LoadScene("Exploration 1.2");
     }
     public bool _IsGameActive() 
     {

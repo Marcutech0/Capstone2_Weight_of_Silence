@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-public class Timer : MonoBehaviour
+public class ResearchPanicMinigame : MonoBehaviour
 {
     [Header("Timer")]
     public Slider _TimerSlider;
@@ -35,6 +35,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_TutorialPanel.activeSelf) return;
         if (_StopTimer) return;
 
         _CurrentTime -= Time.deltaTime;
@@ -65,6 +66,16 @@ public class Timer : MonoBehaviour
         _WrongPoints++;
         _WrongPointsText.text = " Incorrect Categorized Title: " + _WrongPoints;
         WinAndFailCon();
+    }
+
+    public void CloseTutorial() 
+    {
+        _TutorialPanel.SetActive(false);
+    }
+
+    public void OpenTutorial()
+    {
+        _TutorialPanel.SetActive(true);
     }
 
     private void WinAndFailCon()
@@ -99,22 +110,5 @@ public class Timer : MonoBehaviour
             _GameStatusObject.SetActive(true);
             SceneManager.LoadScene("Exploration 1.3");
         }
-    }
-
-    public void OpenTutorialPanel()
-    {
-        _TutorialPanel.SetActive(true);
-        IsPaused();
-        _StopTimer = true;
-    }
-
-    public void CloseTutorialPanel()
-    {
-        _TutorialPanel.SetActive(false);
-        _StopTimer = false;
-    }
-    bool IsPaused() 
-    {
-        return _TutorialPanel != null && _TutorialPanel.activeSelf;
     }
 }

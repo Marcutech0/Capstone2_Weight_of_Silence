@@ -6,6 +6,7 @@ public class FlyerWallInteraction : MonoBehaviour
     [Header("UI")]
     public GameObject _DialoguePanel;
     public GameObject _InteractIndicator;
+    public GameObject _NPC;
     public TextMeshProUGUI _NpcName; // since this is a object npc name is empty
     public TextMeshProUGUI _StoryText;
     public TextMeshProUGUI _InteractText;
@@ -50,6 +51,7 @@ public class FlyerWallInteraction : MonoBehaviour
                 _LegendManager._Fear.SetActive(true);
                 PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
                 PlayerPrefs.Save();
+                _NPC.SetActive(true);
             }
             else
                 EndDialogue();
