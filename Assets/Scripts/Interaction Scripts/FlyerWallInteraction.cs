@@ -17,8 +17,11 @@ public class FlyerWallInteraction : MonoBehaviour
     public bool _IsInRange;
     public bool _HasInteracted;
     public GameFlowLegendManager _LegendManager;
+    public NewsScreenInteract _FlyerWallInteraction;
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
+    [SerializeField] bool _HasInteractedNewsScreenInteraction = false;
+    [SerializeField] bool _HasInteractedFlyerWallInteraction = false;
 
     public void Update()
     {
@@ -26,6 +29,7 @@ public class FlyerWallInteraction : MonoBehaviour
         {
             _HasInteracted = true;
             StartCoroutine(ShowDialogueFlyerWall());
+            _HasInteractedFlyerWallInteraction = true;
         }
 
         if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
@@ -51,7 +55,10 @@ public class FlyerWallInteraction : MonoBehaviour
                 _LegendManager._Fear.SetActive(true);
                 PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
                 PlayerPrefs.Save();
-                _NPC.SetActive(true);
+                if (_HasInteractedFlyerWallInteraction && _FlyerWallInteraction._HasInteracted)
+                {
+                    _NPC.SetActive(true);
+                }
             }
             else
                 EndDialogue();
