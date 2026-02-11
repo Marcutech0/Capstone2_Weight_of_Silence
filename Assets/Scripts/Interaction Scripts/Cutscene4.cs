@@ -19,7 +19,6 @@ public class Cutscene4 : MonoBehaviour
     private int _DialogueIndex;
     private bool _CanContinue;
 
-    // NEW
     private string[] _CurrentLines;
     private string[] _CurrentSpeakers;
     private int _CurrentLineIndex;
@@ -52,7 +51,6 @@ public class Cutscene4 : MonoBehaviour
             }
             else
             {
-                // If we reached dialogue index 4 before choices
                 if (_DialogueIndex < 4)
                 {
                     ContinueMainDialogue();
@@ -101,21 +99,21 @@ public class Cutscene4 : MonoBehaviour
         }
     }
 
-    void StartDialogueSet(string[] lines, string[] speakers)
+    void StartDialogueSet(string[] _Lines, string[] _Speakers)
     {
-        _CurrentLines = lines;
-        _CurrentSpeakers = speakers;
+        _CurrentLines = _Lines;
+        _CurrentSpeakers = _Speakers;
         _CurrentLineIndex = 0;
 
         StartCoroutine(TypeLine(_CurrentLines[_CurrentLineIndex], _CurrentSpeakers[_CurrentLineIndex]));
     }
 
-    IEnumerator TypeLine(string line, string speaker)
+    IEnumerator TypeLine(string _Line, string _Speaker)
     {
         _StoryText.text = "";
-        _NpcName.text = speaker;
+        _NpcName.text = _Speaker;
 
-        foreach (char c in line)
+        foreach (char c in _Line)
         {
             _StoryText.text += c;
             yield return new WaitForSeconds(0.01f);
@@ -140,13 +138,10 @@ public class Cutscene4 : MonoBehaviour
         SceneManager.LoadScene("Cutscene1.5");
     }
 
-    // =========================
-    // CHOICES
-    // =========================
+    
 
     public void Choice1DiningRoom()
     {
-        // Stats
         _LegendManager._CourageCount += 3;
         _LegendManager._FearCount += 4;
         _LegendManager._GuiltCount--;
