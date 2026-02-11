@@ -34,17 +34,22 @@ public class CutScene1 : MonoBehaviour
             {
                 _Phone.SetActive(true);
                 _DialoguePanel.SetActive(false);
-                _RayasMessages.RayaMessageRoutine();
             }
 
             else if (_DialogueIndex == 3) 
+            {
+                _RayasMessages.RayaMessageRoutine();
+
+            }
+
+            else if (_DialogueIndex == 5) 
             {
                 _Phone.SetActive(false);
                 _DialoguePanel.SetActive(true);
                 StartCoroutine(ShowNewNarratorDialogue("Liam sits up, rubs his eyes. He stares at the second message longer than the first."));
             }
 
-            else if (_DialogueIndex == 4)
+            else if (_DialogueIndex == 6)
             {
                 StartCoroutine(ShowNewInnerDialogue("Later keeps getting further away."));
             }

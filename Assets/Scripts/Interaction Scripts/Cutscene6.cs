@@ -9,8 +9,7 @@ public class Cutscene6 : MonoBehaviour
     public GameObject _Choice1Panel;
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
-    public GameObject _PhonePanel;
-    public TextMeshProUGUI _RayasUnsentMessage;
+
     [TextArea] public string _Storyline;
     
     [SerializeField] private int _DialogueIndex;
@@ -34,15 +33,7 @@ public class Cutscene6 : MonoBehaviour
 
             if (_DialogueIndex == 1)
             {
-                _RayasUnsentMessage.text = "Liam, if anything happens—";
-                _PhonePanel.SetActive(true);
                 _Choice1Panel.SetActive(true);
-            }
-
-            else if (_DialogueIndex == 3)
-            {
-                StartCoroutine(ShowNewDialogueNarrartor("Siren outside. Camera lingers on the unfinished message."));
-                _PhonePanel.SetActive(false);
             }
 
             else 
@@ -79,21 +70,6 @@ public class Cutscene6 : MonoBehaviour
         _CanContinue = true;
     }
 
-    IEnumerator ShowNewDialogueNarrartor(string _Newline)
-    {
-        _DialoguePanel.SetActive(true);
-
-        _StoryText.text = "";
-
-        foreach (char c in _Newline)
-        {
-            _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
-        }
-
-        _CanContinue = true;
-    }
-
     public void Choice1RayaDorm() 
     {
         _LegendManager._CourageCount += 2;
@@ -110,7 +86,6 @@ public class Cutscene6 : MonoBehaviour
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialogueIndex++;
         _CanContinue = true;
 
     }
@@ -127,7 +102,6 @@ public class Cutscene6 : MonoBehaviour
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialogueIndex++;
         _CanContinue = true;
     }
     public void Choice3RayaDorm()
@@ -146,7 +120,6 @@ public class Cutscene6 : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
-        _DialogueIndex++;
         _CanContinue = true;
     }
 

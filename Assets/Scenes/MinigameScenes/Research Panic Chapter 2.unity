@@ -600,7 +600,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -920,8 +920,8 @@ GameObject:
   - component: {fileID: 199163415}
   - component: {fileID: 199163418}
   - component: {fileID: 199163417}
+  - component: {fileID: 199163416}
   - component: {fileID: 199163419}
-  - component: {fileID: 199163420}
   m_Layer: 0
   m_Name: Education
   m_TagString: Education
@@ -949,6 +949,21 @@ RectTransform:
   m_AnchoredPosition: {x: -386, y: 366}
   m_SizeDelta: {x: 768.4002, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &199163416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199163414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12976008c4dcf54987456bdad545e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggingText
+  _TextTransform: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 952685366}
 --- !u!114 &199163417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,21 +1029,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &199163420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199163414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
 --- !u!1 &215855934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,9 +1112,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602082869}
-        m_TargetAssemblyTypeName: ResearchPanicGameManagerChapter2, Assembly-CSharp
-        m_MethodName: CloseTutorial
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: CloseTutorialPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2065,8 +2065,8 @@ GameObject:
   - component: {fileID: 440260948}
   - component: {fileID: 440260951}
   - component: {fileID: 440260950}
+  - component: {fileID: 440260949}
   - component: {fileID: 440260952}
-  - component: {fileID: 440260953}
   m_Layer: 0
   m_Name: Culture
   m_TagString: Culture
@@ -2094,6 +2094,21 @@ RectTransform:
   m_AnchoredPosition: {x: 448, y: 224}
   m_SizeDelta: {x: 768.4002, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &440260949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440260947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12976008c4dcf54987456bdad545e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggingText
+  _TextTransform: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 1164775097}
 --- !u!114 &440260950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,21 +2174,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &440260953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440260947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
 --- !u!1 &466640487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,7 +2325,6 @@ GameObject:
   - component: {fileID: 507075318}
   - component: {fileID: 507075317}
   - component: {fileID: 507075320}
-  - component: {fileID: 507075321}
   m_Layer: 0
   m_Name: Politics
   m_TagString: Politics
@@ -2433,21 +2432,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &507075321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507075315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 0}
-  _Spawner: {fileID: 0}
 --- !u!1 &535685339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,7 +3273,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3440,7 +3424,6 @@ GameObject:
   - component: {fileID: 891205009}
   - component: {fileID: 891205008}
   - component: {fileID: 891205011}
-  - component: {fileID: 891205012}
   m_Layer: 0
   m_Name: Politics
   m_TagString: Politics
@@ -3548,21 +3531,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &891205012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891205006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 0}
-  _Spawner: {fileID: 0}
 --- !u!1 &900994693
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,9 +3614,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1602082869}
-        m_TargetAssemblyTypeName: ResearchPanicGameManagerChapter2, Assembly-CSharp
-        m_MethodName: OpenTutorial
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: OpenTutorialPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3857,8 +3825,8 @@ GameObject:
   - component: {fileID: 940359181}
   - component: {fileID: 940359184}
   - component: {fileID: 940359183}
+  - component: {fileID: 940359182}
   - component: {fileID: 940359185}
-  - component: {fileID: 940359186}
   m_Layer: 0
   m_Name: Education
   m_TagString: Education
@@ -3886,6 +3854,21 @@ RectTransform:
   m_AnchoredPosition: {x: -515.48926, y: 133}
   m_SizeDelta: {x: 677.2787, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &940359182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940359180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12976008c4dcf54987456bdad545e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggingText
+  _TextTransform: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 952685366}
 --- !u!114 &940359183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3951,21 +3934,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &940359186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940359180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
 --- !u!1 &944789203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,7 +4118,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4230,8 +4198,8 @@ GameObject:
   - component: {fileID: 963909204}
   - component: {fileID: 963909206}
   - component: {fileID: 963909205}
+  - component: {fileID: 963909207}
   - component: {fileID: 963909208}
-  - component: {fileID: 963909209}
   m_Layer: 0
   m_Name: Politics
   m_TagString: Politics
@@ -4297,6 +4265,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963909203}
   m_CullTransparentMesh: 1
+--- !u!114 &963909207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963909203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12976008c4dcf54987456bdad545e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggingText
+  _TextTransform: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 2058573663}
 --- !u!54 &963909208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4324,21 +4307,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &963909209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963909203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 2058573663}
 --- !u!1 &984853116
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,8 +4318,8 @@ GameObject:
   - component: {fileID: 984853117}
   - component: {fileID: 984853120}
   - component: {fileID: 984853119}
+  - component: {fileID: 984853118}
   - component: {fileID: 984853121}
-  - component: {fileID: 984853122}
   m_Layer: 0
   m_Name: Education
   m_TagString: Education
@@ -4379,6 +4347,21 @@ RectTransform:
   m_AnchoredPosition: {x: -515.48926, y: 133}
   m_SizeDelta: {x: 677.2787, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &984853118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984853116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12976008c4dcf54987456bdad545e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggingText
+  _TextTransform: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 952685366}
 --- !u!114 &984853119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4444,21 +4427,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &984853122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984853116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
 --- !u!1 &1008439382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,7 +4777,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4945,7 +4913,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5138,7 +5106,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5549,7 +5517,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5629,8 +5597,8 @@ GameObject:
   - component: {fileID: 1320050675}
   - component: {fileID: 1320050678}
   - component: {fileID: 1320050677}
+  - component: {fileID: 1320050676}
   - component: {fileID: 1320050679}
-  - component: {fileID: 1320050680}
   m_Layer: 0
   m_Name: Culture
   m_TagString: Culture
@@ -5658,6 +5626,21 @@ RectTransform:
   m_AnchoredPosition: {x: -556.43616, y: 133}
   m_SizeDelta: {x: 595.3846, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1320050676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320050674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12976008c4dcf54987456bdad545e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggingText
+  _TextTransform: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 1164775097}
 --- !u!114 &1320050677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5723,21 +5706,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1320050680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320050674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
 --- !u!1 &1363048083
 GameObject:
   m_ObjectHideFlags: 0
@@ -5785,8 +5753,8 @@ GameObject:
   - component: {fileID: 1394359459}
   - component: {fileID: 1394359462}
   - component: {fileID: 1394359461}
+  - component: {fileID: 1394359460}
   - component: {fileID: 1394359463}
-  - component: {fileID: 1394359464}
   m_Layer: 0
   m_Name: Culture
   m_TagString: Culture
@@ -5814,6 +5782,21 @@ RectTransform:
   m_AnchoredPosition: {x: -515.12445, y: 133}
   m_SizeDelta: {x: 678.008, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1394359460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394359458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12976008c4dcf54987456bdad545e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggingText
+  _TextTransform: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 1164775097}
 --- !u!114 &1394359461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5879,21 +5862,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1394359464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394359458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30373a4a393f0914baae423b9d944fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
-  _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
 --- !u!1 &1413549031
 GameObject:
   m_ObjectHideFlags: 0
@@ -6342,9 +6310,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResearchPanicGameManagerChapter2
   _TimerSlider: {fileID: 1966028428}
   _TimerText: {fileID: 1804311688}
-  _MinigameDuration: 10
+  _MinigameDuration: 5
   _StopTimer: 0
-  _CurrentTime: 0
+  _TimeRemaining: 0
   _CorrectPoints: 0
   _WrongPoints: 0
   _CorrectPointsText: {fileID: 1426565550}

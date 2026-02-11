@@ -6,7 +6,7 @@ public class DraggingText : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 {
     [SerializeField] private RectTransform _TextTransform;
     public Canvas _MinigameScreen;
-    public ResearchTitleSpawner _Spawner;
+    public ResearchTitleSpawner _Spawner; 
 
     private void Awake()
     {
@@ -71,17 +71,17 @@ public class DraggingText : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     private void CheckTextTagAndScore(string _FolderType)
     {
-        ResearchPanicMinigame _ResearchPanic = FindAnyObjectByType<ResearchPanicMinigame>();
-        if (_ResearchPanic == null) return;
+        Timer _Timer = FindAnyObjectByType<Timer>();
+        if (_Timer == null) return;
 
         // Compare the tag of the text with folder type
         if (gameObject.CompareTag(_FolderType))
         {
-            _ResearchPanic.AddCorrectPoints();
+            _Timer.AddCorrectPoints();
         }
         else
         {
-            _ResearchPanic.AddWrongPoints();
+            _Timer.AddWrongPoints();
         }
     }
 }

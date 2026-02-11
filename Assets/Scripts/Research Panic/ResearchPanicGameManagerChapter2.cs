@@ -10,8 +10,8 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     public Slider _TimerSlider;
     public TextMeshProUGUI _TimerText;
     public float _MinigameDuration;
-    public bool _StopTimer;
     public float _CurrentTime;
+    public bool _StopTimer;
     [Header("Points System")]
     public int _CorrectPoints;
     public int _WrongPoints;
@@ -25,9 +25,9 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     void Start()
     {
         _StopTimer = false;
+        _CurrentTime = _MinigameDuration;
         _TimerSlider.maxValue = _MinigameDuration;
         _TimerSlider.value = _MinigameDuration;
-        _CurrentTime = _MinigameDuration;
         _CorrectPoints = 0;
         _WrongPoints = 0;
     }
@@ -35,7 +35,6 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_TutorialPanel.activeSelf) return;
         if (_StopTimer) return;
 
         _CurrentTime -= Time.deltaTime;
@@ -66,16 +65,6 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
         _WrongPoints++;
         _WrongPointsText.text = " Incorrect Categorized Title: " + _WrongPoints;
         WinAndFailCon();
-    }
-
-    public void CloseTutorial()
-    {
-        _TutorialPanel.SetActive(false);
-    }
-
-    public void OpenTutorial()
-    {
-        _TutorialPanel.SetActive(true);
     }
 
     private void WinAndFailCon()
@@ -110,5 +99,22 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _GameStatusObject.SetActive(true);
             SceneManager.LoadScene("Exploration 2.3");
         }
+    }
+
+    public void OpenTutorialPanel()
+    {
+        _TutorialPanel.SetActive(true);
+        IsPaused();
+        _StopTimer = true;
+    }
+
+    public void CloseTutorialPanel()
+    {
+        _TutorialPanel.SetActive(false);
+        _StopTimer = false;
+    }
+    bool IsPaused()
+    {
+        return _TutorialPanel != null && _TutorialPanel.activeSelf;
     }
 }
