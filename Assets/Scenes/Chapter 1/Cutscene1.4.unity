@@ -1516,7 +1516,8 @@ MonoBehaviour:
   _Choice1Panel: {fileID: 2119567558}
   _NpcName: {fileID: 839128396}
   _StoryText: {fileID: 1616679852}
-  _Storyline: Students like that bring danger.
+  _Storyline: Several student organizations have raised concerns after classmates
+    were publicly accused of having links to extremist groups
   _LegendManager: {fileID: 1402940291}
   _DialogueIndex: 0
   _CanContinue: 0

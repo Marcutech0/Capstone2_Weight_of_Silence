@@ -18,7 +18,7 @@ public class Cutscene5 : MonoBehaviour
     void Start()
     {
         _NpcName.text = "Liam";
-        StartCoroutine(ShowDialoguePhone());
+        StartCoroutine(ShowDialogue());
     }
 
     public void Update()
@@ -29,6 +29,42 @@ public class Cutscene5 : MonoBehaviour
             _DialogueIndex++;
 
             if (_DialogueIndex == 1)
+            {
+                StartCoroutine(ShowNewDialogueNarrator("The phone lights up."));
+            }
+            else if (_DialogueIndex == 2)
+            {
+                StartCoroutine(ShowNewDialogueNarrator("No new message."));
+            }
+            else if (_DialogueIndex == 3)
+            {
+                StartCoroutine(ShowNewDialogueNarrator("Just the time."));
+            }
+            else if (_DialogueIndex == 4)
+            {
+                StartCoroutine(ShowNewDialogueLiam("She always replies by now."));
+            }
+            else if (_DialogueIndex == 5)
+            {
+                StartCoroutine(ShowNewDialogueNarrator("Rain streaks down the glass."));
+            }
+            else if (_DialogueIndex == 6)
+            {
+                StartCoroutine(ShowNewDialogueLiam("Unless she’s busy."));
+            }
+            else if (_DialogueIndex == 7)
+            {
+                StartCoroutine(ShowNewDialogueLiam("..."));
+            }
+            else if (_DialogueIndex == 8)
+            {
+                StartCoroutine(ShowNewDialogueLiam("Unless something’s wrong."));
+            }
+            else if (_DialogueIndex == 9)
+            {
+                StartCoroutine(ShowNewDialogueLiam("I need to check on her."));
+            }
+            else if (_DialogueIndex == 10)
             {
                 _FadeTransition.FadeOut();
                 StartCoroutine(CallNextScene());
@@ -43,16 +79,17 @@ public class Cutscene5 : MonoBehaviour
         _LegendManager._Guilt.SetActive(false);
     }
 
-    IEnumerator ShowDialoguePhone()
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Exploration 1.4");
+    }
+
+    IEnumerator ShowDialogue()
     {
         _DialoguePanel.SetActive(true);
 
         _StoryText.text = "";
-        _LegendManager._GuiltCount += 2;
-        _LegendManager._Guilt.SetActive(true);
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
-        PlayerPrefs.Save();
 
         foreach (char c in _Storyline)
         {
@@ -62,9 +99,33 @@ public class Cutscene5 : MonoBehaviour
         _CanContinue = true;
     }
 
-    IEnumerator CallNextScene()
+    IEnumerator ShowNewDialogueNarrator(string _NewLine)
     {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Exploration 1.4");
+        _DialoguePanel.SetActive(true);
+
+        _StoryText.text = "";
+
+        _NpcName.text = "";
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
+    }
+
+    IEnumerator ShowNewDialogueLiam(string _NewLine)
+    {
+        _DialoguePanel.SetActive(true);
+
+        _StoryText.text = "";
+
+        _NpcName.text = "Liam";
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
     }
 }
