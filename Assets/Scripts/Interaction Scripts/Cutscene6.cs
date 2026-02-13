@@ -17,6 +17,7 @@ public class Cutscene6 : MonoBehaviour
     [SerializeField] bool _CanContinue;
     public GameFlowLegendManager _LegendManager;
     public Fade _FadeTransition;
+    public PhoneExploration1_1 _Phone;
 
 
     public void Start()
@@ -37,6 +38,25 @@ public class Cutscene6 : MonoBehaviour
                 _RayasUnsentMessage.text = "Liam, if anything happens—";
                 _PhonePanel.SetActive(true);
                 _Choice1Panel.SetActive(true);
+
+                int _Result = PlayerPrefs.GetInt("ChoiceResult", 0);
+                if (_Result == 1)
+                {
+                    _Phone._ReplyText.text = "I’m alive, promise.";
+                    _Phone._RayaReplyText.text = "Good. Don’t disappear on me today, okay?";
+                }
+
+                else if (_Result == 2)
+                {
+                    _Phone._ReplyText.text = "Sure. We’ll talk later.";
+                    _Phone._RayaReplyText.text = "Later, then.";
+                }
+
+                else if (_Result == 3) 
+                {
+                    _Phone._LiamMessageBox.SetActive(false);
+                    _Phone._RayaMessageBox.SetActive(false);
+                }
             }
 
             else if (_DialogueIndex == 3)

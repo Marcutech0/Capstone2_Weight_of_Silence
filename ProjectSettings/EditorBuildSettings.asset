@@ -86,6 +86,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter 1/PrologueScene.unity
     guid: 5fc366f39a317fd4c87acea0bb8a1dbb
+  - enabled: 1
+    path: Assets/Scenes/Chapter 3/OutcryEnding.unity
+    guid: 1881af1a4a2ddaa4298149e411716760
+  - enabled: 1
+    path: Assets/Scenes/Chapter 3/SilentEnding.unity
+    guid: d8e02623d686f3a4c810f593937270bd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
