@@ -28,7 +28,7 @@ public class Shared_Notes_Manager : MonoBehaviour
     [SerializeField] private RectTransform fragmentsParent;
     [SerializeField] private int layoutRows = 5;
     [SerializeField] private int layoutCols = 2;
-    [SerializeField] private float layoutXStart = -150f;
+    [SerializeField] private float layoutXStart = -500f;
     [SerializeField] private float layoutYStart = 400f;
     [SerializeField] private float layoutXSpacing = 400f;
     [SerializeField] private float layoutYSpacing = 150f;
@@ -57,6 +57,7 @@ public class Shared_Notes_Manager : MonoBehaviour
     {
         public RectTransform originalParent;
         public Vector2 originalPosition;
+        public UnityEngine.UI.ColorBlock originalButtonColors;
         public bool isOnNotebook;
     }
 
@@ -186,8 +187,13 @@ public class Shared_Notes_Manager : MonoBehaviour
             int row = i % rows;
             if (col >= cols) break;
 
+            // Position starting from the LEFT side of the parent instead of centered.
+            // We treat layoutXStart as a padding value from the left edge.
+            float parentHalfWidth = fragmentsParent.rect.width * 4;
+            float leftStartX = -parentHalfWidth + layoutXStart;
+
             Vector2 pos = new Vector2(
-                layoutXStart + (col * layoutXSpacing),
+                leftStartX + (col * layoutXSpacing),
                 layoutYStart - (row * layoutYSpacing)
             );
 
@@ -213,10 +219,13 @@ public class Shared_Notes_Manager : MonoBehaviour
             // Remember the original parent/position so we can return it from the notebook.
             if (rt != null)
             {
+                var btn = fragment.GetComponent<UnityEngine.UI.Button>();
+
                 fragmentStates[fragment] = new FragmentState
                 {
                     originalParent = rt.parent as RectTransform,
                     originalPosition = rt.anchoredPosition,
+                    originalButtonColors = btn != null ? btn.colors : default,
                     isOnNotebook = false
                 };
             }
@@ -335,11 +344,24 @@ public class Shared_Notes_Manager : MonoBehaviour
         fragRT.localScale = Vector3.one;
         fragRT.SetAsLastSibling();
 
-        // Once the fragment is on the notebook, force its text color to black.
-        TMP_Text fragmentText = fragment.GetComponentInChildren<TMP_Text>();
-        if (fragmentText != null)
+        // Adjust button tint using hex colors so the text appears black on the white notebook,
+        // while still remaining hoverable (Color Tint still works).
+        var buttonOnNotebook = fragment.GetComponent<UnityEngine.UI.Button>();
+        if (buttonOnNotebook != null)
         {
-            fragmentText.color = Color.black;
+            var colors = buttonOnNotebook.colors;
+
+            // Edit hex values to whatever colors when on the notebook
+            Color normalHex, highlightedHex, pressedHex;
+            ColorUtility.TryParseHtmlString("#000000", out normalHex);      // black
+            ColorUtility.TryParseHtmlString("#E25959", out highlightedHex); // dark gray
+            ColorUtility.TryParseHtmlString("#E25959", out pressedHex);     // even darker
+
+            colors.normalColor = normalHex;
+            colors.highlightedColor = highlightedHex; 
+            colors.pressedColor = pressedHex;
+            colors.selectedColor = colors.normalColor;
+            buttonOnNotebook.colors = colors;
         }
 
         // Mark this fragment as being on the notebook and allow it to be clicked again.
@@ -403,16 +425,16 @@ public class Shared_Notes_Manager : MonoBehaviour
         // Mark as back on the blackboard.
         state.isOnNotebook = false;
 
+        // Restore original button tint so it behaves as it did on the blackboard.
+        var buttonOnBoard = fragment.GetComponent<UnityEngine.UI.Button>();
+        if (buttonOnBoard != null)
+        {
+            buttonOnBoard.colors = state.originalButtonColors;
+        }
+
         // Remove from placed list and reduce selected count.
         placedFragments.Remove(fragment);
         selectedCount = Mathf.Max(0, selectedCount - 1);
-
-        // Restore its default text color if desired (optional).
-        TMP_Text fragmentText = fragment.GetComponentInChildren<TMP_Text>();
-        if (fragmentText != null)
-        {
-            fragmentText.color = Color.white;
-        }
 
         // Allow interaction again.
         fragment.SetInteractable(true);
