@@ -1,6 +1,7 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 public class PhoneInteraction : MonoBehaviour
 { 
@@ -117,5 +118,11 @@ public class PhoneInteraction : MonoBehaviour
             _IsInRange = false;
             _InteractIndicator.SetActive(false);
         }
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Exploration 1.1");
     }
 }

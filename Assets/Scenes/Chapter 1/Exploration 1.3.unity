@@ -4302,6 +4302,7 @@ MonoBehaviour:
   _LiamsMessages: {fileID: 0}
   _RayasMessages: {fileID: 0}
   _ChoiceResult: 0
+  _HasInteractedPhone: 0
 --- !u!224 &532682309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16468,9 +16469,7 @@ MonoBehaviour:
   _NpcName: {fileID: 1832511179}
   _StoryText: {fileID: 1290899410}
   _InteractText: {fileID: 1502719333}
-  _Storyline: "Small paper squares stuck to a light post.\nNames written in pen,
-    Some half-torn. and you don\u2019t recognize most of them.\nOne sticker is peeled
-    almost all the way off.\nIt still holds."
+  _Storyline: Small paper squares stuck to a light post.
   _PlayerController: {fileID: 2075290758}
   _PlayerControls: {fileID: 2075290757}
   _IsInRange: 0
@@ -16495,13 +16494,7 @@ MonoBehaviour:
   _NpcName: {fileID: 1832511179}
   _StoryText: {fileID: 1290899410}
   _InteractText: {fileID: 1502719333}
-  _Storyline: 'A guard scans IDs slower than usual.
-
-    He looks at faces longer.
-    At bags and phones
-
-    You hesitate before stepping forward but then signalled
-    you to to proceed to the right towards the exit'
+  _Storyline: A guard scans IDs slower than usual.
   _PlayerController: {fileID: 2075290758}
   _PlayerControls: {fileID: 2075290757}
   _IsInRange: 0

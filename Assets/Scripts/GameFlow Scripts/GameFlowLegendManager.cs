@@ -35,8 +35,8 @@ public class GameFlowLegendManager : MonoBehaviour
     public void Awake()
     {
         // testing purposes
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.Save();
         //Debug.Log("Player Int Legend count resetted!");
 
         _CourageCount = PlayerPrefs.GetInt("Courage Count", 0);

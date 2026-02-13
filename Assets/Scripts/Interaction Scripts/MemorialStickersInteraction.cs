@@ -32,7 +32,17 @@ public class MemorialStickersInteraction : MonoBehaviour
             _DialogueIndex++;
             if (_DialogueIndex == 1)
             {
-                EndDialogue();
+                StartCoroutine(ShowNewDialogueNarrator("Names written in pen."));
+            }
+
+            else if (_DialogueIndex == 2)
+            {
+                StartCoroutine(ShowNewDialogueNarrator("Some crossed out."));
+            }
+
+            else if (_DialogueIndex == 3) 
+            {
+                StartCoroutine(ShowNewDialogueNarrator("Some half-torn."));
             }
         }
     }
@@ -54,6 +64,24 @@ public class MemorialStickersInteraction : MonoBehaviour
         _StoryText.text = "";
 
         foreach (char c in _Storyline)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
+    }
+
+    IEnumerator ShowNewDialogueNarrator(string _NewLine)
+    {
+        _DialoguePanel.SetActive(true);
+        _InteractIndicator.SetActive(false);
+
+        _PlayerController.enabled = false;
+        _PlayerControls.enabled = false;
+
+        _StoryText.text = "";
+
+        foreach (char c in _NewLine)
         {
             _StoryText.text += c;
             yield return new WaitForSeconds(0.01f);

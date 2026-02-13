@@ -83,12 +83,12 @@ public class Exploration3_1Phone : MonoBehaviour
         _PlayerControls.enabled = true;
         _LegendManager._Courage.SetActive(false);
 
-        if (_Board._HasInteracted || _Locker._HasInteracted || _HasInteracted || _LegendManager._CourageCount >= 30) 
+        if (_Board._HasInteracted || _Locker._HasInteracted || _HasInteracted || _LegendManager._CourageCount >= 18) 
         {
             StartCoroutine(CallNextSceneEnding1());
         }
 
-        else if (_Board._HasInteracted || _Locker._HasInteracted || _HasInteracted || _LegendManager._CourageCount < 30) 
+        else if (_Board._HasInteracted || _Locker._HasInteracted || _HasInteracted || _LegendManager._CourageCount <= 18) 
         {
             StartCoroutine(CallNextSceneEnding2());
         }

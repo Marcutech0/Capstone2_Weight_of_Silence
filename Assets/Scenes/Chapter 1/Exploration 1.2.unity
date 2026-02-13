@@ -3798,6 +3798,59 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1 &535449739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535449740}
+  - component: {fileID: 535449741}
+  m_Layer: 0
+  m_Name: Collider (3)
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535449740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535449739}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.82, y: 0.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 539276848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &535449741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535449739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 2.4863195}
+  m_Center: {x: 0, y: 0, z: -0.4948492}
 --- !u!1 &539276847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,6 +3884,7 @@ Transform:
   - {fileID: 403904625}
   - {fileID: 495140898}
   - {fileID: 186216780}
+  - {fileID: 535449740}
   - {fileID: 1217735151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3853,6 +3907,7 @@ GameObject:
   - component: {fileID: 571146194}
   - component: {fileID: 571146193}
   - component: {fileID: 571146192}
+  - component: {fileID: 571146203}
   m_Layer: 0
   m_Name: PlayerObject (1)
   m_TagString: Player
@@ -3913,8 +3968,7 @@ MonoBehaviour:
   _FlyerWallInteraction: {fileID: 571146194}
   _DialogueIndex: 0
   _CanContinue: 0
-  _HasInteractedNewsScreenInteraction: 0
-  _HasInteractedFlyerWallInteraction: 0
+  _HasInteractedNewsScreen: 0
 --- !u!114 &571146194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,6 +4179,20 @@ Transform:
   - {fileID: 1699285253}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571146203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571146191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0bdd9f13d413146a57430262b698ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionChecker
+  _NewsScreen: {fileID: 571146194}
+  _FlyerWall: {fileID: 571146193}
 --- !u!1 &571645038
 GameObject:
   m_ObjectHideFlags: 0
@@ -9354,6 +9422,7 @@ MonoBehaviour:
   _LiamsMessages: {fileID: 0}
   _RayasMessages: {fileID: 0}
   _ChoiceResult: 0
+  _HasInteractedPhone: 0
 --- !u!224 &1369384381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13042,7 +13111,7 @@ Transform:
   m_GameObject: {fileID: 1931114093}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6946001, y: 1, z: -1.0341}
+  m_LocalPosition: {x: -1.84, y: 1, z: -1.0341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

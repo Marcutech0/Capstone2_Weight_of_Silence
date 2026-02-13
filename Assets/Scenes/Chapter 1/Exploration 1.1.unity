@@ -3298,7 +3298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &411654497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5433,7 +5433,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513761}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PhoneInteraction, Assembly-CSharp
         m_MethodName: Choice3Dorm
         m_Mode: 1
@@ -5702,7 +5702,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513761}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PhoneInteraction, Assembly-CSharp
         m_MethodName: Choice1Dorm
         m_Mode: 1
@@ -7834,7 +7834,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283513761}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PhoneInteraction, Assembly-CSharp
         m_MethodName: Choice2Dorm
         m_Mode: 1
@@ -7902,7 +7902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &820809221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11594,7 +11594,6 @@ GameObject:
   - component: {fileID: 1283513765}
   - component: {fileID: 1283513764}
   - component: {fileID: 1283513763}
-  - component: {fileID: 1283513761}
   - component: {fileID: 1283513770}
   m_Layer: 0
   m_Name: PlayerObject
@@ -11664,30 +11663,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1283513761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283513756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 532c438cc6d77af4082e00631bd5d387, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  _DialoguePanel: {fileID: 1613662449}
-  _InteractIndicator: {fileID: 1401476552}
-  _ChoicePanel: {fileID: 65253030}
-  _NpcName: {fileID: 1014614096}
-  _StoryText: {fileID: 520454683}
-  _InteractText: {fileID: 772411354}
-  _LegendManager: {fileID: 414652652}
-  _Storyline: 
-  _PlayerController: {fileID: 1283513760}
-  _PlayerControls: {fileID: 1283513758}
-  _IsInRange: 0
-  _HasInteracted: 0
 --- !u!114 &1283513763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11874,6 +11849,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LiamsDoorInteraction
   _PhoneNotif: {fileID: 772411354}
   _InteractIndicator: {fileID: 1401476552}
+  _Phone: {fileID: 1458365484}
+  _PhoneButton: {fileID: 411654496}
+  _Desk: {fileID: 1283513764}
+  _Mirror: {fileID: 1283513763}
 --- !u!1 &1320153702
 GameObject:
   m_ObjectHideFlags: 0
@@ -13212,7 +13191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1458365484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13241,6 +13220,8 @@ MonoBehaviour:
   _LiamsMessages: {fileID: 1653689713}
   _RayasMessages: {fileID: 369002588}
   _ChoiceResult: 0
+  _HasInteractedPhone: 0
+  _ReplyButton: {fileID: 1975359298}
 --- !u!224 &1458365485
 RectTransform:
   m_ObjectHideFlags: 0

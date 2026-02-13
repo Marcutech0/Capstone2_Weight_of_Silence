@@ -27,7 +27,7 @@ public class UniversalPhone : MonoBehaviour
                 return;
             }
 
-            if (_PhonePanel.activeSelf)
+            if (_Phone._HomeUI.activeSelf)
             {
                 _PhonePanel.SetActive(false);
                 return;
