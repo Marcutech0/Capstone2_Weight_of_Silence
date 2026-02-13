@@ -10437,7 +10437,7 @@ Transform:
   m_GameObject: {fileID: 1408174370}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.98, y: 0.6, z: -1.13}
+  m_LocalPosition: {x: -4.99, y: 0.6, z: -1.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16468,7 +16468,9 @@ MonoBehaviour:
   _NpcName: {fileID: 1832511179}
   _StoryText: {fileID: 1290899410}
   _InteractText: {fileID: 1502719333}
-  _Storyline: Memory line
+  _Storyline: "Small paper squares stuck to a light post.\nNames written in pen,
+    Some half-torn. and you don\u2019t recognize most of them.\nOne sticker is peeled
+    almost all the way off.\nIt still holds."
   _PlayerController: {fileID: 2075290758}
   _PlayerControls: {fileID: 2075290757}
   _IsInRange: 0
@@ -16493,7 +16495,13 @@ MonoBehaviour:
   _NpcName: {fileID: 1832511179}
   _StoryText: {fileID: 1290899410}
   _InteractText: {fileID: 1502719333}
-  _Storyline: Hesitation
+  _Storyline: 'A guard scans IDs slower than usual.
+
+    He looks at faces longer.
+    At bags and phones
+
+    You hesitate before stepping forward but then signalled
+    you to to proceed to the right towards the exit'
   _PlayerController: {fileID: 2075290758}
   _PlayerControls: {fileID: 2075290757}
   _IsInRange: 0
