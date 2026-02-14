@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 public class MinigameManager : MonoBehaviour
 {
     public static MinigameManager _Instance;
@@ -13,9 +14,10 @@ public class MinigameManager : MonoBehaviour
     public TextMeshProUGUI _GameStatusText;
     public CanvasGroup _TahoPanel;
     public GameObject _TutorialPanel;
+    public Slider _TahoSlider;
 
     [Header("MinigameSettings")]
-    public float _GameDuration = 20f;
+    public float _GameDuration;
     private float _RemainingTime;
     private bool _GameActive = false;
     public ReleaseManager _OverfillManager;
@@ -37,6 +39,20 @@ public class MinigameManager : MonoBehaviour
     {
         // starts minigame
         StartCoroutine(StartMinigame());
+    }
+
+    public void UpdateFillSlider(float value)
+    {
+        if (_TahoSlider != null)
+            _TahoSlider.value = value;
+    }
+
+    public void Update()
+    {
+        if (CupClickManager._CurrentlySelectedCup != null)
+        {
+            _TahoSlider.value = CupClickManager._CurrentlySelectedCup._FillPercent;
+        }
     }
 
     IEnumerator StartMinigame()
