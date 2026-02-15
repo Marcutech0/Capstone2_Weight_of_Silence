@@ -29,6 +29,8 @@ public class MinigameManager : MonoBehaviour
     public float _MinSpillAmount;
     public float _MaxSpillAmount;
 
+    public GameFlowLegendManager _LegendManager;
+
     public void Awake()
     {
          // set the instance to this Manager
@@ -135,10 +137,15 @@ public class MinigameManager : MonoBehaviour
 
         else 
         {
+            _LegendManager._CourageCount++;
+            _LegendManager._GuiltCount--;
+            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.Save();
             _GameStatusText.text = "Time's up, good job!";
         }
-
-        SceneManager.LoadScene("Exploration 1.2");
+        UpdateUI();
+        StartCoroutine(CallNextScene());
     }
     public bool _IsGameActive() 
     {
@@ -160,5 +167,24 @@ public class MinigameManager : MonoBehaviour
     bool IsPaused() 
     {
         return _TutorialPanel != null && _TutorialPanel.activeSelf;
+    }
+
+    public void UpdateUI()
+    {
+        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
+        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
+        _LegendManager._Courage.SetActive(true);
+        _LegendManager._Guilt.SetActive(true);
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        _LegendManager._Courage.SetActive(false);
+        _LegendManager._Guilt.SetActive(false);
+
+        yield return new WaitForSeconds(1.5f);
+        _GameStatusText.text = "Moving to Campus";
+        SceneManager.LoadScene("Exploration 1.2");
     }
 }
