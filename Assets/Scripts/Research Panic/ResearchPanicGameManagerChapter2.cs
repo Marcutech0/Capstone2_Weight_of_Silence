@@ -81,7 +81,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
 
     private void WinAndFailCon()
     {
-        if (_WrongPoints >= 3)
+        if (_WrongPoints >= 3) // Lose
         {
             _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
             _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
@@ -100,7 +100,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             StartCoroutine(CallNextScene());
         }
 
-        else if (_StopTimer && _CorrectPoints == 0)
+        else if (_StopTimer && _CorrectPoints == 0) // Lose
         {
             _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
             _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
@@ -118,7 +118,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             StartCoroutine(CallNextScene());
         }
 
-        else if (_StopTimer && _WrongPoints < 3)
+        else if (_StopTimer && _WrongPoints < 3)// Win
         {
             _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
             _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);

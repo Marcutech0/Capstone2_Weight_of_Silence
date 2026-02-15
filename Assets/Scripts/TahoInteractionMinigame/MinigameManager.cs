@@ -130,12 +130,12 @@ public class MinigameManager : MonoBehaviour
     {
         // lose win conditions
         _GameActive = false;
-        if (_OverfillManager._OverfillCount >= 3)
+        if (_OverfillManager._OverfillCount >= 3) // Lose
         {
             _GameStatusText.text = "Game over! spilled to many cups!";
         }
 
-        else 
+        else // Win
         {
             _LegendManager._CourageCount++;
             _LegendManager._GuiltCount--;
