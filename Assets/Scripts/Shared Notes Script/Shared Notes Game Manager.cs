@@ -1,7 +1,8 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shared_Notes_Manager : MonoBehaviour
 {
@@ -65,6 +66,8 @@ public class Shared_Notes_Manager : MonoBehaviour
     private int selectedCount = 0;
     private bool isLocked = false;
 
+    //Gameflow Variables
+    public GameFlowLegendManager _LegendManager;
     private void Start()
     {
         // Reset runtime state in case this object is reused.
@@ -450,6 +453,23 @@ public class Shared_Notes_Manager : MonoBehaviour
         // Show win screen, hide lose screen (if assigned).
         if (winScreen != null) winScreen.SetActive(true);
         if (loseScreen != null) loseScreen.SetActive(false);
+
+        // Update legend stats: +2 Courage, +1 Reputation.
+        _LegendManager._CourageCount+=2;
+        _LegendManager._ReputationCount++;
+        PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
+        PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
+        PlayerPrefs.Save();
+        UpdateUI();
+    }
+
+    //Updates UI for Legend
+    public void UpdateUI()
+    {
+        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
+        _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
+        _LegendManager._Courage.SetActive(true);
+        _LegendManager._Reputation.SetActive(true);
     }
 
     private void Fail()
@@ -538,5 +558,20 @@ public class Shared_Notes_Manager : MonoBehaviour
             result.Add(pool[indices[i]]);
 
         return result;
+    }
+
+    public void CollectScene()
+    {
+        StartCoroutine(CallNextScene());
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        _LegendManager._Courage.SetActive(false);
+        _LegendManager._Reputation.SetActive(false);
+
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Cutscene1.3");
     }
 }
