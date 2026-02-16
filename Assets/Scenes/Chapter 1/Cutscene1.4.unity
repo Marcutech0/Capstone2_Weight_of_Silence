@@ -1038,7 +1038,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482990187}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d04e776c9f552174eb48613627af639c, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 1ed8f22be73db9c46835baeee079521c, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1519,8 +1519,6 @@ MonoBehaviour:
   _Storyline: Several student organizations have raised concerns after classmates
     were publicly accused of having links to extremist groups
   _LegendManager: {fileID: 1402940291}
-  _DialogueIndex: 0
-  _CanContinue: 0
   _FadeTransition: {fileID: 1377868268}
 --- !u!1 &1160506582
 GameObject:
