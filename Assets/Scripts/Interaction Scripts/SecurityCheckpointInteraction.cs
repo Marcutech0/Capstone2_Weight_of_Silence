@@ -78,10 +78,7 @@ public class SecurityCheckpointInteraction : MonoBehaviour
 
         _StoryText.text = "";
         _NpcName.text = string.Empty;
-        _LegendManager._FearCount++;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._Fear.SetActive(true);
-
+        _LegendManager._FearCount++;  
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.Save();
 

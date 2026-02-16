@@ -27,7 +27,6 @@ public class Cutscene4 : MonoBehaviour
     {
         _NpcName.text = "Liam";
 
-        // First dialogue only
         _CurrentLines = new string[] { _Storyline };
         _CurrentSpeakers = new string[] { "Liam" };
         _CurrentLineIndex = 0;
@@ -217,14 +216,6 @@ public class Cutscene4 : MonoBehaviour
 
     void UpdateStatsUI()
     {
-        _LegendManager._Courage.SetActive(true);
-        _LegendManager._Fear.SetActive(true);
-        _LegendManager._Guilt.SetActive(true);
-
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);

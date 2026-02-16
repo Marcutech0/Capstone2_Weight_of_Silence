@@ -35,8 +35,6 @@ public class NoticeBoardInteractionRayaDorm : MonoBehaviour
             {
                 StartCoroutine(ShowNewDialogueTextLiam("They don't even use names."));
                 _LegendManager._FearCount++;
-                _LegendManager._Fear.SetActive(true);
-                _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
                 PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
                 PlayerPrefs.Save();
             }

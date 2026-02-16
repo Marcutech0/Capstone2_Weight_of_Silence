@@ -97,7 +97,6 @@ public class ResearchPanicMinigame : MonoBehaviour
             PlayerPrefs.Save();
             _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
-            UpdateUI();
             StartCoroutine(CallNextScene());
         }
 
@@ -115,7 +114,6 @@ public class ResearchPanicMinigame : MonoBehaviour
             PlayerPrefs.Save();
             _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
-            UpdateUI();
             StartCoroutine(CallNextScene());
         }
 
@@ -133,7 +131,6 @@ public class ResearchPanicMinigame : MonoBehaviour
             PlayerPrefs.Save();
             _GameStatus.text = "You won! Evidence Gained";
             _GameStatusObject.SetActive(true);
-            UpdateUI();
             StartCoroutine(CallNextScene());
         }
     }

@@ -58,8 +58,6 @@ public class NewsScreenInteract : MonoBehaviour
         _NpcName.text = string.Empty;
 
         _LegendManager._GuiltCount++;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         foreach (char c in _Storyline)

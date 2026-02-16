@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class UniversalPhone : MonoBehaviour
 {
-    public GameObject _PhonePanel;
+    public GameObject _HomeUI;
     public GameObject _MessagesUI;
     public PhoneExploration1_1 _Phone;
     public void OpenPhone()
     {
-        _PhonePanel.SetActive(true);
+        _HomeUI.SetActive(true);
     }
 
     public void OpenMessages()
@@ -16,22 +16,12 @@ public class UniversalPhone : MonoBehaviour
         _MessagesUI.SetActive(true);
     }
 
-    public void Update()
+    public void ClosePhone()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (_HomeUI.activeSelf || _MessagesUI.activeSelf)
         {
-
-            if (_MessagesUI.activeSelf)
-            {
-                _MessagesUI.SetActive(false);
-                return;
-            }
-
-            if (_Phone._HomeUI.activeSelf)
-            {
-                _PhonePanel.SetActive(false);
-                return;
-            }
+            _HomeUI.SetActive(false);
+            _MessagesUI.SetActive(false);
         }
     }
 

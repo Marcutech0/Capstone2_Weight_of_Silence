@@ -15,6 +15,7 @@ public class Exploration3_1Locker : MonoBehaviour
     public PlayerMovement _PlayerControls;
     public bool _IsInRange;
     public bool _HasInteracted;
+    public bool _DialogueFinished;
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
     public void Update()
@@ -46,6 +47,7 @@ public class Exploration3_1Locker : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _DialogueFinished = true;
     }
 
     IEnumerator ShowDialogueLocker()

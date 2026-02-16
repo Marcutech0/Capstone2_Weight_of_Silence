@@ -105,27 +105,12 @@ public class PhoneExploration1_1 : MonoBehaviour
 
     }
 
-    public void Update()
+    public void ClosePhone() 
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (_HomeUI.activeSelf || _MessagesUI.activeSelf) 
         {
-            if (_ReplyChoice1.activeSelf)
-            {
-                _ReplyChoice1.SetActive(false);
-                return;
-            }
-
-            else if (_MessagesUI.activeSelf)
-            {
-                _MessagesUI.SetActive(false);
-                return;
-            }
-
-            else if (_HomeUI.activeSelf)
-            {
-                _HomeUI.SetActive(false);
-                return;
-            }
+            _HomeUI.SetActive(false);
+            _MessagesUI.SetActive(false);
         }
     }
 

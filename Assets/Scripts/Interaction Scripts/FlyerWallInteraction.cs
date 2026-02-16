@@ -39,8 +39,6 @@ public class FlyerWallInteraction : MonoBehaviour
             {
                 StartCoroutine(ShowNewDialogueLiam("Someone didn’t want this seen."));
                 _LegendManager._ReputationCount++;
-                _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
-                _LegendManager._Reputation.SetActive(true);
                 PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
                 PlayerPrefs.Save();
             }
@@ -49,8 +47,6 @@ public class FlyerWallInteraction : MonoBehaviour
                 StartCoroutine(ShowNewDialogueLiam("They said someone got tagged last night."));
                 _NpcName.text = "Overheard Students";
                 _LegendManager._FearCount++;
-                _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-                _LegendManager._Fear.SetActive(true);
                 PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
                 PlayerPrefs.Save();
             }

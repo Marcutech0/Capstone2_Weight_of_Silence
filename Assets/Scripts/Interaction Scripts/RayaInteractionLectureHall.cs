@@ -97,8 +97,6 @@ public class RayaInteractionLectureHall : MonoBehaviour
     public void Choice1LectureHall()
     {
         _LegendManager._FearCount++;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._Fear.SetActive(true);
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
@@ -111,8 +109,6 @@ public class RayaInteractionLectureHall : MonoBehaviour
     public void Choice2LectureHall()
     {
         _LegendManager._ReputationCount++;
-        _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
-        _LegendManager._Reputation.SetActive(true);
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
@@ -125,8 +121,6 @@ public class RayaInteractionLectureHall : MonoBehaviour
     public void Choice3LectureHall()
     {
         _LegendManager._AnonymityCount++;
-        _LegendManager._AnonymityText.text = "Anonymity: " + _LegendManager._AnonymityCount;
-        _LegendManager._Anonymity.SetActive(true);
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);

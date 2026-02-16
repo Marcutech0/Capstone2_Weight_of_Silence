@@ -144,7 +144,6 @@ public class MinigameManager : MonoBehaviour
             PlayerPrefs.Save();
             _GameStatusText.text = "Time's up, good job!";
         }
-        UpdateUI();
         StartCoroutine(CallNextScene());
     }
     public bool _IsGameActive() 

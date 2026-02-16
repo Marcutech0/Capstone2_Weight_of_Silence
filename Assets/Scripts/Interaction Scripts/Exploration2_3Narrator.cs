@@ -15,6 +15,8 @@ public class Exploration2_3Narrator : MonoBehaviour
     public GameObject _MessagesUI;
     public GameObject _RayaMessageBox;
     public GameObject _PhoneNotif;
+    public GameObject _PhoneButtonsUI;
+    public GameObject _MessagesApp;
     public TextMeshProUGUI _PhoneNotifText;
 
     [TextArea] public string _Storyline;
@@ -41,7 +43,7 @@ public class Exploration2_3Narrator : MonoBehaviour
 
             if (_DialogueIndex == 1)
             {
-                StartCoroutine(ShowNarratorNewDialogue("Your phone buzzes."));
+                StartCoroutine(ShowNarratorNewDialogue("Your phone buzzes.", true));
             }
 
             else if (_DialogueIndex == 2)
@@ -71,33 +73,35 @@ public class Exploration2_3Narrator : MonoBehaviour
 
             else if (_DialogueIndex == 3)
             {
-                StartCoroutine(ShowNarratorNewDialogue("—or nothing at all."));
+                StartCoroutine(ShowNarratorNewDialogue("—or nothing at all.", false));
                 _ChoicePanel1.SetActive(true);
             }
 
             else if (_DialogueIndex == 5)
             {
-                StartCoroutine(ShowNarratorNewDialogue("The portal updates"));
+                StartCoroutine(ShowNarratorNewDialogue("The portal updates", true));
 
             }
 
             else if (_DialogueIndex == 6)
             {
                _HomeUI.SetActive(true);
+                _MessagesApp.SetActive(false);
                _MessagesUI.SetActive(false);
                 StartCoroutine(PhoneNotifRoutine());
             }
 
             else if (_DialogueIndex == 7)
             {
-                StartCoroutine(ShowNarratorNewDialogue("No feedback."));
-                _PhonePanel.SetActive(false);
+                StartCoroutine(ShowNarratorNewDialogue("No feedback.", true));
+                _HomeUI.SetActive(false);
             }
 
             else
             {
-                StartCoroutine(CallNextScene());
                 EndDialogue();
+                _PhoneButtonsUI.SetActive(true);
+                _MessagesApp.SetActive(true);
             }
         }
     }
@@ -114,12 +118,6 @@ public class Exploration2_3Narrator : MonoBehaviour
         _LegendManager._FearCount--;
         _LegendManager._GuiltCount++;
         _LegendManager._AnonymityCount++;
-        _LegendManager._AnonymityText.text = "Anonymity: " + _LegendManager._AnonymityCount;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._Fear.SetActive(true);
-        _LegendManager._Guilt.SetActive(true);
-        _LegendManager._Anonymity.SetActive(true);
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
@@ -127,25 +125,22 @@ public class Exploration2_3Narrator : MonoBehaviour
         StartCoroutine(LegendManagerDelay());
         _ChoicePanel1.SetActive(false);
         _DialogueIndex++;
-        _PhonePanel.SetActive(false);
+        _HomeUI.SetActive(false);
+        _CanContinue = true;
     }
 
     public void Choice2()
     {
         _LegendManager._FearCount--;
         _LegendManager._AnonymityCount++;
-        _LegendManager._AnonymityText.text = "Anonymity: " + _LegendManager._AnonymityCount;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._Fear.SetActive(true);
-        _LegendManager._Anonymity.SetActive(true);
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.Save();
         StartCoroutine(LegendManagerDelay());
         _ChoicePanel1.SetActive(false);
         _DialogueIndex++;
-        _PhonePanel.SetActive(false);
-
+        _HomeUI.SetActive(false);
+        _CanContinue = true;
     }
 
     IEnumerator ShowNarratorDialogue()
@@ -163,7 +158,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         _CanContinue = true;
     }
 
-    IEnumerator ShowNarratorNewDialogue(string _NewLine)
+    IEnumerator ShowNarratorNewDialogue(string _NewLine, bool _AllowContinue)
     {
         _DialoguePanel.SetActive(true);
         _StoryText.text = "";
@@ -175,7 +170,7 @@ public class Exploration2_3Narrator : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.01f);
         }
-        _CanContinue = true;
+        _CanContinue = _AllowContinue;
     }
 
     IEnumerator ShowNewDialogueRaya(string _NewLine)
@@ -209,12 +204,20 @@ public class Exploration2_3Narrator : MonoBehaviour
 
     IEnumerator PhoneNotifRoutine()
     {
-        _PhonePanel.SetActive(true);
+        _HomeUI.SetActive(true);
         _PhoneNotif.SetActive(true);
         _PhoneNotifText.text = "Submission received.";
 
         yield return new WaitForSeconds(1f);
         _PhoneNotif.SetActive(false);
         _CanContinue = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Door")) 
+        {
+            StartCoroutine(CallNextScene());
+        }
     }
 }

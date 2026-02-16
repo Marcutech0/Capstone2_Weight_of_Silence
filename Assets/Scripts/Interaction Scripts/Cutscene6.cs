@@ -119,12 +119,6 @@ public class Cutscene6 : MonoBehaviour
         _LegendManager._CourageCount += 2;
         _LegendManager._AnonymityCount += 5;
         _LegendManager._GuiltCount -= 2;
-        _LegendManager._Courage.SetActive(true);
-        _LegendManager._Anonymity.SetActive(true);
-        _LegendManager._Guilt.SetActive(true);
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._AnonymityText.text = "Anonymity: " + _LegendManager._AnonymityCount;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
@@ -139,10 +133,6 @@ public class Cutscene6 : MonoBehaviour
     {
         _LegendManager._FearCount += 2;
         _LegendManager._GuiltCount += 2;
-        _LegendManager._Fear.SetActive(true);
-        _LegendManager._Guilt.SetActive(true);
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
@@ -155,12 +145,6 @@ public class Cutscene6 : MonoBehaviour
         _LegendManager._CourageCount += 4;
         _LegendManager._FearCount += 3;
         _LegendManager._ReputationCount--;
-        _LegendManager._Courage.SetActive(true);
-        _LegendManager._Fear.SetActive(true);
-        _LegendManager._Reputation.SetActive(true);
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);

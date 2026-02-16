@@ -66,6 +66,8 @@ public class MemorialStickersInteraction : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
+        _NpcName.text = "";
+
 
         foreach (char c in _Storyline)
         {
@@ -84,6 +86,7 @@ public class MemorialStickersInteraction : MonoBehaviour
         _PlayerControls.enabled = false;
 
         _StoryText.text = "";
+        _NpcName.text = "";
 
         foreach (char c in _NewLine)
         {

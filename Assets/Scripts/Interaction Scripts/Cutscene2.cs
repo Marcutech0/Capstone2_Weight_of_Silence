@@ -122,8 +122,6 @@ public class Cutscene2 : MonoBehaviour
     public void Choice4Dorm() 
     {
         _LegendManager._ReputationCount++;
-        _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
-        _LegendManager._Reputation.SetActive(true);
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
@@ -136,8 +134,6 @@ public class Cutscene2 : MonoBehaviour
     public void Choice5Dorm() 
     {
         _LegendManager._GuiltCount++;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
@@ -150,8 +146,6 @@ public class Cutscene2 : MonoBehaviour
     public void Choice6Dorm() 
     {
         _LegendManager._CourageCount++;
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._Courage.SetActive(true);
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
@@ -164,8 +158,6 @@ public class Cutscene2 : MonoBehaviour
     public void Choice7Dorm()
     {
         _LegendManager._CourageCount++;
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._Courage.SetActive(true);
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.Save();
         _DialogueIndex++;
@@ -177,9 +169,7 @@ public class Cutscene2 : MonoBehaviour
     public void Choice8Dorm()
     {
         _LegendManager._FearCount++;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._Fear.SetActive(true);
-        PlayerPrefs.SetInt("Courage Count", _LegendManager._FearCount);
+        PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.Save();
         _DialogueIndex++;
         _CanContinue = false;
@@ -190,8 +180,6 @@ public class Cutscene2 : MonoBehaviour
     public void Choice9Dorm()
     {
         _LegendManager._GuiltCount++;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _DialogueIndex++;

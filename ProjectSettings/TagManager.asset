@@ -38,6 +38,7 @@ TagManager:
   - Locker
   - Ending1
   - Ending2
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -83,8 +83,6 @@ public class Cutscene3 : MonoBehaviour
     public void Choice1Library() 
     {
         _LegendManager._CourageCount++;
-        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
-        _LegendManager._Courage.SetActive(true);
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.Save();
         _DialogueIndex = 1;
@@ -97,10 +95,6 @@ public class Cutscene3 : MonoBehaviour
     {
         _LegendManager._AnonymityCount++;
         _LegendManager._FearCount++;
-        _LegendManager._AnonymityText.text = "Anonymity: " + _LegendManager._AnonymityCount;
-        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
-        _LegendManager._Anonymity.SetActive(true);
-        _LegendManager._Fear.SetActive(true);
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.Save();
@@ -113,8 +107,6 @@ public class Cutscene3 : MonoBehaviour
     public void Choice3Library()
     {
         _LegendManager._GuiltCount++;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _DialogueIndex = 1;

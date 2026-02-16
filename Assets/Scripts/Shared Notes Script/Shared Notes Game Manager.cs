@@ -460,7 +460,6 @@ public class Shared_Notes_Manager : MonoBehaviour
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
-        UpdateUI();
     }
 
     //Updates UI for Legend

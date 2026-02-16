@@ -8,7 +8,8 @@ public class LiamsDoorInteraction : MonoBehaviour
     public TextMeshProUGUI _PhoneNotif;
     public GameObject _InteractIndicator;
     public PhoneExploration1_1 _Phone;
-    public GameObject _PhoneButton;
+    public GameObject _PhoneButtonsOpenUI;
+    public GameObject _PhoneButtonsCloseUI;
     public Deskinteraction _Desk;
     public MirrorInteraction _Mirror;
 
@@ -21,7 +22,8 @@ public class LiamsDoorInteraction : MonoBehaviour
 
             if (_Desk._HasInteracted && _Mirror._HasInteracted)
             {
-                _PhoneButton.SetActive(true);
+                _PhoneButtonsOpenUI.SetActive(true);
+                _PhoneButtonsCloseUI.SetActive(true);
                 _PhoneNotif.text = "You may now access your phone";
 
                 if (_Phone._HasInteractedPhone && _Desk._HasInteracted && _Mirror._HasInteracted)
