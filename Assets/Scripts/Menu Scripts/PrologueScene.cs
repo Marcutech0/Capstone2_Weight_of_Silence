@@ -11,7 +11,7 @@ public class PrologueScene : MonoBehaviour
 
     private IEnumerator LoadNextSceneAfterDelay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(43f);
         SceneManager.LoadScene("Exploration 1.1");
     }
 }
