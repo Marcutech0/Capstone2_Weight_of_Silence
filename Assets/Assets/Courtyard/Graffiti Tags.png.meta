@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 5639c2f2993b11643a3cff1fbd6bdb79
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Graffiti Tags_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2212
+        width: 888
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd77d9543eec3842ba9cb8c956fe5fe
+      internalID: 591161766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_5
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 2191
+        width: 747
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bdfdff78f3f3c441abd51d4678a54e5
+      internalID: -1275535886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_14
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1966
+        width: 521
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38ebe237fbe20243b02646c7a014f87
+      internalID: 1443599725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_16
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1823
+        width: 670
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77db0fdeef2cb7747bc7c92902c7a688
+      internalID: -2043723986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_19
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1536
+        width: 821
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fb627f6b903cc41adc9f5a3f0df554
+      internalID: 1929382769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_20
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1490
+        width: 326
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9da13ef769b401489d4e5614c30bbf6
+      internalID: -1590344696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_21
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 1514
+        width: 323
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e62e9b8b7d0ffc4db7fc889d7a59be2
+      internalID: -1488498018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_22
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1335
+        width: 1267
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be355470723f9844ea6863c825189aa4
+      internalID: -1398001892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 668
+        width: 801
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af04af2881d83df4f86b00a17094968f
+      internalID: -1336943154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_26
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 753
+        width: 912
+        height: 538
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a609fc81fb4483f4f88e77afd9e8e9dc
+      internalID: 1029416739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_27
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 99
+        width: 760
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56899e1125d33e4f85ac15549c9c33d
+      internalID: 893924501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Graffiti Tags_29
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 129
+        width: 776
+        height: 490
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635ddc8ea5c251142aa59d3033229b6a
+      internalID: -851056499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 88aae6e6638131e47987f5e50a7f784b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Graffiti Tags_0: 591161766
+      Graffiti Tags_1: 888192651
+      Graffiti Tags_10: 2107095220
+      Graffiti Tags_11: 202858007
+      Graffiti Tags_12: -59269114
+      Graffiti Tags_13: -49926044
+      Graffiti Tags_14: 1443599725
+      Graffiti Tags_15: -1715575846
+      Graffiti Tags_16: -2043723986
+      Graffiti Tags_17: 941446558
+      Graffiti Tags_18: 1037361599
+      Graffiti Tags_19: 1929382769
+      Graffiti Tags_2: 1326220804
+      Graffiti Tags_20: -1590344696
+      Graffiti Tags_21: -1488498018
+      Graffiti Tags_22: -1398001892
+      Graffiti Tags_23: -907682843
+      Graffiti Tags_24: 974947670
+      Graffiti Tags_25: -1336943154
+      Graffiti Tags_26: 1029416739
+      Graffiti Tags_27: 893924501
+      Graffiti Tags_28: -78537320
+      Graffiti Tags_29: -851056499
+      Graffiti Tags_3: 1679605677
+      Graffiti Tags_30: 1096478311
+      Graffiti Tags_31: -661661433
+      Graffiti Tags_32: -1812851396
+      Graffiti Tags_4: -1426457261
+      Graffiti Tags_5: -1275535886
+      Graffiti Tags_6: -2083557195
+      Graffiti Tags_7: -1650566167
+      Graffiti Tags_8: 713847983
+      Graffiti Tags_9: -1624368130
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

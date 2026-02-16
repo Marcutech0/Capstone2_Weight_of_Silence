@@ -1,0 +1,375 @@
+fileFormatVersion: 2
+guid: 854f92406910ac34aa602224e9cfbb2c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1716
+        width: 160
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b1c6c908b0ca84091af285ed71a8f2
+      internalID: -590900735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_2
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 967
+        width: 906
+        height: 1018
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab0f0c0298b4ee4b97da1e4ed7b9f69
+      internalID: 35586178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_3
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1459
+        width: 225
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a109bb8b2378c7e4f8b2f76c46994279
+      internalID: -636653241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_4
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1369
+        width: 519
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e23bf880351aa45ab98d85b0a54ca8
+      internalID: 60781478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_5
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1015
+        width: 179
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa143045b925e474baa8cef573877c42
+      internalID: -1428257983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_6
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 1031
+        width: 478
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210a0923be6ebd84b8929e402be9b81d
+      internalID: -1884053764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_7
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 30
+        width: 609
+        height: 905
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a31e86612404ff44b8e927672530b40
+      internalID: 2123052661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_8
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 33
+        width: 809
+        height: 875
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6c67bf9419b6f41801b7a249f1e640
+      internalID: -89234870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_9
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 508
+        width: 333
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e26e08d294e53f448b43e45f45aa36e
+      internalID: 346317069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_10
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 325
+        width: 516
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa45b547f42d8b43b94d1c95860dbb8
+      internalID: -265230139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CAMPUS COURTYARD EVENT TILESET_NIGHT_13
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 30
+        width: 626
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e0de65c2a3ae7443974bd8524eaf2c1
+      internalID: -1713822574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1a16668c2871fe34ea10d593b782e265
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_0: 1431704283
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_1: -590900735
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_10: -265230139
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_11: -1144923392
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_12: 248087128
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_13: -1713822574
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_2: 35586178
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_3: -636653241
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_4: 60781478
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_5: -1428257983
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_6: -1884053764
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_7: 2123052661
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_8: -89234870
+      CAMPUS COURTYARD EVENT TILESET_NIGHT_9: 346317069
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

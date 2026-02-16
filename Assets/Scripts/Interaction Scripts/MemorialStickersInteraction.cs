@@ -32,7 +32,7 @@ public class MemorialStickersInteraction : MonoBehaviour
             _DialogueIndex++;
             if (_DialogueIndex == 1)
             {
-                StartCoroutine(ShowNewDialogueNarrator("Names written in pen."));
+                StartCoroutine(ShowNewDialogueNarrator("Names written in paint."));
             }
 
             else if (_DialogueIndex == 2)
@@ -42,7 +42,11 @@ public class MemorialStickersInteraction : MonoBehaviour
 
             else if (_DialogueIndex == 3) 
             {
-                StartCoroutine(ShowNewDialogueNarrator("Some half-torn."));
+                StartCoroutine(ShowNewDialogueNarrator("Some half-erased."));
+            }
+            else if (_DialogueIndex == 4)
+            {
+                EndDialogue();
             }
         }
     }
