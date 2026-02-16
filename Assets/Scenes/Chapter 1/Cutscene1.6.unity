@@ -185,6 +185,8 @@ MonoBehaviour:
   _LiamsMessages: {fileID: 0}
   _RayasMessages: {fileID: 0}
   _ChoiceResult: 0
+  _HasInteractedPhone: 0
+  _ReplyButton: {fileID: 0}
 --- !u!1 &24372793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,7 +2188,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482990187}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d04e776c9f552174eb48613627af639c, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: fea8270bd0c29d1499999e0f586cc1ff, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
