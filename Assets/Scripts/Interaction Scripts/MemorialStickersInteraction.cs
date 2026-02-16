@@ -42,7 +42,7 @@ public class MemorialStickersInteraction : MonoBehaviour
 
             else if (_DialogueIndex == 3) 
             {
-                StartCoroutine(ShowNewDialogueNarrator("Some half-torn."));
+                StartCoroutine(ShowNewDialogueNarrator("Some half-erased."));
             }
         }
     }
