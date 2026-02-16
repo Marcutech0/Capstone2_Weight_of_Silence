@@ -8,6 +8,13 @@ public class MainMenu_Manager : MonoBehaviour
     public GameObject Settings_Menu;
     public GameObject CreditsPanel;
 
+    public Vector2 hoverOffset = new Vector2(30f, 0f);
+    public float slideSpeed = 10f;
+
+    private RectTransform _rect;
+    private Vector2 _originalPosition;
+    private Vector2 _targetPosition;
+
 
     //Audio Section
     [SerializeField] private AudioClip ClickSfx;
@@ -75,6 +82,17 @@ public class MainMenu_Manager : MonoBehaviour
         CreditsPanel.SetActive(false);
 
     }
+
+    public void HoverEnter()
+    {
+        _targetPosition = _originalPosition + hoverOffset;
+    }
+
+    public void HoverExit()
+    {
+        _targetPosition = _originalPosition;
+    }
+
 
 }
 
