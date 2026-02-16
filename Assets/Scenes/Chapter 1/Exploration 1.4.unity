@@ -1407,6 +1407,8 @@ MonoBehaviour:
   _LiamsMessages: {fileID: 0}
   _RayasMessages: {fileID: 0}
   _ChoiceResult: 0
+  _HasInteractedPhone: 0
+  _ReplyButton: {fileID: 0}
 --- !u!224 &258809680
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1736,6 +1738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 1
   animator: {fileID: 290191251}
+  isFacingRight: 1
 --- !u!95 &290191251
 Animator:
   serializedVersion: 7
@@ -4724,7 +4727,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 17165a9ff508a6d419c8fbaadaf1b1e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4979,7 +4982,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 413909971}
-  m_VersionIndex: 6703
+  m_VersionIndex: 6707
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12198,7 +12201,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: f509d6b359a72224c9349916b45f8a81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12402,7 +12405,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 994613020}
-  m_VersionIndex: 2681
+  m_VersionIndex: 2685
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12498,7 +12501,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 17165a9ff508a6d419c8fbaadaf1b1e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12753,7 +12756,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 579086794}
-  m_VersionIndex: 5889
+  m_VersionIndex: 5893
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

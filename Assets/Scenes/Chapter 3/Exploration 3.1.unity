@@ -3666,6 +3666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 1
   animator: {fileID: 472638568}
+  isFacingRight: 1
 --- !u!143 &472638570
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5757,6 +5758,8 @@ MonoBehaviour:
   _LiamsMessages: {fileID: 0}
   _RayasMessages: {fileID: 0}
   _ChoiceResult: 0
+  _HasInteractedPhone: 0
+  _ReplyButton: {fileID: 0}
 --- !u!224 &871365885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11215,7 +11218,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 4d804eaf78571f04889abcf8b5b1cac0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11419,7 +11422,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 51380306}
-  m_VersionIndex: 4261
+  m_VersionIndex: 4265
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12352,7 +12355,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: a2faee9f9fb54ca44beb7bf9b6f70b6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12607,7 +12610,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 707648416}
-  m_VersionIndex: 9376
+  m_VersionIndex: 9384
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
