@@ -82,6 +82,7 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _ChoicePanel1.SetActive(false);
+        _DialoguePanel.SetActive(false);
         _CanContinue = false;
         StartCoroutine(EndDialogueDelay());
         StartCoroutine(CallNextScene());
