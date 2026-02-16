@@ -22,6 +22,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     public ResearchTitleSpawner _CurrentTitleActivePolitics, _CurrentTitleActiveCulture, _CurrentTitleActiveEducation;
 
     public GameObject _TutorialPanel;
+    public GameFlowLegendManager _LegendManager;
     void Start()
     {
         _StopTimer = false;
@@ -80,35 +81,84 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
 
     private void WinAndFailCon()
     {
-        if (_WrongPoints >= 3)
+        if (_WrongPoints >= 3) // Lose
         {
             _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
             _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
             _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
             _StopTimer = true;
-            _GameStatus.text = "You failed! too many miscategorized titles";
+            _LegendManager._CourageCount--;
+            _LegendManager._FearCount += 2;
+            _LegendManager._GuiltCount++;
+            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Fear  Count", _LegendManager._FearCount);
+            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.Save();
+            _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
-            SceneManager.LoadScene("Exploration 2.3");
+            UpdateUI();
+            StartCoroutine(CallNextScene());
         }
 
-        else if (_StopTimer && _CorrectPoints == 0)
+        else if (_StopTimer && _CorrectPoints == 0) // Lose
         {
             _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
             _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
             _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
-            _GameStatus.text = "You failed! no titles were categorized";
+            _LegendManager._CourageCount--;
+            _LegendManager._FearCount += 2;
+            _LegendManager._GuiltCount++;
+            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Fear  Count", _LegendManager._FearCount);
+            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.Save();
+            _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
-            SceneManager.LoadScene("Exploration 2.3");
+            UpdateUI();
+            StartCoroutine(CallNextScene());
         }
 
-        else if (_StopTimer && _WrongPoints < 3)
+        else if (_StopTimer && _WrongPoints < 3)// Win
         {
             _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
             _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
             _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
-            _GameStatus.text = "You won! titles were categorized!";
+            _LegendManager._CourageCount += 5;
+            _LegendManager._ReputationCount += 3;
+            _LegendManager._GuiltCount -= 2;
+            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Reputation  Count", _LegendManager._ReputationCount);
+            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.Save();
+            _GameStatus.text = "You won! Evidence Gained";
             _GameStatusObject.SetActive(true);
-            SceneManager.LoadScene("Exploration 2.3");
+            UpdateUI();
+            StartCoroutine(CallNextScene());
         }
+    }
+
+    public void UpdateUI()
+    {
+        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
+        _LegendManager._FearText.text = "Fear: " + _LegendManager._FearCount;
+        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
+        _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
+        _LegendManager._Courage.SetActive(true);
+        _LegendManager._Fear.SetActive(true);
+        _LegendManager._Guilt.SetActive(true);
+        _LegendManager._Reputation.SetActive(true);
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        _LegendManager._Courage.SetActive(false);
+        _LegendManager._Fear.SetActive(false);
+        _LegendManager._Guilt.SetActive(false);
+        _LegendManager._Reputation.SetActive(false);
+
+        yield return new WaitForSeconds(1.5f);
+        _GameStatus.text = "Moving to Campus";
+        SceneManager.LoadScene("Exploration 2.3");
     }
 }

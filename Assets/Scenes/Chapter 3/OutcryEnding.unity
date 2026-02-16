@@ -858,7 +858,7 @@ MonoBehaviour:
   _DialoguePanel: {fileID: 363821179}
   _NpcName: {fileID: 839128396}
   _StoryText: {fileID: 1616679852}
-  _Storyline: Same classroom. Empty. Evening.
+  _Storyline: Graduation day.
   _DialogueIndex: 0
   _CanContinue: 0
   _FadeText: {fileID: 1258548870}

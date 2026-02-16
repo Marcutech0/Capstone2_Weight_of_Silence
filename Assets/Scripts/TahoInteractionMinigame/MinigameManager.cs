@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 public class MinigameManager : MonoBehaviour
 {
     public static MinigameManager _Instance;
@@ -13,9 +14,10 @@ public class MinigameManager : MonoBehaviour
     public TextMeshProUGUI _GameStatusText;
     public CanvasGroup _TahoPanel;
     public GameObject _TutorialPanel;
+    public Slider _TahoSlider;
 
     [Header("MinigameSettings")]
-    public float _GameDuration = 20f;
+    public float _GameDuration;
     private float _RemainingTime;
     private bool _GameActive = false;
     public ReleaseManager _OverfillManager;
@@ -27,6 +29,8 @@ public class MinigameManager : MonoBehaviour
     public float _MinSpillAmount;
     public float _MaxSpillAmount;
 
+    public GameFlowLegendManager _LegendManager;
+
     public void Awake()
     {
          // set the instance to this Manager
@@ -37,6 +41,20 @@ public class MinigameManager : MonoBehaviour
     {
         // starts minigame
         StartCoroutine(StartMinigame());
+    }
+
+    public void UpdateFillSlider(float value)
+    {
+        if (_TahoSlider != null)
+            _TahoSlider.value = value;
+    }
+
+    public void Update()
+    {
+        if (CupClickManager._CurrentlySelectedCup != null)
+        {
+            _TahoSlider.value = CupClickManager._CurrentlySelectedCup._FillPercent;
+        }
     }
 
     IEnumerator StartMinigame()
@@ -112,17 +130,22 @@ public class MinigameManager : MonoBehaviour
     {
         // lose win conditions
         _GameActive = false;
-        if (_OverfillManager._OverfillCount >= 3)
+        if (_OverfillManager._OverfillCount >= 3) // Lose
         {
             _GameStatusText.text = "Game over! spilled to many cups!";
         }
 
-        else 
+        else // Win
         {
+            _LegendManager._CourageCount++;
+            _LegendManager._GuiltCount--;
+            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.Save();
             _GameStatusText.text = "Time's up, good job!";
         }
-
-        SceneManager.LoadScene("Exploration 1.2");
+        UpdateUI();
+        StartCoroutine(CallNextScene());
     }
     public bool _IsGameActive() 
     {
@@ -144,5 +167,24 @@ public class MinigameManager : MonoBehaviour
     bool IsPaused() 
     {
         return _TutorialPanel != null && _TutorialPanel.activeSelf;
+    }
+
+    public void UpdateUI()
+    {
+        _LegendManager._CourageText.text = "Courage: " + _LegendManager._CourageCount;
+        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
+        _LegendManager._Courage.SetActive(true);
+        _LegendManager._Guilt.SetActive(true);
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        _LegendManager._Courage.SetActive(false);
+        _LegendManager._Guilt.SetActive(false);
+
+        yield return new WaitForSeconds(1.5f);
+        _GameStatusText.text = "Moving to Campus";
+        SceneManager.LoadScene("Exploration 1.2");
     }
 }

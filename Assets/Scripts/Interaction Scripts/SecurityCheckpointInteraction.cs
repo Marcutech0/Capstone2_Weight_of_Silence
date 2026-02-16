@@ -35,6 +35,26 @@ public class SecurityCheckpointInteraction : MonoBehaviour
 
             if (_DialogueIndex == 1)
             {
+                StartCoroutine(ShowNewDialogueNarrator("He looks at faces longer."));
+            }
+
+            else if (_DialogueIndex == 2) 
+            {
+                StartCoroutine(ShowNewDialogueNarrator("At bags."));
+            }
+
+            else if (_DialogueIndex == 3) 
+            {
+                StartCoroutine(ShowNewDialogueNarrator("At phones."));
+            }
+
+            else if (_DialogueIndex == 4) 
+            {
+                StartCoroutine(ShowNewDialogueNarrator("You hesitate before stepping forward."));
+            }
+
+            else 
+            {
                 EndDialogue();
             }
         }
@@ -73,10 +93,29 @@ public class SecurityCheckpointInteraction : MonoBehaviour
         _CanContinue = true;
     }
 
+    IEnumerator ShowNewDialogueNarrator(string _NewLine) 
+    {
+        _DialoguePanel.SetActive(true);
+        _InteractIndicator.SetActive(false);
+
+        _PlayerController.enabled = false;
+        _PlayerControls.enabled = false;
+
+        _StoryText.text = "";
+
+        foreach (char c in _NewLine)
+        {
+            _StoryText.text += c;
+            yield return new WaitForSeconds(0.01f);
+        }
+        _CanContinue = true;
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Security Checkpoint") && !_HasInteracted)
         {
+
             _IsInRange = true;
             _InteractIndicator.SetActive(true);
 

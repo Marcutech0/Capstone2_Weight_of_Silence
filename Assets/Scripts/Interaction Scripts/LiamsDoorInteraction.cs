@@ -7,13 +7,30 @@ public class LiamsDoorInteraction : MonoBehaviour
 {
     public TextMeshProUGUI _PhoneNotif;
     public GameObject _InteractIndicator;
+    public PhoneExploration1_1 _Phone;
+    public GameObject _PhoneButton;
+    public Deskinteraction _Desk;
+    public MirrorInteraction _Mirror;
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LiamsDoor"))
         {
             _InteractIndicator.SetActive(true);
-            _PhoneNotif.text = "Please Check your Phone First and reply to Raya";
+            _PhoneNotif.text = "Please Interact with the Desk and Mirror to acces your phone";
+
+            if (_Desk._HasInteracted && _Mirror._HasInteracted)
+            {
+                _PhoneButton.SetActive(true);
+                _PhoneNotif.text = "You may now access your phone";
+
+                if (_Phone._HasInteractedPhone && _Desk._HasInteracted && _Mirror._HasInteracted)
+                {
+                    _PhoneNotif.text = "Going to Campus Courtyard";
+                    StartCoroutine(CallNextScene());
+                }
+            }
+ 
         }
     }
 
@@ -23,5 +40,11 @@ public class LiamsDoorInteraction : MonoBehaviour
         {
             _InteractIndicator.SetActive(false);
         }
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Cutscene1.2");
     }
 }

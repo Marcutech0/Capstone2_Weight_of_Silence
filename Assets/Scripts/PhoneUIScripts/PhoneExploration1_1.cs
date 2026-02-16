@@ -18,14 +18,20 @@ public class PhoneExploration1_1 : MonoBehaviour
     public LiamsDoorInteraction _DormDoor;
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public LiamsMessages _LiamsMessages;
+    public RayasMessages _RayasMessages;
+    public int _ChoiceResult;
+    public bool _HasInteractedPhone;
+    public GameObject _ReplyButton;
     public void OpenPhone()
     {
-        _PhonePanel.SetActive(true);
+        _HomeUI.SetActive(true);
     }
 
     public void OpenMessages()
     {
         _MessagesUI.SetActive(true);
+        _HomeUI.SetActive(false);
     }
 
     public void Reply()
@@ -46,6 +52,12 @@ public class PhoneExploration1_1 : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         StartCoroutine(RayasReplyDelayChoice1());
+        _ChoiceResult = 1;
+        PlayerPrefs.SetInt("ChoiceResult", _ChoiceResult);
+        PlayerPrefs.Save();
+        _HasInteractedPhone = true;
+        _ReplyButton.SetActive(false);
+
     }
 
     public void Choice1_2() 
@@ -61,6 +73,11 @@ public class PhoneExploration1_1 : MonoBehaviour
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         StartCoroutine(RayasReplyDelayChoice2());
+        _ChoiceResult = 2;
+        PlayerPrefs.SetInt("ChoiceResult", _ChoiceResult);
+        PlayerPrefs.Save();
+        _HasInteractedPhone = true;
+        _ReplyButton.SetActive(false);
     }
 
 
@@ -68,6 +85,7 @@ public class PhoneExploration1_1 : MonoBehaviour
     {
         _PlayerControls.enabled = false;
         _PlayerController.enabled = false;
+        _ReplyChoice1.SetActive(false);
         _LegendManager._AnonymityCount++;
         _LegendManager._GuiltCount++;
         _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
@@ -78,11 +96,18 @@ public class PhoneExploration1_1 : MonoBehaviour
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         StartCoroutine(SeenStatusDelay());
+        _ChoiceResult = 3;
+        PlayerPrefs.SetInt("ChoiceResult", _ChoiceResult);
+        PlayerPrefs.Save();
+        _HasInteractedPhone = true;
+        _ReplyButton.SetActive(false);
+
+
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             if (_ReplyChoice1.activeSelf)
             {
@@ -90,15 +115,15 @@ public class PhoneExploration1_1 : MonoBehaviour
                 return;
             }
 
-            if (_MessagesUI.activeSelf)
+            else if (_MessagesUI.activeSelf)
             {
                 _MessagesUI.SetActive(false);
                 return;
             }
 
-            if (_PhonePanel.activeSelf)
+            else if (_HomeUI.activeSelf)
             {
-                _PhonePanel.SetActive(false);
+                _HomeUI.SetActive(false);
                 return;
             }
         }
@@ -110,7 +135,9 @@ public class PhoneExploration1_1 : MonoBehaviour
         _RayaMessageBox.SetActive(true);
         _RayaReplyText.text = "Good. Don’t disappear on me today, okay?";
         yield return new WaitForSeconds(1f);
-        StartCoroutine(CallNextSceneRoutine());
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
+
     }
 
     IEnumerator RayasReplyDelayChoice2()
@@ -119,7 +146,8 @@ public class PhoneExploration1_1 : MonoBehaviour
         _RayaMessageBox.SetActive(true);
         _RayaReplyText.text = "Later, then.";
         yield return new WaitForSeconds(1f);
-        StartCoroutine(CallNextSceneRoutine());
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
     IEnumerator SeenStatusDelay()
@@ -129,19 +157,9 @@ public class PhoneExploration1_1 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _SeenText.SetActive(false);
         yield return new WaitForSeconds(1f);
-        StartCoroutine(CallNextSceneRoutine());
+        _PlayerController.enabled = true;
+        _PlayerControls.enabled = true;
     }
 
-    IEnumerator CallNextSceneRoutine()
-    {
-        _HomeUI.SetActive(false);
-        _MessagesUI.SetActive(false);
-        _LegendManager._Reputation.SetActive(false);
-        _LegendManager._Guilt.SetActive(false);
-        _LegendManager._Anonymity.SetActive(false);
-        _DormDoor._InteractIndicator.SetActive(true);
-        _DormDoor._PhoneNotif.text = "Going to Campus Courtyard";
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Cutscene1.2");
-    }
+    
 }

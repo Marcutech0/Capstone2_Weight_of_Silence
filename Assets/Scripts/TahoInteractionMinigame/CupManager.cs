@@ -78,8 +78,11 @@ public class CupClickManager : MonoBehaviour, IPointerClickHandler
         if (_SelectedCupText != null)
             _SelectedCupText.text = $"Selected Cup: {_Index}";
 
-        if (_FillPercentText != null)
-            _FillPercentText.text = $"{_CupData._FillPercent:0}%";
+        if (MinigameManager._Instance != null)
+        {
+            MinigameManager._Instance.UpdateFillSlider(_CupData._FillPercent);
+        }
+
     }
 }
 

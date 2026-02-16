@@ -10,6 +10,13 @@ public class Exploration2_3Narrator : MonoBehaviour
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
     public GameObject _ChoicePanel1;
+    public GameObject _PhonePanel;
+    public GameObject _HomeUI;
+    public GameObject _MessagesUI;
+    public GameObject _RayaMessageBox;
+    public GameObject _PhoneNotif;
+    public TextMeshProUGUI _PhoneNotifText;
+
     [TextArea] public string _Storyline;
 
     [SerializeField] private int _DialogueIndex;
@@ -17,6 +24,7 @@ public class Exploration2_3Narrator : MonoBehaviour
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
     public GameFlowLegendManager _LegendManager;
+    public PhoneExploration1_1 _Phone;
     void Start()
     {
         _NpcName.text = string.Empty;
@@ -38,7 +46,27 @@ public class Exploration2_3Narrator : MonoBehaviour
 
             else if (_DialogueIndex == 2)
             {
-                StartCoroutine(ShowNewDialogueRaya("Ingat ka."));
+                _PhonePanel.SetActive(true);
+                int _Result = PlayerPrefs.GetInt("ChoiceResult", 0);
+                if (_Result == 1)
+                {
+                    _Phone._ReplyText.text = "I’m alive, promise.";
+                    _Phone._RayaReplyText.text = "Good. Don’t disappear on me today, okay?";
+                }
+
+                else if (_Result == 2)
+                {
+                    _Phone._ReplyText.text = "Sure. We’ll talk later.";
+                    _Phone._RayaReplyText.text = "Later, then.";
+                }
+
+                else if (_Result == 3)
+                {
+                    _Phone._LiamMessageBox.SetActive(false);
+                    _Phone._RayaMessageBox.SetActive(false);
+                    _RayaMessageBox.transform.localPosition = new Vector3(-99.93086f, 159, 0);
+                }
+                _CanContinue = true;
             }
 
             else if (_DialogueIndex == 3)
@@ -50,16 +78,20 @@ public class Exploration2_3Narrator : MonoBehaviour
             else if (_DialogueIndex == 5)
             {
                 StartCoroutine(ShowNarratorNewDialogue("The portal updates"));
+
             }
 
             else if (_DialogueIndex == 6)
             {
-                StartCoroutine(ShowNarratorNewDialogue("Submission received."));
+               _HomeUI.SetActive(true);
+               _MessagesUI.SetActive(false);
+                StartCoroutine(PhoneNotifRoutine());
             }
 
             else if (_DialogueIndex == 7)
             {
                 StartCoroutine(ShowNarratorNewDialogue("No feedback."));
+                _PhonePanel.SetActive(false);
             }
 
             else
@@ -95,6 +127,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         StartCoroutine(LegendManagerDelay());
         _ChoicePanel1.SetActive(false);
         _DialogueIndex++;
+        _PhonePanel.SetActive(false);
     }
 
     public void Choice2()
@@ -111,6 +144,8 @@ public class Exploration2_3Narrator : MonoBehaviour
         StartCoroutine(LegendManagerDelay());
         _ChoicePanel1.SetActive(false);
         _DialogueIndex++;
+        _PhonePanel.SetActive(false);
+
     }
 
     IEnumerator ShowNarratorDialogue()
@@ -170,5 +205,16 @@ public class Exploration2_3Narrator : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Cutscene2.3");
+    }
+
+    IEnumerator PhoneNotifRoutine()
+    {
+        _PhonePanel.SetActive(true);
+        _PhoneNotif.SetActive(true);
+        _PhoneNotifText.text = "Submission received.";
+
+        yield return new WaitForSeconds(1f);
+        _PhoneNotif.SetActive(false);
+        _CanContinue = true;
     }
 }
