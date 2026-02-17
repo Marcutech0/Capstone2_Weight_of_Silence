@@ -36,14 +36,7 @@ public class GameMenu_Manager : MonoBehaviour
     public void ExitGame()
     {
         PlayClickSFX();
-
-#if UNITY_EDITOR
-        // stop Play Mode in the Editor
-        EditorApplication.isPlaying = false;
-#else
-        // quit in a build
         Application.Quit();
-#endif
     }
     public void CallNextScene()
     {
