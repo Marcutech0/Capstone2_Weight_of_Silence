@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1206865308, guid: a91de0f954a86884aa6aeb0a3b635806, type: 3}
+  m_Sprite: {fileID: -626373544, guid: 168b9292339e777478cc7f91645ba7b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,3 +89,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CupData
   _FillPercent: 0
+  _CupImage: {fileID: 156318746298370298}
+  _EmptySprite: {fileID: -626373544, guid: 168b9292339e777478cc7f91645ba7b4, type: 3}
+  _PouringSprite: {fileID: 979548878, guid: 46c06e863aedf014d85d1019023019e0, type: 3}
