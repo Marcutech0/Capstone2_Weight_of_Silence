@@ -3354,8 +3354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 0}
-  _Spawner: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &529737201
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,8 +5205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
-  _MinigameScreen: {fileID: 0}
-  _Spawner: {fileID: 0}
+  _MinigameScreen: {fileID: 1413549035}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &900994693
 GameObject:
   m_ObjectHideFlags: 0

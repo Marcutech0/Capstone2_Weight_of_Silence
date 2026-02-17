@@ -103,7 +103,7 @@ public class RayaInteractionLectureHall : MonoBehaviour
         _DialogueIndex = 1;
         _CanContinue = false;
         _NpcName.text = "Raya";
-        StartCoroutine(ShowNewDialogueText("That�s what they always call them."));
+        StartCoroutine(ShowNewDialogueText("That's what they always call them."));
     }
 
     public void Choice2LectureHall()
