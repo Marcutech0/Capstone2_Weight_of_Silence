@@ -2,7 +2,7 @@
 - Project name: Capstone1_Prototype
 - Unity version: Unity 6000.2.9f1
 - Active game object:
-  - Name: Desk
-  - Tag: Desk
-  - Layer: Default
+  - Name: Tutorial Panel
+  - Tag: Untagged
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
