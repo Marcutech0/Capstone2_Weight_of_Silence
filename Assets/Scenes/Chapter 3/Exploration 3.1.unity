@@ -1801,6 +1801,7 @@ MonoBehaviour:
   _PlayerControls: {fileID: 194532402}
   _IsInRange: 0
   _HasInteracted: 0
+  _DialogueFinished: 0
   _DialogueIndex: 0
   _CanContinue: 0
 --- !u!114 &194532408
@@ -11187,6 +11188,7 @@ Transform:
   - {fileID: 2503253}
   - {fileID: 907664160}
   - {fileID: 1397177308}
+  - {fileID: 1483757151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464977737
@@ -11398,7 +11400,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6681491498867929285, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: ee5778d41a3a881449c1a86c0e491684, type: 3}
+  m_Resource: {fileID: 8300000, guid: e57c3b148ffd1964ab8f13998e4927e3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

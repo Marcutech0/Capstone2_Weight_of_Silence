@@ -8550,8 +8550,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 2.4863195}
-  m_Center: {x: 0, y: 0, z: -0.4948492}
+  m_Size: {x: 1, y: 1.8142629, z: 2.4863195}
+  m_Center: {x: 0, y: 0.40713143, z: -0.4948492}
 --- !u!1 &1193815973
 GameObject:
   m_ObjectHideFlags: 0
@@ -9005,11 +9005,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6681491498867929285, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: ee5778d41a3a881449c1a86c0e491684, type: 3}
+  m_Resource: {fileID: 8300000, guid: 64be954ad6894bf4db2ca66983bccd1f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -11094,8 +11094,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20.003054, y: 1.5354658, z: 1}
-  m_Center: {x: 9.168242, y: 0.26773304, z: 0}
+  m_Size: {x: 20.003054, y: 4.3241386, z: 1}
+  m_Center: {x: 9.168242, y: 1.6620691, z: 0}
 --- !u!1 &1584445485
 GameObject:
   m_ObjectHideFlags: 0
@@ -15003,8 +15003,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 2.4863195}
-  m_Center: {x: 0, y: 0, z: -0.4948492}
+  m_Size: {x: 1, y: 3.1248198, z: 2.4863195}
+  m_Center: {x: 0, y: 1.0624099, z: -0.4948492}
 --- !u!1 &2075856564
 GameObject:
   m_ObjectHideFlags: 0
