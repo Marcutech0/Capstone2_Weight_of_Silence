@@ -111,6 +111,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+       
     }
 
     public void Choice1()
@@ -198,6 +199,9 @@ public class Exploration2_3Narrator : MonoBehaviour
 
     IEnumerator CallNextScene()
     {
+        _PlayerController.enabled = false;
+        _PlayerControls.enabled = false;
+        _PhoneButtonsUI.SetActive(false);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Cutscene2.3");
     }
@@ -218,6 +222,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         if (other.CompareTag("Door")) 
         {
             StartCoroutine(CallNextScene());
+            
         }
     }
 }

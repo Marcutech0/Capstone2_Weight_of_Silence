@@ -14,7 +14,7 @@ public class CutScene2_2 : MonoBehaviour
     public TextMeshProUGUI _NotifText1;
     public TextMeshProUGUI _NotifText2;
     public TextMeshProUGUI _NotifText3;
-    public GameObject _PhonePanel;
+    public GameObject _HomeUI;
     [TextArea] public string _Storyline;
 
     [SerializeField] private int _DialogueIndex;
@@ -44,19 +44,19 @@ public class CutScene2_2 : MonoBehaviour
             else if (_DialogueIndex == 3)
             {
                 StartCoroutine(ShowNarratorNewDialogue("You scroll."));
-                _PhonePanel.SetActive(false);
+                _HomeUI.SetActive(false);
             }
 
             else if (_DialogueIndex == 4)
             {
                 StartCoroutine(ShowNarratorNewDialogue("Raya’s name is still there."));
-                _PhonePanel.SetActive(false);
+                _HomeUI.SetActive(false);
             }
 
             else if (_DialogueIndex == 5)
             {
                 StartCoroutine(ShowNarratorNewDialogue("No explanation. Just a deadline."));
-                _PhonePanel.SetActive(false);
+                _HomeUI.SetActive(false);
             }
 
             else 
@@ -107,7 +107,7 @@ public class CutScene2_2 : MonoBehaviour
 
     IEnumerator PhoneNotifRoutine()
     {
-        _PhonePanel.SetActive(true);
+        _HomeUI.SetActive(true);
         yield return new WaitForSeconds(1f);
         _NotifPanel1.SetActive(true);
         _NotifText1.text = "CAPSTONE PROGRESS REVIEW";

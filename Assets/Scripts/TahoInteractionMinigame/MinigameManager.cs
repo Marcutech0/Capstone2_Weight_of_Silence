@@ -15,6 +15,9 @@ public class MinigameManager : MonoBehaviour
     public CanvasGroup _TahoPanel;
     public GameObject _TutorialPanel;
     public Slider _TahoSlider;
+    public GameObject _WinLoseScreen;
+    public GameObject _GameStatus;
+    public GameObject _Continue;
 
     [Header("MinigameSettings")]
     public float _GameDuration;
@@ -133,6 +136,9 @@ public class MinigameManager : MonoBehaviour
         if (_OverfillManager._OverfillCount >= 3) // Lose
         {
             _GameStatusText.text = "Game over! spilled to many cups!";
+            _GameStatus.SetActive(true);
+            _WinLoseScreen.SetActive(true);
+            
         }
 
         else // Win
@@ -143,8 +149,10 @@ public class MinigameManager : MonoBehaviour
             PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
             PlayerPrefs.Save();
             _GameStatusText.text = "Time's up, good job!";
+            _WinLoseScreen.SetActive(true);
+            _GameStatus.SetActive(true);
+            
         }
-        StartCoroutine(CallNextScene());
     }
     public bool _IsGameActive() 
     {
@@ -176,14 +184,20 @@ public class MinigameManager : MonoBehaviour
         _LegendManager._Guilt.SetActive(true);
     }
 
+    public void End() 
+    {
+        StartCoroutine(CallNextScene());
+    }
+
+
     IEnumerator CallNextScene()
     {
+        
+        _Continue.SetActive(false);
         yield return new WaitForSeconds(1f);
-        _LegendManager._Courage.SetActive(false);
-        _LegendManager._Guilt.SetActive(false);
-
-        yield return new WaitForSeconds(1.5f);
         _GameStatusText.text = "Moving to Campus";
         SceneManager.LoadScene("Exploration 1.2");
     }
+
+    
 }

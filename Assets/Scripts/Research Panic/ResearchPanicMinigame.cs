@@ -12,7 +12,6 @@ public class ResearchPanicMinigame : MonoBehaviour
     public float _MinigameDuration;
     public bool _StopTimer;
     public float _CurrentTime;
-    public GameObject _TutorialPanel;
     [Header("Points System")]
     public int _CorrectPoints;
     public int _WrongPoints;
@@ -20,9 +19,19 @@ public class ResearchPanicMinigame : MonoBehaviour
     public TextMeshProUGUI _WrongPointsText;
     public TextMeshProUGUI _GameStatus;
     public GameObject _GameStatusObject;
-    public ResearchTitleSpawner _CurrentTitleActivePolitics, _CurrentTitleActiveCulture, _CurrentTitleActiveEducation;
 
+
+    public GameObject _TutorialPanel;
     public GameFlowLegendManager _LegendManager;
+    public GameObject _LoseScreen;
+    public GameObject _WinScreen;
+    public GameObject _Continue;
+    public GameObject _ImagePopper;
+    public GameObject _Distractions;
+    public GameObject _ResearchTexts;
+    public GameObject _PoliticsHolder;
+    public GameObject _CultureHolder;
+    public GameObject _EducationHolder;
 
     void Start()
     {
@@ -60,7 +69,18 @@ public class ResearchPanicMinigame : MonoBehaviour
     {
         _CorrectPoints++;
         _CorrectPointsText.text = " Correct Categorized Title: " + _CorrectPoints;
-        WinAndFailCon();
+
+        if ((_CorrectPoints + _WrongPoints) >= 9)
+        {
+            _StopTimer = true;
+            WinAndFailCon();
+        }
+
+        else if (_CorrectPoints >= 9)
+        {
+            _StopTimer = true;
+            WinAndFailCon();
+        }
     }
 
     public void AddWrongPoints() 
@@ -84,9 +104,10 @@ public class ResearchPanicMinigame : MonoBehaviour
     {
         if (_WrongPoints >= 3) // Lose
         {
-            _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
-            _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
-            _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
+            _ResearchTexts.SetActive(true);
+            _PoliticsHolder.SetActive(false);
+            _CultureHolder.SetActive(false);
+            _EducationHolder.SetActive(false);
             _StopTimer = true;
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
@@ -97,14 +118,18 @@ public class ResearchPanicMinigame : MonoBehaviour
             PlayerPrefs.Save();
             _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
-            StartCoroutine(CallNextScene());
+            _LoseScreen.SetActive(true);
+            _Continue.SetActive(true);
+            _ImagePopper.SetActive(false);
+            _Distractions.SetActive(false);
         }
 
         else if (_StopTimer && _CorrectPoints == 0) // Lose
         {
-            _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
-            _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
-            _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
+            _ResearchTexts.SetActive(true);
+            _PoliticsHolder.SetActive(false);
+            _CultureHolder.SetActive(false);
+            _EducationHolder.SetActive(false);
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
             _LegendManager._GuiltCount++;
@@ -114,14 +139,18 @@ public class ResearchPanicMinigame : MonoBehaviour
             PlayerPrefs.Save();
             _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
-            StartCoroutine(CallNextScene());
+            _LoseScreen.SetActive(true);
+            _Continue.SetActive(true);
+            _ImagePopper.SetActive(false);
+            _Distractions.SetActive(false);
         }
 
         else if (_StopTimer && _WrongPoints < 3) // Win
         {
-            _CurrentTitleActivePolitics._CurrentTitle.SetActive(false);
-            _CurrentTitleActiveCulture._CurrentTitle.SetActive(false);
-            _CurrentTitleActiveEducation._CurrentTitle.SetActive(false);
+            _ResearchTexts.SetActive(true);
+            _PoliticsHolder.SetActive(false);
+            _CultureHolder.SetActive(false);
+            _EducationHolder.SetActive(false);
             _LegendManager._CourageCount += 5;
             _LegendManager._ReputationCount += 3;
             _LegendManager._GuiltCount -= 2;
@@ -131,7 +160,10 @@ public class ResearchPanicMinigame : MonoBehaviour
             PlayerPrefs.Save();
             _GameStatus.text = "You won! Evidence Gained";
             _GameStatusObject.SetActive(true);
-            StartCoroutine(CallNextScene());
+            _WinScreen.SetActive(true);
+            _Continue.SetActive(true);
+            _ImagePopper.SetActive(false);
+            _Distractions.SetActive(false);
         }
     }
 
@@ -149,14 +181,19 @@ public class ResearchPanicMinigame : MonoBehaviour
 
     IEnumerator CallNextScene()
     {
-        yield return new WaitForSeconds(1f);
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Fear.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
         _LegendManager._Reputation.SetActive(false);
+        _Continue.SetActive(false);
 
         yield return new WaitForSeconds(1.5f);
         _GameStatus.text = "Moving to Campus";
         SceneManager.LoadScene("Exploration 1.3");
+    }
+
+    public void EndMinigame()
+    {
+        StartCoroutine(CallNextScene());
     }
 }
