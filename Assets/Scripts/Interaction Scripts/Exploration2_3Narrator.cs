@@ -25,6 +25,7 @@ public class Exploration2_3Narrator : MonoBehaviour
     [SerializeField] bool _CanContinue;
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public Animator _PlayerAnimator;
     public GameFlowLegendManager _LegendManager;
     public PhoneExploration1_1 _Phone;
     void Start()
@@ -111,6 +112,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _PlayerAnimator.enabled = true;
        
     }
 
@@ -150,6 +152,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         _StoryText.text = "";
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         foreach (char c in _Storyline)
         {
@@ -166,6 +169,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         _NpcName.text = string.Empty;
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
@@ -181,6 +185,7 @@ public class Exploration2_3Narrator : MonoBehaviour
         _NpcName.text = "Raya";
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;

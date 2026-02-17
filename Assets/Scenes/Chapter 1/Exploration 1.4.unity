@@ -6648,6 +6648,7 @@ MonoBehaviour:
   _Storyline: Unauthorized gatherings are prohibited.
   _PlayerController: {fileID: 1181558935}
   _PlayerControls: {fileID: 1181558934}
+  _PlayerAnimator: {fileID: 1181558933}
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 1416299615}

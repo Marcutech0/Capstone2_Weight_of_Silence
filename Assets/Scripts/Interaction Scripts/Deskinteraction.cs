@@ -13,6 +13,7 @@ public class Deskinteraction : MonoBehaviour
 
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public Animator _PlayerAnimator;
     public bool _IsInRange;
     public bool _HasInteracted;
     [SerializeField] private int _DialogueIndex;
@@ -41,6 +42,7 @@ public class Deskinteraction : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _PlayerAnimator.enabled = true;
     }
 
     IEnumerator ShowDialogueDesk() 
@@ -50,6 +52,7 @@ public class Deskinteraction : MonoBehaviour
 
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         _StoryText.text = "";
         _NpcName.text = string.Empty;

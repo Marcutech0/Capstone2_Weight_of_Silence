@@ -6018,6 +6018,7 @@ MonoBehaviour:
   _CanContinue: 0
   _PlayerController: {fileID: 1007099378}
   _PlayerControls: {fileID: 1007099377}
+  _PlayerAnimator: {fileID: 1007099376}
   _LegendManager: {fileID: 1283036059}
   _Phone: {fileID: 1038470344}
 --- !u!1 &1007855448

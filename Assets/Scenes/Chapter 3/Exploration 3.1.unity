@@ -1498,6 +1498,7 @@ MonoBehaviour:
   _Storyline: You rest your weight against cold metal.
   _PlayerController: {fileID: 194532403}
   _PlayerControls: {fileID: 194532402}
+  _PlayerAnimator: {fileID: 194532401}
   _IsInRange: 0
   _HasInteracted: 0
   _DialogueFinished: 0
@@ -1523,6 +1524,7 @@ MonoBehaviour:
   _Storyline: Old pins. New papers. None of them mention her.
   _PlayerController: {fileID: 194532403}
   _PlayerControls: {fileID: 194532402}
+  _PlayerAnimator: {fileID: 194532401}
   _IsInRange: 0
   _HasInteracted: 0
   _DialogueIndex: 0
@@ -1547,6 +1549,7 @@ MonoBehaviour:
   _CanContinue: 0
   _PlayerController: {fileID: 194532403}
   _PlayerControls: {fileID: 194532402}
+  _PlayerAnimator: {fileID: 194532401}
 --- !u!114 &194532410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1574,6 +1577,7 @@ MonoBehaviour:
   _EndingDialogueFinished: 0
   _PlayerController: {fileID: 194532403}
   _PlayerControls: {fileID: 194532402}
+  _PlayerAnimator: {fileID: 194532401}
   _LegendManager: {fileID: 1397177307}
 --- !u!1 &202548410
 GameObject:

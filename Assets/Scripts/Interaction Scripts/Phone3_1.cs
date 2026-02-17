@@ -22,6 +22,7 @@ public class Phone3_1 : MonoBehaviour
     [SerializeField] bool _EndingDialogueFinished;
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public Animator _PlayerAnimator;
     public GameFlowLegendManager _LegendManager;
 
     
@@ -99,6 +100,7 @@ public class Phone3_1 : MonoBehaviour
 
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         _StoryText.text = "";
         _NpcName.text = string.Empty;
@@ -117,6 +119,7 @@ public class Phone3_1 : MonoBehaviour
 
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         _StoryText.text = "";
         _NpcName.text = string.Empty;

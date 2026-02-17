@@ -9932,6 +9932,7 @@ MonoBehaviour:
     in our group."
   _PlayerController: {fileID: 1698795016}
   _PlayerControls: {fileID: 1698795015}
+  _PlayerAnimator: {fileID: 1698795014}
   _IsInRange: 0
   _HasInteracted: 0
   _DialogueIndex: 0
@@ -9957,6 +9958,7 @@ MonoBehaviour:
   _CanContinue: 0
   _PlayerController: {fileID: 1698795016}
   _PlayerControls: {fileID: 1698795015}
+  _PlayerAnimator: {fileID: 1698795014}
 --- !u!1 &1706308065
 GameObject:
   m_ObjectHideFlags: 0

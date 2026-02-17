@@ -7212,6 +7212,7 @@ MonoBehaviour:
   _Storyline: Graffiti is painted on the wall
   _PlayerController: {fileID: 861920828}
   _PlayerControls: {fileID: 861920827}
+  _PlayerAnimator: {fileID: 861920826}
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 485179251}
@@ -7237,6 +7238,7 @@ MonoBehaviour:
   _Storyline: A guard scans IDs slower than usual.
   _PlayerController: {fileID: 861920828}
   _PlayerControls: {fileID: 861920827}
+  _PlayerAnimator: {fileID: 861920826}
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 485179251}

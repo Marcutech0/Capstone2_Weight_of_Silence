@@ -16,6 +16,7 @@ public class RayaInteractionLectureHall : MonoBehaviour
     [TextArea] public string _Storyline;
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public Animator _PlayerAnimator;
     public bool _IsInRange;
     public bool _HasInteracted;
     [SerializeField] private int _DialogueIndex;
@@ -54,6 +55,7 @@ public class RayaInteractionLectureHall : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _PlayerAnimator.enabled = true;
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Fear.SetActive(false);
         _LegendManager._Anonymity.SetActive(false);
@@ -66,6 +68,7 @@ public class RayaInteractionLectureHall : MonoBehaviour
 
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         _StoryText.text = "";
 

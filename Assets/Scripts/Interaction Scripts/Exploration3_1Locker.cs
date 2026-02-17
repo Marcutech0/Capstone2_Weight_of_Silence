@@ -13,6 +13,7 @@ public class Exploration3_1Locker : MonoBehaviour
 
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public Animator _PlayerAnimator;
     public bool _IsInRange;
     public bool _HasInteracted;
     public bool _DialogueFinished;
@@ -47,6 +48,7 @@ public class Exploration3_1Locker : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _PlayerAnimator.enabled = true;
         _DialogueFinished = true;
     }
 
@@ -57,6 +59,7 @@ public class Exploration3_1Locker : MonoBehaviour
 
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         _StoryText.text = "";
         _NpcName.text = string.Empty;
@@ -76,6 +79,7 @@ public class Exploration3_1Locker : MonoBehaviour
 
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         _StoryText.text = "";
         foreach (char c in _NewLine)

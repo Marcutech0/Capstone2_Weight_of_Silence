@@ -6925,6 +6925,7 @@ MonoBehaviour:
   _Storyline: "Let\u2019s not do that."
   _PlayerController: {fileID: 1272695349}
   _PlayerControls: {fileID: 1272695348}
+  _PlayerAnimator: {fileID: 1272695347}
   _IsInRange: 0
   _HasInteracted: 0
   _DialogueIndex: 0
@@ -6949,6 +6950,7 @@ MonoBehaviour:
   _Storyline: "Someone peeled these off carefully. Someone else didn\u2019t."
   _PlayerController: {fileID: 1272695349}
   _PlayerControls: {fileID: 1272695348}
+  _PlayerAnimator: {fileID: 1272695347}
   _IsInRange: 0
   _HasInteracted: 0
   _DialogueIndex: 0
@@ -6971,6 +6973,7 @@ MonoBehaviour:
   _Storyline: You step out into campus.
   _PlayerController: {fileID: 1272695349}
   _PlayerControls: {fileID: 1272695348}
+  _PlayerAnimator: {fileID: 1272695347}
   _DialogueIndex: 0
   _CanContinue: 0
 --- !u!1 &1275893497

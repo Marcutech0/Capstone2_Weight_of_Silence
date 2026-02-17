@@ -8512,6 +8512,7 @@ MonoBehaviour:
   _Storyline: 
   _PlayerController: {fileID: 1597059520}
   _PlayerControls: {fileID: 1597059519}
+  _PlayerAnimator: {fileID: 1597059518}
   _IsInRange: 0
   _HasInteracted: 0
   _DialogueIndex: 0
@@ -8538,6 +8539,7 @@ MonoBehaviour:
   _Storyline: Torn protest flyer with a red mark
   _PlayerController: {fileID: 1597059520}
   _PlayerControls: {fileID: 1597059519}
+  _PlayerAnimator: {fileID: 1597059518}
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 2024838818}
@@ -8565,6 +8567,7 @@ MonoBehaviour:
   _Storyline: Reports of missing student activists circulate online
   _PlayerController: {fileID: 1597059520}
   _PlayerControls: {fileID: 1597059519}
+  _PlayerAnimator: {fileID: 1597059518}
   _IsInRange: 0
   _HasInteracted: 0
   _LegendManager: {fileID: 2024838818}

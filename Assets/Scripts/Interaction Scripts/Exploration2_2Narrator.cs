@@ -14,6 +14,7 @@ public class Exploration2_2Narrator : MonoBehaviour
     [SerializeField] bool _CanContinue;
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public Animator _PlayerAnimator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,6 +52,7 @@ public class Exploration2_2Narrator : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _PlayerAnimator.enabled = true;
     }
 
     IEnumerator ShowNarratorDialogue()
@@ -59,6 +61,7 @@ public class Exploration2_2Narrator : MonoBehaviour
         _StoryText.text = "";
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         foreach (char c in _Storyline)
         {
@@ -74,6 +77,8 @@ public class Exploration2_2Narrator : MonoBehaviour
         _StoryText.text = "";
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
+
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;

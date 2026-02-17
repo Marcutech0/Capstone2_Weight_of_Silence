@@ -13,6 +13,7 @@ public class Exploration2_1Narrator : MonoBehaviour
 
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
+    public Animator _PlayerAnimator;
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
 
@@ -78,6 +79,7 @@ public class Exploration2_1Narrator : MonoBehaviour
         _DialoguePanel.SetActive(false);
         _PlayerControls.enabled = true;
         _PlayerController.enabled = true;
+        _PlayerAnimator.enabled = true;
 
     }
 
@@ -87,6 +89,7 @@ public class Exploration2_1Narrator : MonoBehaviour
         _StoryText.text = "";
         _PlayerControls.enabled = false;
         _PlayerController.enabled = false;
+        _PlayerAnimator.enabled = false;
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
@@ -101,6 +104,7 @@ public class Exploration2_1Narrator : MonoBehaviour
         _NpcName.text = string.Empty;
         _PlayerControls.enabled = false;
         _PlayerController.enabled = false;
+        _PlayerAnimator.enabled = false;
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
