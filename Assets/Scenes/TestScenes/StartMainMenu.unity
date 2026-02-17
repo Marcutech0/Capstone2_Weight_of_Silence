@@ -4164,6 +4164,7 @@ MonoBehaviour:
   slideSpeed: 50
   ClickSfx: {fileID: 8300000, guid: 92e235e72077c914c8b09c805234aba6, type: 3}
   AudioSource: {fileID: 519258862}
+  GameFlowLegendManager: {fileID: 0}
 --- !u!1 &1745537587
 GameObject:
   m_ObjectHideFlags: 0
@@ -4749,7 +4750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1965001962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4766,6 +4767,7 @@ RectTransform:
   - {fileID: 702736339}
   - {fileID: 187185350}
   - {fileID: 2010866416}
+  - {fileID: 1768698236}
   m_Father: {fileID: 997884782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
