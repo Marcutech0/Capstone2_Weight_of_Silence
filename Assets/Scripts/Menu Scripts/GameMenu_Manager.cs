@@ -11,6 +11,9 @@ public class GameMenu_Manager : MonoBehaviour
     [SerializeField] private AudioClip ClickSfx;
     [SerializeField] private AudioSource AudioSource;
 
+    //Gameflow 
+    [SerializeField] private GameFlowLegendManager GameFlowLegendManager;
+
     void Start()
     {
        Game_Settings.SetActive(false);
@@ -32,11 +35,18 @@ public class GameMenu_Manager : MonoBehaviour
     public void BacktoMainMenu()
     {
         SceneManager.LoadScene("StartMainMenu");
+
+        //Save Variables for replayability
+        PlayerPrefs.Save();
     }
     public void ExitGame()
     {
         PlayClickSFX();
         Application.Quit();
+
+        //Reset Variables for replayability
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
     public void CallNextScene()
     {
