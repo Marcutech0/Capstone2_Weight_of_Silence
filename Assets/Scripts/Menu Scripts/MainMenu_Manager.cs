@@ -20,6 +20,9 @@ public class MainMenu_Manager : MonoBehaviour
     [SerializeField] private AudioClip ClickSfx;
     [SerializeField] private AudioSource AudioSource;
 
+
+    //Gameflow 
+    [SerializeField] private GameFlowLegendManager GameFlowLegendManager;
     void Start()
     {
         Settings_Menu.SetActive(false);
@@ -42,14 +45,11 @@ public class MainMenu_Manager : MonoBehaviour
     public void ExitGame()
     {
             PlayClickSFX();
-
-#if UNITY_EDITOR
-        // stop Play Mode in the Editor
-        EditorApplication.isPlaying = false;
-#else
-        // quit in a build
         Application.Quit();
-#endif
+
+        //Reset Variables for replayability
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 
     //either Settings Menu in same scene or load new scene
