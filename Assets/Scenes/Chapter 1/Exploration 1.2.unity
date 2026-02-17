@@ -1918,6 +1918,7 @@ Transform:
   m_Children:
   - {fileID: 447334549}
   - {fileID: 121016731}
+  - {fileID: 2024838819}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &301865742
@@ -5133,7 +5134,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1597059524}
         m_TargetAssemblyTypeName: RayaInteractionLectureHall, Assembly-CSharp
         m_MethodName: Choice1LectureHall
         m_Mode: 1
@@ -7141,7 +7142,6 @@ Transform:
   - {fileID: 2062912252}
   - {fileID: 1931114094}
   - {fileID: 731814905}
-  - {fileID: 2024838819}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1048502484
@@ -9152,7 +9152,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1597059524}
         m_TargetAssemblyTypeName: RayaInteractionLectureHall, Assembly-CSharp
         m_MethodName: Choice3LectureHall
         m_Mode: 1
@@ -10843,7 +10843,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1597059524}
         m_TargetAssemblyTypeName: RayaInteractionLectureHall, Assembly-CSharp
         m_MethodName: Choice2LectureHall
         m_Mode: 1
@@ -14253,11 +14253,11 @@ Transform:
   m_GameObject: {fileID: 2024838817}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 575.7107, y: 0, z: 2201.8154}
+  m_LocalPosition: {x: -461.52942, y: -496.20264, z: 2201.8154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1043251188}
+  m_Father: {fileID: 301618858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026249028
 GameObject:
