@@ -30,7 +30,7 @@ public class Controls : MonoBehaviour
 
         else
         {
-            _Cup.SetPouring(false);
+            _Cup.SetPouring(true);
         }
     }
 

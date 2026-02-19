@@ -176,8 +176,8 @@ MonoBehaviour:
   _ReplyChoice1: {fileID: 0}
   _ReplyText: {fileID: 1571064886}
   _RayaReplyText: {fileID: 1871362028}
-  _RayaMessageBox: {fileID: 0}
-  _LiamMessageBox: {fileID: 0}
+  _RayaMessageBox: {fileID: 749095718}
+  _LiamMessageBox: {fileID: 584747068}
   _SeenText: {fileID: 0}
   _Messages: {fileID: 0}
   _DormDoor: {fileID: 0}
