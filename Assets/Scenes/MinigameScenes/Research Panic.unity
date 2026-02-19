@@ -177,8 +177,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Sort the titles on the screen.\n \nPlace it on the correct folder.\n\nGet
-    as much correct titles sorted before the timer runs out\n\nPopus appear on the
-    screen make sure to not be distracted!"
+    as much correct titles sorted before the timer runs out\n\nPop ups appear on
+    the screen make sure to not be distracted!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
