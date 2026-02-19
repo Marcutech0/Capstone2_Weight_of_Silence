@@ -5439,6 +5439,8 @@ MonoBehaviour:
   winScreen: {fileID: 122870885}
   loseScreen: {fileID: 497598792}
   moveToSlotSeconds: 0.35
+  _ButtonWin: {fileID: 734488521}
+  _ButtonLose: {fileID: 130374075}
   _LegendManager: {fileID: 520746711}
 --- !u!1 &2045370771
 GameObject:
