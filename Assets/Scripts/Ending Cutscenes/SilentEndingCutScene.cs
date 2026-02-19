@@ -74,7 +74,7 @@ public class SilentEndingCutScene : MonoBehaviour
             else
             {
                 EndDialogue();
-                _FadeText.FadeRoutine();
+                StartCoroutine(CallNextScene());
             }
 
         }
@@ -126,7 +126,7 @@ public class SilentEndingCutScene : MonoBehaviour
 
     IEnumerator CallNextScene()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("");
+         yield return (_FadeText.FadeRoutine());
+        SceneManager.LoadScene("StartMainMenu");
     }
 }

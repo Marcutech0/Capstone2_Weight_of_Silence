@@ -163,8 +163,7 @@ public class OutCryEnding : MonoBehaviour
 
             else if (_DialogueIndex == 27) 
             {
-                _FadeText.FadeRoutine();
-                _CanContinue = true;
+                StartCoroutine(FadeText());
             }
 
             else if (_DialogueIndex == 28)
@@ -175,7 +174,7 @@ public class OutCryEnding : MonoBehaviour
             else
             {
                 EndDialogue();
-                _FadeText.FadeRoutine();
+                StartCoroutine(CallNextScene());
             }
 
         }
@@ -241,7 +240,13 @@ public class OutCryEnding : MonoBehaviour
 
     IEnumerator CallNextScene()
     {
-        yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("");
+        yield return (_FadeText.FadeRoutine());
+        SceneManager.LoadScene("StartMainMenu");
+    }
+
+    IEnumerator FadeText() 
+    {
+        yield return (_FadeText.FadeRoutine());
+        _CanContinue = true;
     }
 }

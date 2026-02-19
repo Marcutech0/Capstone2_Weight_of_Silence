@@ -26,9 +26,9 @@ public class FadeText : MonoBehaviour
         yield return StartCoroutine(FadeCanvasGroup(_FadeTextPanel, _FadeTextPanel.alpha, 0f, _FadeDuration));
     }
 
-    public void FadeRoutine() 
+    public IEnumerator FadeRoutine() 
     {
-        StartCoroutine(FadeInOut());
+         yield return StartCoroutine(FadeInOut());
     }
 
 
