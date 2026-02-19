@@ -11286,7 +11286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa1257617186274db24557be7165e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UniversalPhone
-  _HomeUI: {fileID: 0}
+  _HomeUI: {fileID: 447560790}
   _MessagesUI: {fileID: 1596539379}
   _Phone: {fileID: 1897838517}
 --- !u!114 &2044429048
