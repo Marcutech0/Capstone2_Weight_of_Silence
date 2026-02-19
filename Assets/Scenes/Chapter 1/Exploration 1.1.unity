@@ -17868,6 +17868,10 @@ PrefabInstance:
       propertyPath: AudioSource
       value: 
       objectReference: {fileID: 189418037}
+    - target: {fileID: 6191406251829781571, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+      propertyPath: GameFlowLegendManager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6630054551806793827, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

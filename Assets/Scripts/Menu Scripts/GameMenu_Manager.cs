@@ -16,6 +16,7 @@ public class GameMenu_Manager : MonoBehaviour
 
     void Start()
     {
+        GameFlowLegendManager = FindAnyObjectByType<GameFlowLegendManager>();
        Game_Settings.SetActive(false);
         Menu_UI.SetActive(false);
     }
