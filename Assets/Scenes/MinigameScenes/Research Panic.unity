@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -71, y: 44}
+  m_AnchoredPosition: {x: -91, y: 87}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101910552
@@ -176,13 +176,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sort the titles on the screen and place it to
-
-    it''s correct folders,
-    get as much correct titles sorted before the timer runs out
-
-    without getting
-    distracted ny the distractions on the screen'
+  m_text: "Sort the titles on the screen.\n \nPlace it on the correct folder.\n\nGet
+    as much correct titles sorted before the timer runs out\n\nPopus appear on the
+    screen make sure to not be distracted!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
@@ -1526,8 +1522,7 @@ Transform:
   m_LocalPosition: {x: 575.7107, y: 0, z: 2201.8154}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1074876467}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &311178364
@@ -2576,7 +2571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: 69}
+  m_AnchoredPosition: {x: 85, y: 123}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673385131
@@ -4306,7 +4301,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 224122010}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1089286050208562865, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_Name
@@ -4314,11 +4309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1089286050208562865, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -457.51422
+      value: 118.19647
       objectReference: {fileID: 0}
     - target: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4326,7 +4321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3364.7217
+      value: 5566.537
       objectReference: {fileID: 0}
     - target: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4405,11 +4400,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
---- !u!4 &1074876467 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
-  m_PrefabInstance: {fileID: 1074876466}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099598826
 GameObject:
   m_ObjectHideFlags: 0
@@ -8036,3 +8026,4 @@ SceneRoots:
   - {fileID: 1560693177}
   - {fileID: 858776702}
   - {fileID: 224122010}
+  - {fileID: 1074876466}
