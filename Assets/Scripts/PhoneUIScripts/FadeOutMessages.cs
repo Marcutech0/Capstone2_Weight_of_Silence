@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using TMPro.EditorUtilities;
+//using TMPro.EditorUtilities;
 public class FadeOutMessages : MonoBehaviour
 {
     public GameObject _RayasMessageBox1;
