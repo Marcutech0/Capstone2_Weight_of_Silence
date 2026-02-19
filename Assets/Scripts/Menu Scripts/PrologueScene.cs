@@ -12,6 +12,6 @@ public class PrologueScene : MonoBehaviour
     private IEnumerator LoadNextSceneAfterDelay()
     {
         yield return new WaitForSeconds(43f);
-        SceneManager.LoadScene("Exploration 1.1");
+        SceneManager.LoadScene("Cutscene1.1");
     }
 }
