@@ -2524,7 +2524,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 90458468, guid: d95e51a2f4fac054c97dc744e6347d94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -11110,8 +11110,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.803356, z: 1.338954}
-  m_Center: {x: 0, y: 0.90167797, z: -0.02147019}
+  m_Size: {x: 1, y: 2.803356, z: 1.8936087}
+  m_Center: {x: 0, y: 0.90167797, z: -0.29879755}
 --- !u!1 &1722890339
 GameObject:
   m_ObjectHideFlags: 0
