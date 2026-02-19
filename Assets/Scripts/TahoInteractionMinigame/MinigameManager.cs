@@ -145,8 +145,8 @@ public class MinigameManager : MonoBehaviour
         {
             _LegendManager._CourageCount++;
             _LegendManager._GuiltCount--;
-            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
-            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
             PlayerPrefs.Save();
             _GameStatusText.text = "Time's up, good job!";
             _WinLoseScreen.SetActive(true);
@@ -187,6 +187,9 @@ public class MinigameManager : MonoBehaviour
     public void End() 
     {
         StartCoroutine(CallNextScene());
+        PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
+        PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
+        PlayerPrefs.Save();
     }
 
 
@@ -194,9 +197,7 @@ public class MinigameManager : MonoBehaviour
     {
         
         _Continue.SetActive(false);
-        PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
-        PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
-        PlayerPrefs.Save();
+        
         yield return new WaitForSeconds(1f);
         _GameStatusText.text = "Moving to Campus";
         SceneManager.LoadScene("Exploration 1.2");

@@ -83,7 +83,7 @@ public class Phone3_1 : MonoBehaviour
 
     public void EndingRoute() 
     {
-        if (_LegendManager._CourageCount >= 10) 
+        if (_LegendManager._CourageCount >= 18) 
         {
             StartCoroutine(CallNextSceneEnding1());
         }

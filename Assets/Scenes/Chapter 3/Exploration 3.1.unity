@@ -7893,7 +7893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306eedc82803da640b4b84ee1c68aac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  _CourageCount: 20
+  _CourageCount: 0
   _FearCount: 0
   _ReputationCount: 0
   _AnonymityCount: 0
