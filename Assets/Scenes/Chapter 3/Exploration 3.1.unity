@@ -3680,8 +3680,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.8384233
+  m_Center: {x: -0.20855224, y: 0, z: -1.0644616}
 --- !u!212 &456899040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3758,7 +3758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &494193634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5040,7 +5040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &871365884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7359,7 +7359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1291429788}
   - component: {fileID: 1291429790}
-  - component: {fileID: 1291429789}
+  - component: {fileID: 1291429791}
   m_Layer: 0
   m_Name: BulletinBoard
   m_TagString: BulletinBoard
@@ -7382,27 +7382,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1447432490}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1291429789
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291429787}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1291429790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7461,6 +7440,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!135 &1291429791
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291429787}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.875
+  m_Center: {x: 0, y: 0, z: 0.000000007450581}
 --- !u!1 &1306060429
 GameObject:
   m_ObjectHideFlags: 0
