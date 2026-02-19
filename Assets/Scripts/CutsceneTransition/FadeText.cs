@@ -3,34 +3,87 @@ using System.Collections;
 using TMPro;
 public class FadeText : MonoBehaviour
 {
-    public TextMeshProUGUI _FadeTextPanel;
-    public float _FadeDuration = 2.0f;
+    [Header("UI References")]
+    [SerializeField] private CanvasGroup _FadePanel;
+    [SerializeField] private TextMeshProUGUI _FadeTextPanel;
 
-    
-    IEnumerator FadeCanvasGroup(TextMeshProUGUI _Text, float _Start, float _End, float _Duration)
+    [Header("Settings")]
+    [SerializeField] private float _FadeDuration = 2.0f;
+    [SerializeField] private float _WaitTime = 2.0f;
+
+    private void Awake()
     {
-        float _Elapsedtime = 0.0f;
-        while (_Elapsedtime < _FadeDuration)
+        if (_FadePanel != null)
+            _FadePanel.alpha = 0f;
+
+        if (_FadeTextPanel != null)
         {
-            _Elapsedtime += Time.deltaTime;
-            _Text.alpha = Mathf.Lerp(_Start, _End, _Elapsedtime / _Duration);
-            yield return null;
+            Color textColor = _FadeTextPanel.color;
+            textColor.a = 0f;
+            _FadeTextPanel.color = textColor;
         }
-        _Text.alpha = _End;
     }
 
+    public void StartFade()
+    {
+        StartCoroutine(FadeRoutine());
+    }
+
+    public IEnumerator FadeRoutine()
+    {
+        yield return FadeInOut();
+    }
+    
     IEnumerator FadeInOut()
     {
-        yield return StartCoroutine(FadeCanvasGroup(_FadeTextPanel, _FadeTextPanel.alpha, 1f, _FadeDuration));
-        yield return new WaitForSeconds(2f);
-        yield return StartCoroutine(FadeCanvasGroup(_FadeTextPanel, _FadeTextPanel.alpha, 0f, _FadeDuration));
+        yield return FadeCanvasGroup(_FadePanel, 0f, 1f, _FadeDuration);
+
+        yield return new WaitForSeconds(_WaitTime);
+
+        yield return FadeTextAlpha(_FadeTextPanel, 0f, 1f, _FadeDuration);
+
+        yield return new WaitForSeconds(_WaitTime);
+
+        yield return FadeTextAlpha(_FadeTextPanel, 1f, 0f, _FadeDuration);
+
+        yield return FadeCanvasGroup(_FadePanel, 1f, 0f, _FadeDuration);
     }
 
-    public IEnumerator FadeRoutine() 
+    IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float startAlpha, float endAlpha, float duration)
     {
-         yield return StartCoroutine(FadeInOut());
+        if (canvasGroup == null) yield break;
+
+        float elapsedTime = 0.0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / duration);
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, t);
+            yield return null;
+        }
+
+        canvasGroup.alpha = endAlpha;
     }
 
 
+    IEnumerator FadeTextAlpha(TextMeshProUGUI text, float startAlpha, float endAlpha, float duration)
+    {
+        if (text == null) yield break;
 
+        float elapsedTime = 0.0f;
+        Color originalColor = text.color;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / duration);
+            originalColor.a = Mathf.Lerp(startAlpha, endAlpha, t);
+            text.color = originalColor;
+            yield return null;
+        }
+
+        originalColor.a = endAlpha;
+        text.color = originalColor;
+    }
 }
