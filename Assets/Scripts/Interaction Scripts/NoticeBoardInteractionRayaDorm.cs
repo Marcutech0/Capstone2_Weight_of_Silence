@@ -82,7 +82,7 @@ public class NoticeBoardInteractionRayaDorm : MonoBehaviour
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
         _CanContinue = true;
     }

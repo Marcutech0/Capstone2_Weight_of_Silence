@@ -2,7 +2,7 @@
 - Project name: Capstone1_Prototype
 - Unity version: Unity 6000.2.9f1
 - Active game object:
-  - Name: CutsceneObject
-  - Tag: Untagged
+  - Name: PlayerObject
+  - Tag: Player
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
