@@ -15,6 +15,7 @@ public class PhoneExploration1_1 : MonoBehaviour
     public GameObject _RayaMessageBox;
     public GameObject _LiamMessageBox;
     public GameObject _SeenText;
+    public GameObject _Messages;
     public LiamsDoorInteraction _DormDoor;
     public CharacterController _PlayerController;
     public PlayerMovement _PlayerControls;
@@ -47,8 +48,6 @@ public class PhoneExploration1_1 : MonoBehaviour
         _LiamMessageBox.SetActive(true);
         _ReplyText.text = "I’m alive, promise.";
         _LegendManager._ReputationCount++;
-        _LegendManager._ReputationText.text = "Reputation: " + _LegendManager._ReputationCount;
-        _LegendManager._Reputation.SetActive(true);
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         StartCoroutine(RayasReplyDelayChoice1());
@@ -68,8 +67,6 @@ public class PhoneExploration1_1 : MonoBehaviour
         _LiamMessageBox.SetActive(true);
         _ReplyText.text = "Sure. We’ll talk later.";
         _LegendManager._GuiltCount++;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         StartCoroutine(RayasReplyDelayChoice2());
@@ -88,10 +85,6 @@ public class PhoneExploration1_1 : MonoBehaviour
         _ReplyChoice1.SetActive(false);
         _LegendManager._AnonymityCount++;
         _LegendManager._GuiltCount++;
-        _LegendManager._GuiltText.text = "Guilt: " + _LegendManager._GuiltCount;
-        _LegendManager._AnonymityText.text = "Anonymity: " + _LegendManager._AnonymityCount;
-        _LegendManager._Anonymity.SetActive(true);
-        _LegendManager._Guilt.SetActive(true);
         PlayerPrefs.SetInt("Anonymity Count", _LegendManager._AnonymityCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
@@ -141,9 +134,10 @@ public class PhoneExploration1_1 : MonoBehaviour
         _SeenText.SetActive(true);
         yield return new WaitForSeconds(1f);
         _SeenText.SetActive(false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
+        _Messages.SetActive(false);
     }
 
     

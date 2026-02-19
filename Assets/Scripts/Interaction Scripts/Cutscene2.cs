@@ -68,7 +68,7 @@ public class Cutscene2 : MonoBehaviour
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
             _Choice2Panel.SetActive(true);
     }
@@ -80,7 +80,7 @@ public class Cutscene2 : MonoBehaviour
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
 
         _CanContinue = true;
@@ -93,7 +93,7 @@ public class Cutscene2 : MonoBehaviour
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
         }
 
         _CanContinue = true;
