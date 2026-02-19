@@ -830,7 +830,7 @@ VideoPlayer:
   m_VideoClip: {fileID: 32900000, guid: bde01bebc06a08341a68c8d49d2279b1, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
+  m_TargetCamera: {fileID: 824046321}
   m_TargetTexture: {fileID: 8400000, guid: a1f41551b485f5a498d0cc14e73e1f76, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
@@ -838,7 +838,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_TimeUpdateMode: 2
+  m_TimeUpdateMode: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
