@@ -113,9 +113,9 @@ public class ResearchPanicMinigame : MonoBehaviour
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
             _LegendManager._GuiltCount++;
-            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
-            PlayerPrefs.SetInt("Fear  Count", _LegendManager._FearCount);
-            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
+            PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
             PlayerPrefs.Save();
             _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
@@ -136,9 +136,9 @@ public class ResearchPanicMinigame : MonoBehaviour
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
             _LegendManager._GuiltCount++;
-            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
-            PlayerPrefs.SetInt("Fear  Count", _LegendManager._FearCount);
-            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
+            PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
             PlayerPrefs.Save();
             _GameStatus.text = "You failed! You only got partial Info";
             _GameStatusObject.SetActive(true);
@@ -159,9 +159,9 @@ public class ResearchPanicMinigame : MonoBehaviour
             _LegendManager._CourageCount += 5;
             _LegendManager._ReputationCount += 3;
             _LegendManager._GuiltCount -= 2;
-            PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
-            PlayerPrefs.SetInt("Reputation  Count", _LegendManager._ReputationCount);
-            PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+            PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
+            PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
+            PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
             PlayerPrefs.Save();
             _GameStatus.text = "You won! Evidence Gained";
             _GameStatusObject.SetActive(true);
@@ -194,11 +194,7 @@ public class ResearchPanicMinigame : MonoBehaviour
         _LegendManager._Guilt.SetActive(false);
         _LegendManager._Reputation.SetActive(false);
         _Continue.SetActive(false);
-        PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
-        PlayerPrefs.SetInt("Reputation  Count", _LegendManager._ReputationCount);
-        PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
-        PlayerPrefs.SetInt("Fear  Count", _LegendManager._FearCount);
-        PlayerPrefs.Save();
+        
         yield return new WaitForSeconds(1f);
         _GameStatus.text = "Moving to Campus";
         SceneManager.LoadScene("Exploration 1.3");
@@ -207,5 +203,10 @@ public class ResearchPanicMinigame : MonoBehaviour
     public void EndMinigame()
     {
         StartCoroutine(CallNextScene());
+        PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
+        PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
+        PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
+        PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
+        PlayerPrefs.Save();
     }
 }
