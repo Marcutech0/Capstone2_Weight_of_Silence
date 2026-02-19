@@ -40,6 +40,8 @@ public class MainMenu_Manager : MonoBehaviour
     {
         PlayClickSFX();
             SceneManager.LoadScene("PrologueScene");
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 
     public void ExitGame()
