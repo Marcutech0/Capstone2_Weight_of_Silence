@@ -67,7 +67,7 @@ public class Exploration2_3Narrator : MonoBehaviour
                 {
                     _Phone._LiamMessageBox.SetActive(false);
                     _Phone._RayaMessageBox.SetActive(false);
-                    _RayaMessageBox.transform.localPosition = new Vector3(-99.93086f, 159, 0);
+                    _RayaMessageBox.transform.localPosition = new Vector3(-68f, -87f, 0);
                 }
                 _CanContinue = true;
             }
@@ -86,6 +86,7 @@ public class Exploration2_3Narrator : MonoBehaviour
 
             else if (_DialogueIndex == 6)
             {
+                _PhonePanel.SetActive(true);
                _HomeUI.SetActive(true);
                 _MessagesApp.SetActive(false);
                _MessagesUI.SetActive(false);
@@ -102,7 +103,6 @@ public class Exploration2_3Narrator : MonoBehaviour
             {
                 EndDialogue();
                 _PhoneButtonsUI.SetActive(true);
-                _MessagesApp.SetActive(true);
             }
         }
     }
