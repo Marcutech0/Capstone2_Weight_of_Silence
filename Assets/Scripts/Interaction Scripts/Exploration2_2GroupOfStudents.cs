@@ -109,12 +109,10 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
 
     IEnumerator ShowDialogueGroupOfStudents()
     {
-        _DialoguePanel.SetActive(true);
         _InteractIndicator.SetActive(false);
-
+        _DialoguePanel.SetActive(true);
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
-        _DialoguePanel.SetActive(false);
 
         _StoryText.text = "";
         _NpcName.text = "Groupmate 1";
