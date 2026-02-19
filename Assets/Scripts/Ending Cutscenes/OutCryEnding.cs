@@ -163,11 +163,6 @@ public class OutCryEnding : MonoBehaviour
 
             else if (_DialogueIndex == 27) 
             {
-                StartCoroutine(FadeText());
-            }
-
-            else if (_DialogueIndex == 28)
-            {
                 StartCoroutine(ShowNewDialogueNarrator("Days later, You’re back on campus, Then another, You don’t look away this time, You answer, Not because it’s safe, But because it’s learned."));
             }
 
@@ -244,9 +239,4 @@ public class OutCryEnding : MonoBehaviour
         SceneManager.LoadScene("StartMainMenu");
     }
 
-    IEnumerator FadeText() 
-    {
-        yield return (_FadeText.FadeRoutine());
-        _CanContinue = true;
-    }
 }
