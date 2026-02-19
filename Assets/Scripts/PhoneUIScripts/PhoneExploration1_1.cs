@@ -27,6 +27,10 @@ public class PhoneExploration1_1 : MonoBehaviour
     public void OpenPhone()
     {
         _HomeUI.SetActive(true);
+        if (_MessagesUI.activeSelf) 
+        {
+            _HomeUI.SetActive(false);
+        }
     }
 
     public void OpenMessages()
