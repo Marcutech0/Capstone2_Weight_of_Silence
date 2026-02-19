@@ -61,7 +61,7 @@ public class Cutscene6 : MonoBehaviour
 
             else if (_DialogueIndex == 3)
             {
-                StartCoroutine(ShowNewDialogueNarrartor("Siren outside. Camera lingers on the unfinished message."));
+                StartCoroutine(ShowNewDialogueNarrartor("Siren outside."));
                 _PhonePanel.SetActive(false);
             }
 
