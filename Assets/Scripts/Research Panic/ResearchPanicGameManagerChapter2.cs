@@ -28,10 +28,12 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     public GameObject _Continue;
     public GameObject _ImagePopper;
     public GameObject _Distractions;
-    public GameObject _ResearchTexts;
     public GameObject _PoliticsHolder;
     public GameObject _CultureHolder;
     public GameObject _EducationHolder;
+    public ResearchTitleSpawner _PoliticsFolder;
+    public ResearchTitleSpawner _CultureFolder;
+    public ResearchTitleSpawner _EducationFolder;
     void Start()
     {
         _StopTimer = false;
@@ -103,7 +105,6 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     {
         if (_WrongPoints >= 3) // Lose
         {
-            _ResearchTexts.SetActive(false);
             _StopTimer = true;
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
@@ -118,11 +119,13 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
+            _PoliticsFolder._CurrentTitle.SetActive(false);
+            _CultureFolder._CurrentTitle.SetActive(false);
+            _EducationFolder._CurrentTitle.SetActive(false);
         }
 
         else if (_StopTimer && _CorrectPoints == 0) // Lose
         {
-            _ResearchTexts.SetActive(false);
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
             _LegendManager._GuiltCount++;
@@ -136,11 +139,13 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
+            _PoliticsFolder._CurrentTitle.SetActive(false);
+            _CultureFolder._CurrentTitle.SetActive(false);
+            _EducationFolder._CurrentTitle.SetActive(false);
         }
 
         else if (_StopTimer && _WrongPoints < 3)// Win
         {
-            _ResearchTexts.SetActive(false);
             _LegendManager._CourageCount += 5;
             _LegendManager._ReputationCount += 3;
             _LegendManager._GuiltCount -= 2;
@@ -154,6 +159,9 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
+            _PoliticsFolder._CurrentTitle.SetActive(false);
+            _CultureFolder._CurrentTitle.SetActive(false);
+            _EducationFolder._CurrentTitle.SetActive(false);
         }
     }
 
@@ -181,6 +189,11 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
         _LegendManager._Guilt.SetActive(false);
         _LegendManager._Reputation.SetActive(false);
         _Continue.SetActive(false);
+        PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
+        PlayerPrefs.SetInt("Reputation  Count", _LegendManager._ReputationCount);
+        PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+        PlayerPrefs.SetInt("Fear  Count", _LegendManager._FearCount);
+        PlayerPrefs.Save();
 
         yield return new WaitForSeconds(1f);
         _GameStatus.text = "Moving to Campus";

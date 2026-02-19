@@ -3491,7 +3491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1089286050208562865, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6820,10 +6820,12 @@ MonoBehaviour:
   _Continue: {fileID: 745957367}
   _ImagePopper: {fileID: 944789203}
   _Distractions: {fileID: 1878683894}
-  _ResearchTexts: {fileID: 1808617842}
   _PoliticsHolder: {fileID: 2058573661}
   _CultureHolder: {fileID: 1164775095}
   _EducationHolder: {fileID: 952685364}
+  _PoliticsFolder: {fileID: 2058573663}
+  _CultureFolder: {fileID: 1164775097}
+  _EducationFolder: {fileID: 952685366}
 --- !u!1 &1627635592
 GameObject:
   m_ObjectHideFlags: 0
