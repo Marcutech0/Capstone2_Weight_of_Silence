@@ -194,6 +194,9 @@ public class MinigameManager : MonoBehaviour
     {
         
         _Continue.SetActive(false);
+        PlayerPrefs.SetInt("Courage  Count", _LegendManager._CourageCount);
+        PlayerPrefs.SetInt("Guilt  Count", _LegendManager._GuiltCount);
+        PlayerPrefs.Save();
         yield return new WaitForSeconds(1f);
         _GameStatusText.text = "Moving to Campus";
         SceneManager.LoadScene("Exploration 1.2");
