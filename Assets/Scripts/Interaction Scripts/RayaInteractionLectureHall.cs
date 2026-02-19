@@ -112,7 +112,7 @@ public class RayaInteractionLectureHall : MonoBehaviour
     public void Choice2LectureHall()
     {
         _LegendManager._ReputationCount++;
-        PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
+        PlayerPrefs.SetInt("Courage Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice1Panel.SetActive(false);
         _DialogueIndex = 1;
