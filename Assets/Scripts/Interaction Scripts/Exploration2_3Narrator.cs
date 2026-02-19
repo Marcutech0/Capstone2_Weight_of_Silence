@@ -44,7 +44,7 @@ public class Exploration2_3Narrator : MonoBehaviour
 
             if (_DialogueIndex == 1)
             {
-                StartCoroutine(ShowNarratorNewDialogue("Your phone buzzes.", true));
+                StartCoroutine(ShowNarratorNewDialogue("You're suppose to leave the room until your phone buzzes.", true));
             }
 
             else if (_DialogueIndex == 2)
