@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &20847018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178.18703, y: 357.02856}
+  m_AnchoredPosition: {x: 114, y: 357.02856}
   m_SizeDelta: {x: 250.41, y: 38.5087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112515375
@@ -722,7 +722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150.36763, y: 404.87463}
+  m_AnchoredPosition: {x: 85, y: 404.87463}
   m_SizeDelta: {x: 306.0387, y: 38.5087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &166055000
@@ -1602,7 +1602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -95, y: 451.37292}
+  m_AnchoredPosition: {x: 34, y: 451.37292}
   m_SizeDelta: {x: 416.774, y: 38.5087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464305902
@@ -2022,7 +2022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 309.1825}
+  m_AnchoredPosition: {x: -115, y: 309.1825}
   m_SizeDelta: {x: 376.98, y: 38.5087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &584747070
@@ -2508,7 +2508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.831184, y: 258.64093}
+  m_AnchoredPosition: {x: 5, y: 258.64093}
   m_SizeDelta: {x: 477.1316, y: 38.5087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749095720
@@ -2897,6 +2897,10 @@ PrefabInstance:
     - target: {fileID: 1089286050208562865, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_Name
       value: Game Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089286050208562865, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_LocalPosition.x
