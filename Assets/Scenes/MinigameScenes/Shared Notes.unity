@@ -564,7 +564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &122870886
 Transform:
   m_ObjectHideFlags: 0
@@ -664,9 +664,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameMenu_Manager, Assembly-CSharp
-        m_MethodName: CallNextScene
+      - m_Target: {fileID: 2044058518}
+        m_TargetAssemblyTypeName: Shared_Notes_Manager, Assembly-CSharp
+        m_MethodName: CollectScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
