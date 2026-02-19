@@ -1248,6 +1248,7 @@ MonoBehaviour:
   _RayaMessageBox: {fileID: 1020039907}
   _LiamMessageBox: {fileID: 867742526}
   _SeenText: {fileID: 0}
+  _Messages: {fileID: 0}
   _DormDoor: {fileID: 0}
   _PlayerController: {fileID: 0}
   _PlayerControls: {fileID: 0}
@@ -6828,11 +6829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617b34e5fb65b714884cbdd0c6072842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameMenu_Manager
-  Game_Settings: {fileID: 0}
-  Menu_UI: {fileID: 0}
+  Game_Settings: {fileID: 1431603440}
+  Menu_UI: {fileID: 1431603439}
   ClickSfx: {fileID: 8300000, guid: 92e235e72077c914c8b09c805234aba6, type: 3}
   AudioSource: {fileID: 1880454956}
-  GameFlowLegendManager: {fileID: 0}
+  GameFlowLegendManager: {fileID: 1416299615}
 --- !u!1 &1169287069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7178,8 +7179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb26fb19daf764c8798aca255bfec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerKeybinds
-  Menu_UI: {fileID: 0}
-  Game_Settings: {fileID: 0}
+  Menu_UI: {fileID: 1431603439}
+  Game_Settings: {fileID: 1431603440}
 --- !u!95 &1181558933
 Animator:
   serializedVersion: 7
@@ -8646,6 +8647,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+--- !u!1 &1431603439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8278593322622055459, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+  m_PrefabInstance: {fileID: 1431603438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1431603440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7750939204293937927, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+  m_PrefabInstance: {fileID: 1431603438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1431603441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3671200899305717605, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+  m_PrefabInstance: {fileID: 1431603438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &1431603442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2004384198544795125, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+  m_PrefabInstance: {fileID: 1431603438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &1445030619
 GameObject:
   m_ObjectHideFlags: 0
@@ -9203,8 +9236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Volume_Setting
   Main_Mixer: {fileID: 24100000, guid: 22389a6c1e90b8a46a3b1279977c061e, type: 2}
-  Music_Slider: {fileID: 0}
-  SFX_Slider: {fileID: 0}
+  Music_Slider: {fileID: 1431603442}
+  SFX_Slider: {fileID: 1431603441}
 --- !u!4 &1510871658
 Transform:
   m_ObjectHideFlags: 0
