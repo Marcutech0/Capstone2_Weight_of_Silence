@@ -50,6 +50,10 @@ public class Shared_Notes_Manager : MonoBehaviour
     [Header("Selection Animation")]
     [SerializeField] private float moveToSlotSeconds = 0.35f;
 
+    [Header("Continue Button")]
+    [SerializeField] private GameObject _ButtonWin;
+    [SerializeField] private GameObject _ButtonLose;
+
     private readonly List<TextFragment> spawnedFragments = new();
     private readonly List<TextFragment> placedFragments = new();
 
@@ -561,16 +565,15 @@ public class Shared_Notes_Manager : MonoBehaviour
 
     public void CollectScene()
     {
+        _ButtonWin.SetActive(false);
+        _ButtonLose.SetActive(false);
         StartCoroutine(CallNextScene());
     }
 
     IEnumerator CallNextScene()
     {
-        yield return new WaitForSeconds(1f);
-        _LegendManager._Courage.SetActive(false);
-        _LegendManager._Reputation.SetActive(false);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Cutscene1.3");
     }
 }
