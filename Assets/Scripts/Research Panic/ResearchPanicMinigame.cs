@@ -28,12 +28,8 @@ public class ResearchPanicMinigame : MonoBehaviour
     public GameObject _Continue;
     public GameObject _ImagePopper;
     public GameObject _Distractions;
-    public GameObject _PoliticsHolder;
-    public GameObject _CultureHolder;
-    public GameObject _EducationHolder;
-    public ResearchTitleSpawner _PoliticsFolder;
-    public ResearchTitleSpawner _CultureFolder;
-    public ResearchTitleSpawner _EducationFolder;
+    public ResearchTitleSpawner _TitleHolder;
+    
 
     void Start()
     {
@@ -106,9 +102,7 @@ public class ResearchPanicMinigame : MonoBehaviour
     {
         if (_WrongPoints >= 3) // Lose
         {
-            _PoliticsHolder.SetActive(false);
-            _CultureHolder.SetActive(false);
-            _EducationHolder.SetActive(false);
+            
             _StopTimer = true;
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
@@ -123,16 +117,12 @@ public class ResearchPanicMinigame : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
-            _PoliticsFolder._CurrentTitle.SetActive(false);
-            _CultureFolder._CurrentTitle.SetActive(false);
-            _EducationFolder._CurrentTitle.SetActive(false);
+            _TitleHolder._CurrentTitle.SetActive(false);
         }
 
         else if (_StopTimer && _CorrectPoints == 0) // Lose
         {
-            _PoliticsHolder.SetActive(false);
-            _CultureHolder.SetActive(false);
-            _EducationHolder.SetActive(false);
+            
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
             _LegendManager._GuiltCount++;
@@ -146,16 +136,13 @@ public class ResearchPanicMinigame : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
-            _PoliticsFolder._CurrentTitle.SetActive(false);
-            _CultureFolder._CurrentTitle.SetActive(false);
-            _EducationFolder._CurrentTitle.SetActive(false);
+            _TitleHolder._CurrentTitle.SetActive(false);
+            
         }
 
         else if (_StopTimer && _WrongPoints < 3) // Win
         {
-            _PoliticsHolder.SetActive(false);
-            _CultureHolder.SetActive(false);
-            _EducationHolder.SetActive(false);
+            
             _LegendManager._CourageCount += 5;
             _LegendManager._ReputationCount += 3;
             _LegendManager._GuiltCount -= 2;
@@ -169,9 +156,8 @@ public class ResearchPanicMinigame : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
-            _PoliticsFolder._CurrentTitle.SetActive(false);
-            _CultureFolder._CurrentTitle.SetActive(false);
-            _EducationFolder._CurrentTitle.SetActive(false);
+            _TitleHolder._CurrentTitle.SetActive(false);
+            
         }
     }
 

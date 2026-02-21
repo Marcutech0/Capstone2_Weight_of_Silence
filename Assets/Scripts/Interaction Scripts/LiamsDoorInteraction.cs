@@ -18,7 +18,7 @@ public class LiamsDoorInteraction : MonoBehaviour
         if (other.CompareTag("LiamsDoor"))
         {
             _InteractIndicator.SetActive(true);
-            _PhoneNotif.text = "Please Interact with the Desk and Mirror to acces your phone";
+            _PhoneNotif.text = "Please Interact with the Desk and Mirror to access your phone";
 
             if (_Desk._HasInteracted && _Mirror._HasInteracted)
             {

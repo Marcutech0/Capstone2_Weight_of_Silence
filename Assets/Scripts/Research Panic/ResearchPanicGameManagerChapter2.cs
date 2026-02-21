@@ -28,12 +28,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     public GameObject _Continue;
     public GameObject _ImagePopper;
     public GameObject _Distractions;
-    public GameObject _PoliticsHolder;
-    public GameObject _CultureHolder;
-    public GameObject _EducationHolder;
-    public ResearchTitleSpawner _PoliticsFolder;
-    public ResearchTitleSpawner _CultureFolder;
-    public ResearchTitleSpawner _EducationFolder;
+    public ResearchTitleSpawner _TitleHolder;
     void Start()
     {
         _StopTimer = false;
@@ -119,9 +114,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
-            _PoliticsFolder._CurrentTitle.SetActive(false);
-            _CultureFolder._CurrentTitle.SetActive(false);
-            _EducationFolder._CurrentTitle.SetActive(false);
+            _TitleHolder._CurrentTitle.SetActive(false);
         }
 
         else if (_StopTimer && _CorrectPoints == 0) // Lose
@@ -139,9 +132,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
-            _PoliticsFolder._CurrentTitle.SetActive(false);
-            _CultureFolder._CurrentTitle.SetActive(false);
-            _EducationFolder._CurrentTitle.SetActive(false);
+            _TitleHolder._CurrentTitle.SetActive(false);
         }
 
         else if (_StopTimer && _WrongPoints < 3)// Win
@@ -159,9 +150,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _Continue.SetActive(true);
             _ImagePopper.SetActive(false);
             _Distractions.SetActive(false);
-            _PoliticsFolder._CurrentTitle.SetActive(false);
-            _CultureFolder._CurrentTitle.SetActive(false);
-            _EducationFolder._CurrentTitle.SetActive(false);
+            _TitleHolder._CurrentTitle.SetActive(false);
         }
     }
 

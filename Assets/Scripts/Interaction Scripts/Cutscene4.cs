@@ -16,12 +16,13 @@ public class Cutscene4 : MonoBehaviour
     public GameFlowLegendManager _LegendManager;
     public Fade _FadeTransition;
 
-    private int _DialogueIndex;
-    private bool _CanContinue;
+    [SerializeField] private int _DialogueIndex;
+    [SerializeField] private bool _CanContinue;
 
-    private string[] _CurrentLines;
-    private string[] _CurrentSpeakers;
-    private int _CurrentLineIndex;
+    [SerializeField] private string[] _CurrentLines;
+    [SerializeField] private string[] _CurrentSpeakers;
+    [SerializeField] private int _CurrentLineIndex;
+    [SerializeField] private bool _DialougeEnd;
 
     void Start()
     {
@@ -36,7 +37,7 @@ public class Cutscene4 : MonoBehaviour
 
     void Update()
     {
-        if (_CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_CanContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _CanContinue = false;
             _CurrentLineIndex++;
@@ -50,13 +51,15 @@ public class Cutscene4 : MonoBehaviour
             }
             else
             {
-                if (_DialogueIndex < 4)
+                if (_DialougeEnd) 
+                {
+                    _DialougeEnd = false;
+                    EndDialogue();
+                }
+
+                else if (_DialogueIndex <= 4) 
                 {
                     ContinueMainDialogue();
-                }
-                else
-                {
-                    EndDialogue();
                 }
             }
         }
@@ -98,21 +101,21 @@ public class Cutscene4 : MonoBehaviour
         }
     }
 
-    void StartDialogueSet(string[] _Lines, string[] _Speakers)
+    void StartDialogueSet(string[] lines, string[] speakers)
     {
-        _CurrentLines = _Lines;
-        _CurrentSpeakers = _Speakers;
+        _CurrentLines = lines;
+        _CurrentSpeakers = speakers;
         _CurrentLineIndex = 0;
 
         StartCoroutine(TypeLine(_CurrentLines[_CurrentLineIndex], _CurrentSpeakers[_CurrentLineIndex]));
     }
 
-    IEnumerator TypeLine(string _Line, string _Speaker)
+    IEnumerator TypeLine(string line, string speaker)
     {
         _StoryText.text = "";
-        _NpcName.text = _Speaker;
+        _NpcName.text = speaker;
 
-        foreach (char c in _Line)
+        foreach (char c in line)
         {
             _StoryText.text += c;
             yield return new WaitForSeconds(0.01f);
@@ -124,20 +127,11 @@ public class Cutscene4 : MonoBehaviour
     public void EndDialogue()
     {
         _DialoguePanel.SetActive(false);
-        _LegendManager._Courage.SetActive(false);
-        _LegendManager._Fear.SetActive(false);
-        _LegendManager._Guilt.SetActive(false);
         _FadeTransition.FadeOut();
         StartCoroutine(CallNextScene());
     }
 
-    IEnumerator CallNextScene()
-    {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("Cutscene1.5");
-    }
-
-    
+  
 
     public void Choice1DiningRoom()
     {
@@ -148,6 +142,7 @@ public class Cutscene4 : MonoBehaviour
         UpdateStatsUI();
 
         _Choice1Panel.SetActive(false);
+        _DialougeEnd = true;
 
         StartDialogueSet(
             new string[]
@@ -174,6 +169,7 @@ public class Cutscene4 : MonoBehaviour
         UpdateStatsUI();
 
         _Choice1Panel.SetActive(false);
+        _DialougeEnd = true;
 
         StartDialogueSet(
             new string[]
@@ -187,6 +183,7 @@ public class Cutscene4 : MonoBehaviour
                 "Tita Liza"
             }
         );
+
     }
 
     public void Choice3DiningRoom()
@@ -197,6 +194,7 @@ public class Cutscene4 : MonoBehaviour
         UpdateStatsUI();
 
         _Choice1Panel.SetActive(false);
+        _DialougeEnd = true;
 
         StartDialogueSet(
             new string[]
@@ -220,5 +218,11 @@ public class Cutscene4 : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Cutscene1.5");
     }
 }

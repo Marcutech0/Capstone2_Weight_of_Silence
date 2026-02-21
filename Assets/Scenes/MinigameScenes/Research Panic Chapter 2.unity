@@ -761,7 +761,7 @@ MonoBehaviour:
   m_text: Cancel Culture and Its Effects on Public Discourse in Online Communities
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1035,11 +1035,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1305916512}
-  m_Father: {fileID: 952685365}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -386, y: 212.96924}
+  m_AnchoredPosition: {x: 185, y: 304}
   m_SizeDelta: {x: 768.4002, y: 173.9385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &199163417
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &212982920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1557,7 @@ MonoBehaviour:
   m_text: Digital Media and the Evolution of Filipino Cultural Identity
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_text: Academic Pressure and Its Impact on Student Mental Health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2341,11 +2341,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 311178365}
-  m_Father: {fileID: 1164775096}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 416.8192, y: 244.62231}
+  m_AnchoredPosition: {x: -33, y: 105}
   m_SizeDelta: {x: 606.0385, y: 141.2446}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440260950
@@ -2368,7 +2368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -415095135, guid: 7c7c003648b40074aadb9dbca09f42e7, type: 3}
+  m_Sprite: {fileID: 1451826541, guid: 7c7c003648b40074aadb9dbca09f42e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2427,7 +2427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &507075315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,7 +2442,7 @@ GameObject:
   - component: {fileID: 507075320}
   - component: {fileID: 507075321}
   m_Layer: 0
-  m_Name: Politics
+  m_Name: Politics Title 3
   m_TagString: Politics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2465,7 +2465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -474.86743, y: 163.01}
+  m_AnchoredPosition: {x: -474.86743, y: -195}
   m_SizeDelta: {x: 758.5151, y: 160.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507075318
@@ -3268,7 +3268,7 @@ MonoBehaviour:
   m_text: 'Policy Reform and Public Trust: A Study on Anti-Corruption Initiatives'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3794,7 +3794,7 @@ GameObject:
   - component: {fileID: 891205011}
   - component: {fileID: 891205012}
   m_Layer: 0
-  m_Name: Politics
+  m_Name: Politics Title 2
   m_TagString: Politics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3817,7 +3817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179.38696, y: 156.00232}
+  m_AnchoredPosition: {x: -179.38696, y: -20}
   m_SizeDelta: {x: 938.1061, y: 146.0046}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891205009
@@ -4122,7 +4122,7 @@ GameObject:
   - component: {fileID: 940359185}
   - component: {fileID: 940359186}
   m_Layer: 0
-  m_Name: Education
+  m_Name: Education Title 3
   m_TagString: Education
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4141,11 +4141,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1210471466}
-  m_Father: {fileID: 952685365}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -440.7854, y: 177.47638}
+  m_AnchoredPosition: {x: -440.7854, y: 174}
   m_SizeDelta: {x: 826.6865, y: 188.9528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940359183
@@ -4227,7 +4227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &944789203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,63 +4282,7 @@ MonoBehaviour:
   - {fileID: 1878683894}
   _PopInterval: 1
   _ActiveDuration: 0.5
---- !u!1 &952685364
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 952685365}
-  - component: {fileID: 952685366}
-  m_Layer: 0
-  m_Name: Education Holder
-  m_TagString: Title
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &952685365
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952685364}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 199163415}
-  - {fileID: 984853117}
-  - {fileID: 940359181}
-  m_Father: {fileID: 1808617843}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &952685366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952685364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a27998e8719064182c7870c896a20e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResearchTitleSpawner
-  _CanvasRect: {fileID: 1413549032}
-  _ResearchTitles:
-  - {fileID: 199163414}
-  - {fileID: 984853116}
-  - {fileID: 940359180}
-  _CurrentTitle: {fileID: 0}
+  _Title: {fileID: 2058573663}
 --- !u!1 &955714171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4399,7 +4343,7 @@ MonoBehaviour:
   m_text: The Impact of Youth Voter Engagement on Local Government Transparency
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4489,7 +4433,7 @@ GameObject:
   - component: {fileID: 963909208}
   - component: {fileID: 963909209}
   m_Layer: 0
-  m_Name: Politics
+  m_Name: Politics Title
   m_TagString: Politics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4512,7 +4456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -383.69824, y: 163.0094}
+  m_AnchoredPosition: {x: -383.69824, y: -79}
   m_SizeDelta: {x: 940.8534, y: 160.0189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963909205
@@ -4609,7 +4553,7 @@ GameObject:
   - component: {fileID: 984853121}
   - component: {fileID: 984853122}
   m_Layer: 0
-  m_Name: Education
+  m_Name: 'Education Title 2 '
   m_TagString: Education
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4628,11 +4572,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 343588419}
-  m_Father: {fileID: 952685365}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -493.18686, y: 170.43054}
+  m_AnchoredPosition: {x: 155, y: 103}
   m_SizeDelta: {x: 721.8834, y: 174.8611}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984853119
@@ -4714,7 +4658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &1008439382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4984,7 +4928,7 @@ MonoBehaviour:
     Communities
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5156,7 +5100,7 @@ MonoBehaviour:
   m_text: The Role of Traditional Festivals in Strengthening Community Bonds
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5232,63 +5176,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158662212}
   m_CullTransparentMesh: 1
---- !u!1 &1164775095
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1164775096}
-  - component: {fileID: 1164775097}
-  m_Layer: 0
-  m_Name: Culture Holder
-  m_TagString: Title
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1164775096
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164775095}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 440260948}
-  - {fileID: 1320050675}
-  - {fileID: 1394359459}
-  m_Father: {fileID: 1808617843}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1164775097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164775095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a27998e8719064182c7870c896a20e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResearchTitleSpawner
-  _CanvasRect: {fileID: 1413549032}
-  _ResearchTitles:
-  - {fileID: 440260947}
-  - {fileID: 1320050674}
-  - {fileID: 1394359458}
-  _CurrentTitle: {fileID: 0}
 --- !u!1 &1210471465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5350,7 +5237,7 @@ MonoBehaviour:
     Students
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5862,7 +5749,7 @@ MonoBehaviour:
   m_text: The Effectiveness of Blended Learning in Public Secondary Schools
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5952,7 +5839,7 @@ GameObject:
   - component: {fileID: 1320050679}
   - component: {fileID: 1320050680}
   m_Layer: 0
-  m_Name: Culture
+  m_Name: Culture Title 2
   m_TagString: Culture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5971,11 +5858,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 127364506}
-  m_Father: {fileID: 1164775096}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382.65, y: 160.65546}
+  m_AnchoredPosition: {x: 140, y: 160.65546}
   m_SizeDelta: {x: 765.31, y: 155.3109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1320050677
@@ -6057,7 +5944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &1339488806
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,7 +6070,7 @@ GameObject:
   - component: {fileID: 1394359463}
   - component: {fileID: 1394359464}
   m_Layer: 0
-  m_Name: Culture
+  m_Name: Culture Title 3
   m_TagString: Culture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6202,11 +6089,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1158662213}
-  m_Father: {fileID: 1164775096}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -503.28915, y: 160.66}
+  m_AnchoredPosition: {x: -503.28915, y: 323}
   m_SizeDelta: {x: 701.6785, y: 155.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1394359461
@@ -6288,7 +6175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingTextChapter2
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
+  _Spawner: {fileID: 2058573663}
 --- !u!1 &1410255087
 GameObject:
   m_ObjectHideFlags: 0
@@ -6811,8 +6698,8 @@ MonoBehaviour:
   _GameStatus: {fileID: 698326107}
   _GameStatusObject: {fileID: 698326105}
   _CurrentTitleActivePolitics: {fileID: 2058573663}
-  _CurrentTitleActiveCulture: {fileID: 1164775097}
-  _CurrentTitleActiveEducation: {fileID: 952685366}
+  _CurrentTitleActiveCulture: {fileID: 0}
+  _CurrentTitleActiveEducation: {fileID: 0}
   _TutorialPanel: {fileID: 1211276563}
   _LegendManager: {fileID: 2085023012}
   _LoseScreen: {fileID: 1546659032}
@@ -6820,12 +6707,7 @@ MonoBehaviour:
   _Continue: {fileID: 745957367}
   _ImagePopper: {fileID: 944789203}
   _Distractions: {fileID: 1878683894}
-  _PoliticsHolder: {fileID: 2058573661}
-  _CultureHolder: {fileID: 1164775095}
-  _EducationHolder: {fileID: 952685364}
-  _PoliticsFolder: {fileID: 2058573663}
-  _CultureFolder: {fileID: 1164775097}
-  _EducationFolder: {fileID: 952685366}
+  _TitleHolder: {fileID: 2058573663}
 --- !u!1 &1627635592
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,8 +7253,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2058573662}
-  - {fileID: 1164775096}
-  - {fileID: 952685365}
   m_Father: {fileID: 1413549032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7715,7 +7595,7 @@ GameObject:
   - component: {fileID: 2058573662}
   - component: {fileID: 2058573663}
   m_Layer: 0
-  m_Name: Politics Holder
+  m_Name: Title Holder
   m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7736,6 +7616,12 @@ RectTransform:
   - {fileID: 963909204}
   - {fileID: 891205007}
   - {fileID: 507075316}
+  - {fileID: 440260948}
+  - {fileID: 1320050675}
+  - {fileID: 1394359459}
+  - {fileID: 199163415}
+  - {fileID: 984853117}
+  - {fileID: 940359181}
   m_Father: {fileID: 1808617843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7758,8 +7644,14 @@ MonoBehaviour:
   _CanvasRect: {fileID: 1413549032}
   _ResearchTitles:
   - {fileID: 963909203}
+  - {fileID: 440260947}
+  - {fileID: 199163414}
   - {fileID: 891205006}
+  - {fileID: 984853116}
+  - {fileID: 1320050674}
   - {fileID: 507075315}
+  - {fileID: 940359180}
+  - {fileID: 1394359458}
   _CurrentTitle: {fileID: 0}
 --- !u!1 &2085023011
 GameObject:

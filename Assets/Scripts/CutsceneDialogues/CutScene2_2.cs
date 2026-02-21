@@ -30,7 +30,7 @@ public class CutScene2_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_CanContinue && Input.GetKeyDown(KeyCode.E)) 
+        if (_CanContinue && Input.GetKeyDown(KeyCode.Mouse0)) 
         {
             _CanContinue = false;
             _DialogueIndex++;

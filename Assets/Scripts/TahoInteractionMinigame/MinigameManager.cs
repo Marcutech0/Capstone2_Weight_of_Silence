@@ -187,9 +187,7 @@ public class MinigameManager : MonoBehaviour
     public void End() 
     {
         StartCoroutine(CallNextScene());
-        PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
-        PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
-        PlayerPrefs.Save();
+        
     }
 
 

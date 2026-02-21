@@ -27,7 +27,7 @@ public class Exploration3_1BulletinBoard : MonoBehaviour
             StartCoroutine(ShowDialogueBulletinBoard());
         }
 
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _CanContinue = false;
             _DialogueIndex++;

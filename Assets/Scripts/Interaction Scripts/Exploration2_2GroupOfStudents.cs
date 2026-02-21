@@ -29,7 +29,7 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
             StartCoroutine(ShowDialogueGroupOfStudents());
         }
 
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _CanContinue = false;
             _DialogueIndex++;
@@ -50,11 +50,12 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
                 StartCoroutine(ShowNewDialogueNarrator("No one responds"));
             }
 
-            else
+            else if (_DialogueIndex > 4) 
             {
                 EndDialogue();
                 StartCoroutine(CallNextScene());
             }
+
         }
     }
     public void EndDialogue()
@@ -86,7 +87,6 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
         _ChoicePanel1.SetActive(false);
         _DialoguePanel.SetActive(false);
         _CanContinue = false;
-        StartCoroutine(EndDialogueDelay());
         StartCoroutine(CallNextScene());
     }
 
@@ -105,6 +105,7 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
         PlayerPrefs.Save();
         _ChoicePanel1.SetActive(false);
         _DialogueIndex++;
+        _CanContinue = true;
     }
 
     IEnumerator ShowDialogueGroupOfStudents()
@@ -113,6 +114,7 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
         _DialoguePanel.SetActive(true);
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
+        _PlayerAnimator.enabled = false;
 
         _StoryText.text = "";
         _NpcName.text = "Groupmate 1";
@@ -187,17 +189,6 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
         SceneManager.LoadScene("Research Panic Chapter 2");
     }
 
-    IEnumerator EndDialogueDelay()
-    {
-        yield return new WaitForSeconds(1f);
-        _DialoguePanel.SetActive(false);
-        _LegendManager._Fear.SetActive(false);
-        _LegendManager._Courage.SetActive(false);
-        _LegendManager._Guilt.SetActive(false);
-        _LegendManager._Anonymity.SetActive(false);
-        _LegendManager._Reputation.SetActive(false);
-
-    }
 
     public void OnTriggerEnter(Collider other)
     {

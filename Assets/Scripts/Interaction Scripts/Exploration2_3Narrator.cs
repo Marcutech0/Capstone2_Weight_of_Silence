@@ -17,6 +17,8 @@ public class Exploration2_3Narrator : MonoBehaviour
     public GameObject _PhoneNotif;
     public GameObject _PhoneButtonsUI;
     public GameObject _MessagesApp;
+    public GameObject _PhoneButton;
+    public GameObject _CloseButton;
     public TextMeshProUGUI _PhoneNotifText;
 
     [TextArea] public string _Storyline;
@@ -37,7 +39,7 @@ public class Exploration2_3Narrator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_CanContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _CanContinue = false;
             _DialogueIndex++;
@@ -113,6 +115,8 @@ public class Exploration2_3Narrator : MonoBehaviour
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
         _PlayerAnimator.enabled = true;
+        _PhoneButton.SetActive(true);
+        _CloseButton.SetActive(true);
        
     }
 

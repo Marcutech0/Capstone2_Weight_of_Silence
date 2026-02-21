@@ -5381,7 +5381,7 @@ MonoBehaviour:
   bodyText: {fileID: 1521940775}
   tutorialTitle: Shared Notes
   tutorialBody: "Listen carefully to the lecture.\n\nAfterwards, select 5 words that
-    relate to the topic.\n\nRight click the word to select and place unto the notebook\n\nRight
+    relate to the topic.\n\nLeft click the word to select and place unto the notebook\n\nLeft
     click the word that is on the notebook to remove it\n\nOnce 5 words have been
     selected, click submit. \n\nPicking even one wrong keyword will cause you to
     lose, so choose wisely!\n\nWhen ready, click \"Im Ready!\""

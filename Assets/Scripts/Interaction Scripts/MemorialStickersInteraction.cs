@@ -27,7 +27,7 @@ public class MemorialStickersInteraction : MonoBehaviour
             StartCoroutine(ShowDialogueMemorialStickers());
         }
 
-        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_HasInteracted && _CanContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _CanContinue = false;
             _DialogueIndex++;

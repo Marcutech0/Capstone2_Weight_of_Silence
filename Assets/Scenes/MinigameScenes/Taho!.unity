@@ -1466,9 +1466,9 @@ MonoBehaviour:
   _OverfillManager: {fileID: 876018541}
   _ReleaseManager: {fileID: 876018541}
   _MinSpillDelay: 1
-  _MaxSpillDelay: 2
-  _MinSpillAmount: 1
-  _MaxSpillAmount: 2
+  _MaxSpillDelay: 1.5
+  _MinSpillAmount: 10
+  _MaxSpillAmount: 20
   _LegendManager: {fileID: 533295081}
 --- !u!1 &438648442
 GameObject:
@@ -2140,7 +2140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &688566310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935973e296e0bbe419b839203bb97d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controls
-  _FillRate: 20
+  _FillRate: 40
   _FillPercentText: {fileID: 1551683631}
   _TahoBar: {fileID: 1194229681}
 --- !u!114 &876018541
@@ -2825,6 +2825,7 @@ MonoBehaviour:
   _OverfillTracker: {fileID: 53555816}
   _ReleasedCount: 0
   _OverfillCount: 0
+  _UIUpdate: {fileID: 876018540}
 --- !u!1 &897748550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &949725382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4929,7 +4930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 385}
+  m_AnchoredPosition: {x: 52, y: 472}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736568550
@@ -5879,9 +5880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CupManager
   _CupPrefab: {fileID: 2988948842494207427, guid: c489da99a0338244a858842290de5175, type: 3}
   _CupSpawnPoints:
-  - {fileID: 688566310}
   - {fileID: 1995384090}
-  - {fileID: 949725382}
   _UiCanvas: {fileID: 709456561}
   _SelectedCupText: {fileID: 167749855}
   _Cups: []

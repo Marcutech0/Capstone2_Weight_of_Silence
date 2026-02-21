@@ -10,6 +10,7 @@ public class ImagePopout : MonoBehaviour
     public List <GameObject> _PopoutImages;
     public float _PopInterval = 1f;
     public float _ActiveDuration = 0.5f;
+    public ResearchTitleSpawner _Title;
 
     void Start()
     {
@@ -20,24 +21,21 @@ public class ImagePopout : MonoBehaviour
     {
         while (true)
         {
-            if (_PopoutImages.Count > 0) 
+            if (_Title != null && _Title._CurrentTitle != null && _PopoutImages.Count > 0) 
             {
                 int _Index = Random.Range(0, _PopoutImages.Count);
                 GameObject _Image = _PopoutImages[_Index];
                 RectTransform _Rect = _Image.GetComponent<RectTransform>();
 
-                float _HalfWidth = _CanvasRect.rect.width / 2f;
-                float _HalfHeight = _CanvasRect.rect.height / 2f;
-
-                float _X = Random.Range(-_HalfWidth, _HalfHeight);
-                float _Y = Random.Range(-_HalfHeight, _HalfHeight);
-
-                _Rect.SetParent(_CanvasRect, false);
-                _Rect.anchoredPosition = new Vector2(_X, _Y);
-
+                RectTransform _TitlePos = _Title._CurrentTitle.GetComponent<RectTransform>();
+                _Rect.SetParent(_TitlePos, false);
+                _Rect.anchoredPosition = Vector2.zero;
+                _Rect.sizeDelta = _TitlePos.sizeDelta;
+                _Rect.localScale = Vector3.one * 1.2f;
+                _Rect.SetAsLastSibling();
+                _Rect.localRotation = Quaternion.Euler(0, 0, Random.Range(-15f, 15f));
                 _Image.SetActive(true);
                 yield return new WaitForSeconds(_ActiveDuration);
-
                 _Image.SetActive(false);
             }
             yield return new WaitForSeconds(_PopInterval);

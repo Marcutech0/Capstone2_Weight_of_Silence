@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 199163416}
   - component: {fileID: 199163419}
   m_Layer: 0
-  m_Name: Education
+  m_Name: Education Title
   m_TagString: Education
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1110,7 +1110,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1305916512}
-  m_Father: {fileID: 952685365}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingText
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
+  _Spawner: {fileID: 2058573663}
 --- !u!114 &199163417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,7 +2085,7 @@ GameObject:
   - component: {fileID: 440260949}
   - component: {fileID: 440260952}
   m_Layer: 0
-  m_Name: Culture
+  m_Name: Culture Title
   m_TagString: Culture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2104,7 +2104,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 311178365}
-  m_Father: {fileID: 1164775096}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2125,7 +2125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingText
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
+  _Spawner: {fileID: 2058573663}
 --- !u!114 &440260950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,7 +2205,7 @@ GameObject:
   - component: {fileID: 507075317}
   - component: {fileID: 507075320}
   m_Layer: 0
-  m_Name: Politics
+  m_Name: Politics Title 3
   m_TagString: Politics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3202,7 +3202,7 @@ GameObject:
   - component: {fileID: 891205008}
   - component: {fileID: 891205011}
   m_Layer: 0
-  m_Name: Politics
+  m_Name: Politics Title 2
   m_TagString: Politics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3530,7 +3530,7 @@ GameObject:
   - component: {fileID: 940359182}
   - component: {fileID: 940359185}
   m_Layer: 0
-  m_Name: Education
+  m_Name: Education Title 3
   m_TagString: Education
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3549,7 +3549,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1210471466}
-  m_Father: {fileID: 952685365}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3570,7 +3570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingText
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
+  _Spawner: {fileID: 2058573663}
 --- !u!114 &940359183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3690,63 +3690,7 @@ MonoBehaviour:
   - {fileID: 1878683894}
   _PopInterval: 1
   _ActiveDuration: 0.5
---- !u!1 &952685364
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 952685365}
-  - component: {fileID: 952685366}
-  m_Layer: 0
-  m_Name: Education Holder
-  m_TagString: Title
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &952685365
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952685364}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 199163415}
-  - {fileID: 984853117}
-  - {fileID: 940359181}
-  m_Father: {fileID: 1808617843}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &952685366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952685364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a27998e8719064182c7870c896a20e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResearchTitleSpawner
-  _CanvasRect: {fileID: 1413549032}
-  _ResearchTitles:
-  - {fileID: 199163414}
-  - {fileID: 984853116}
-  - {fileID: 940359180}
-  _CurrentTitle: {fileID: 0}
+  _Title: {fileID: 2058573663}
 --- !u!1 &955714171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,7 +3841,7 @@ GameObject:
   - component: {fileID: 963909207}
   - component: {fileID: 963909208}
   m_Layer: 0
-  m_Name: Politics
+  m_Name: Politics Title
   m_TagString: Politics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4017,7 +3961,7 @@ GameObject:
   - component: {fileID: 984853118}
   - component: {fileID: 984853121}
   m_Layer: 0
-  m_Name: Education
+  m_Name: Education Title 2
   m_TagString: Education
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4036,7 +3980,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 343588419}
-  m_Father: {fileID: 952685365}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4057,7 +4001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingText
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 952685366}
+  _Spawner: {fileID: 2058573663}
 --- !u!114 &984853119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4708,63 +4652,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158662212}
   m_CullTransparentMesh: 1
---- !u!1 &1164775095
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1164775096}
-  - component: {fileID: 1164775097}
-  m_Layer: 0
-  m_Name: Culture Holder
-  m_TagString: Title
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1164775096
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164775095}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 440260948}
-  - {fileID: 1320050675}
-  - {fileID: 1394359459}
-  m_Father: {fileID: 1808617843}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1164775097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164775095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a27998e8719064182c7870c896a20e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResearchTitleSpawner
-  _CanvasRect: {fileID: 1413549032}
-  _ResearchTitles:
-  - {fileID: 440260947}
-  - {fileID: 1320050674}
-  - {fileID: 1394359458}
-  _CurrentTitle: {fileID: 0}
 --- !u!1 &1210471465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5291,7 +5178,7 @@ GameObject:
   - component: {fileID: 1320050676}
   - component: {fileID: 1320050679}
   m_Layer: 0
-  m_Name: Culture
+  m_Name: Culture Title 2
   m_TagString: Culture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5310,7 +5197,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 127364506}
-  m_Father: {fileID: 1164775096}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5331,7 +5218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingText
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
+  _Spawner: {fileID: 2058573663}
 --- !u!114 &1320050677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5411,7 +5298,7 @@ GameObject:
   - component: {fileID: 1394359460}
   - component: {fileID: 1394359463}
   m_Layer: 0
-  m_Name: Culture
+  m_Name: Culture Title 3
   m_TagString: Culture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5430,7 +5317,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1158662213}
-  m_Father: {fileID: 1164775096}
+  m_Father: {fileID: 2058573662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5451,7 +5338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggingText
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
-  _Spawner: {fileID: 1164775097}
+  _Spawner: {fileID: 2058573663}
 --- !u!114 &1394359461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6132,12 +6019,7 @@ MonoBehaviour:
   _Continue: {fileID: 1642781376}
   _ImagePopper: {fileID: 944789203}
   _Distractions: {fileID: 1878683894}
-  _PoliticsHolder: {fileID: 2058573661}
-  _CultureHolder: {fileID: 1164775095}
-  _EducationHolder: {fileID: 952685364}
-  _PoliticsFolder: {fileID: 2058573663}
-  _CultureFolder: {fileID: 1164775097}
-  _EducationFolder: {fileID: 952685366}
+  _TitleHolder: {fileID: 2058573663}
 --- !u!1 &1627635592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6852,8 +6734,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2058573662}
-  - {fileID: 1164775096}
-  - {fileID: 952685365}
   m_Father: {fileID: 1413549032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7633,7 +7513,7 @@ GameObject:
   - component: {fileID: 2058573662}
   - component: {fileID: 2058573663}
   m_Layer: 0
-  m_Name: Politics Holder
+  m_Name: TitleHolder
   m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7654,6 +7534,12 @@ RectTransform:
   - {fileID: 963909204}
   - {fileID: 891205007}
   - {fileID: 507075316}
+  - {fileID: 440260948}
+  - {fileID: 1320050675}
+  - {fileID: 1394359459}
+  - {fileID: 199163415}
+  - {fileID: 984853117}
+  - {fileID: 940359181}
   m_Father: {fileID: 1808617843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7676,8 +7562,14 @@ MonoBehaviour:
   _CanvasRect: {fileID: 1413549032}
   _ResearchTitles:
   - {fileID: 963909203}
+  - {fileID: 440260947}
+  - {fileID: 199163414}
   - {fileID: 891205006}
   - {fileID: 507075315}
+  - {fileID: 1320050674}
+  - {fileID: 1394359458}
+  - {fileID: 940359180}
+  - {fileID: 984853116}
   _CurrentTitle: {fileID: 0}
 --- !u!1 &2122039716
 GameObject:

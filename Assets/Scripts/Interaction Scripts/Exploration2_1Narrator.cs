@@ -9,6 +9,8 @@ public class Exploration2_1Narrator : MonoBehaviour
     public GameObject _DialoguePanel;
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
+    public GameObject _PhoneButton;
+    public GameObject _CloseButton;
     [TextArea] public string _Storyline;
 
     public CharacterController _PlayerController;
@@ -26,7 +28,7 @@ public class Exploration2_1Narrator : MonoBehaviour
 
     public void Update()
     {
-        if (_CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_CanContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _CanContinue = false;
             _DialogueIndex++;
@@ -80,6 +82,8 @@ public class Exploration2_1Narrator : MonoBehaviour
         _PlayerControls.enabled = true;
         _PlayerController.enabled = true;
         _PlayerAnimator.enabled = true;
+        _PhoneButton.SetActive(true);
+        _CloseButton.SetActive(true);
 
     }
 

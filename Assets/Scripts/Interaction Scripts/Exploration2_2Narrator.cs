@@ -8,6 +8,8 @@ public class Exploration2_2Narrator : MonoBehaviour
     public GameObject _DialoguePanel;
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
+    public GameObject _PhoneButton;
+    public GameObject _CloseButton;
     [TextArea] public string _Storyline;
 
     [SerializeField] private int _DialogueIndex;
@@ -25,7 +27,7 @@ public class Exploration2_2Narrator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_CanContinue && Input.GetKeyDown(KeyCode.E))
+        if (_CanContinue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             _CanContinue = false;
             _DialogueIndex++;
@@ -53,6 +55,8 @@ public class Exploration2_2Narrator : MonoBehaviour
         _PlayerController.enabled = true;
         _PlayerControls.enabled = true;
         _PlayerAnimator.enabled = true;
+        _PhoneButton.SetActive(true);
+        _CloseButton.SetActive(true);
     }
 
     IEnumerator ShowNarratorDialogue()

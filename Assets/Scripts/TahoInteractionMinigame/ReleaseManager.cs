@@ -6,7 +6,7 @@ public class ReleaseManager : MonoBehaviour
     public TextMeshProUGUI _OverfillTracker;
     public int _ReleasedCount;
     public int _OverfillCount;
-    
+    public Controls _UIUpdate;    
     public void ReleaseCup() 
     {
         // Gets the current selected cup
@@ -20,8 +20,12 @@ public class ReleaseManager : MonoBehaviour
         {
             _ReleasedCount++;
             _ReleasedTracker.text = $"Released: {_ReleasedCount}";
+            CupClickManager._CurrentlySelectedCup = null;
             Destroy(_CurrentCup.gameObject);
+            _UIUpdate._TahoBar.value = 0;
+            _UIUpdate._FillPercentText.text = "0%";
             Debug.Log("Cup Released Successfully");
+            
         }
 
         // if fill percent is less than 100% add 1 to overfill count
@@ -29,8 +33,13 @@ public class ReleaseManager : MonoBehaviour
         {
             _OverfillCount++;
             _OverfillTracker.text = $"Overfilled: {_OverfillCount}";
+            CupClickManager._CurrentlySelectedCup = null;
             Destroy(_CurrentCup.gameObject);
+            _UIUpdate._TahoBar.value = 0;
+            _UIUpdate._FillPercentText.text = "0%";
+            Debug.Log("Cup Released Successfully");
             Debug.Log("Cup Overfilled");
+            
         }
     }
 }
