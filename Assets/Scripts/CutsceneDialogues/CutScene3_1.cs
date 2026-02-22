@@ -28,25 +28,20 @@ public class CutScene3_1 : MonoBehaviour
 
             if (_DialogueIndex == 1)
             {
-                StartCoroutine(ShowNewDialogueNarrator("Days pass."));
+                StartCoroutine(ShowNewDialogueNarrator("Classes continue."));
             }
 
             else if (_DialogueIndex == 2)
             {
-                StartCoroutine(ShowNewDialogueNarrator("Classes continue."));
+                StartCoroutine(ShowNewDialogueNarrator("Posters fade."));
             }
 
             else if (_DialogueIndex == 3)
             {
-                StartCoroutine(ShowNewDialogueNarrator("Posters fade."));
-            }
-
-            else if (_DialogueIndex == 4)
-            {
                 StartCoroutine(ShowNewDialogueNarrator("The space where Raya used to walk is still empty."));
             }
 
-            else if (_DialogueIndex == 5)
+            else if (_DialogueIndex == 4)
             {
                 StartCoroutine(ShowNewDialogueNarrator("No announcement is made."));
             }
