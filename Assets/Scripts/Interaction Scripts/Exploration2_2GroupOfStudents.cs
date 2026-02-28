@@ -40,17 +40,17 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
                 _ChoicePanel1.SetActive(true);
             }
 
-            else if (_DialogueIndex == 3)
+            else if (_DialogueIndex == 2)
             {
                 StartCoroutine(ShowNewDialogueLiam("Raya worked on this, her name deserves to stay on the paper."));
             }
 
-            else if (_DialogueIndex == 4)
+            else if (_DialogueIndex == 3)
             {
                 StartCoroutine(ShowNewDialogueNarrator("No one responds"));
             }
 
-            else if (_DialogueIndex > 4) 
+            else 
             {
                 EndDialogue();
                 StartCoroutine(CallNextScene());
@@ -104,8 +104,6 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _ChoicePanel1.SetActive(false);
-        _DialogueIndex++;
-        _CanContinue = true;
     }
 
     IEnumerator ShowDialogueGroupOfStudents()
