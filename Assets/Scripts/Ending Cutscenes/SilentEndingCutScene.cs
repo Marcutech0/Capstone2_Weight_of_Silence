@@ -94,7 +94,7 @@ public class SilentEndingCutScene : MonoBehaviour
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
         }
         _CanContinue = true;
     }
@@ -105,7 +105,7 @@ public class SilentEndingCutScene : MonoBehaviour
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
         }
         _CanContinue = true;
 
@@ -118,7 +118,7 @@ public class SilentEndingCutScene : MonoBehaviour
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.03f);
         }
         _CanContinue = true;
 
