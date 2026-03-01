@@ -99,7 +99,7 @@ public class CutScene2_3 : MonoBehaviour
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
         _CanContinue = true;
     }
@@ -110,7 +110,7 @@ public class CutScene2_3 : MonoBehaviour
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
         _CanContinue = true;
 

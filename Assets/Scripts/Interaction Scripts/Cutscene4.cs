@@ -118,7 +118,7 @@ public class Cutscene4 : MonoBehaviour
         foreach (char c in line)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
 
         _CanContinue = true;

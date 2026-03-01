@@ -6584,6 +6584,8 @@ MonoBehaviour:
   _PhoneButton: {fileID: 1512644075}
   _CloseButton: {fileID: 1730635871}
   _PhoneNotifText: {fileID: 2059756112}
+  _DialoguePanelUI: {fileID: 89662317}
+  _ChoicePanelUI: {fileID: 1982753684}
   _Storyline: 'You''re left to the room alone
 
 '

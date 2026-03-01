@@ -76,7 +76,7 @@ public class CutScene2_2 : MonoBehaviour
         foreach (char c in _Storyline)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
         _CanContinue = true;
     }
@@ -89,7 +89,7 @@ public class CutScene2_2 : MonoBehaviour
         foreach (char c in _NewLine)
         {
             _StoryText.text += c;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
         }
         _CanContinue = true;
     }
@@ -108,16 +108,16 @@ public class CutScene2_2 : MonoBehaviour
     IEnumerator PhoneNotifRoutine()
     {
         _HomeUI.SetActive(true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         _NotifPanel1.SetActive(true);
         _NotifText1.text = "CAPSTONE PROGRESS REVIEW";
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         _NotifPanel1.SetActive(false);
         _NotifPanel2.SetActive(true);
         _NotifText2.text = "Midterm submission required.";
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         _NotifPanel1.SetActive(false);
         _NotifPanel2.SetActive(false);
         _NotifPanel3.SetActive(true);

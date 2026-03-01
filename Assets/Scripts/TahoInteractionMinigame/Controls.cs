@@ -28,9 +28,9 @@ public class Controls : MonoBehaviour
             _Cup.SetPouring(true);
         }
 
-        else
+        else 
         {
-            _Cup.SetPouring(true);
+            _Cup.SetPouring(false);
         }
     }
 

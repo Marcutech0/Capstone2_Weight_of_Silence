@@ -7015,6 +7015,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19199cfa2a6fc544e82bb9abdc325afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RayasDoorInteraction
+  _NoticeBoard: {fileID: 1181558939}
+  _InteractIndicator: {fileID: 1644712788}
+  _Indicator: {fileID: 1361673254}
 --- !u!114 &1181558939
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ public class Exploration2_3Narrator : MonoBehaviour
     public GameObject _PhoneButton;
     public GameObject _CloseButton;
     public TextMeshProUGUI _PhoneNotifText;
+    public Canvas _DialoguePanelUI;
+    public Canvas _ChoicePanelUI;
 
     [TextArea] public string _Storyline;
 
@@ -52,6 +54,8 @@ public class Exploration2_3Narrator : MonoBehaviour
             else if (_DialogueIndex == 2)
             {
                 _PhonePanel.SetActive(true);
+                _DialoguePanelUI.sortingOrder = 10;
+                _ChoicePanelUI.sortingOrder = 11;
                 int _Result = PlayerPrefs.GetInt("ChoiceResult", 0);
                 if (_Result == 1)
                 {

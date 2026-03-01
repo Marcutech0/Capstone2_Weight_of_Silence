@@ -7129,6 +7129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e38885033e7a24fb28ef79d2683a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Exploration2_1CourtyardDoorInteraction
+  _BulletinBoardInteraction: {fileID: 1272695354}
+  _TwoStudentsInteraction: {fileID: 1272695353}
+  _InteractIndicator: {fileID: 1414369781}
+  _Indicator: {fileID: 1529521619}
 --- !u!114 &1272695353
 MonoBehaviour:
   m_ObjectHideFlags: 0

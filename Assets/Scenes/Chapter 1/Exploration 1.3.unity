@@ -7389,6 +7389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b197e58a976abaa4f99e9977b882365f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DuskDoorInteraction
+  _SecurityCheckpointInteraction: {fileID: 861920833}
+  _MemorialStickersInteraction: {fileID: 861920832}
+  _InteractIndicator: {fileID: 1502719333}
+  _Indicator: {fileID: 1291545808}
 --- !u!114 &861920832
 MonoBehaviour:
   m_ObjectHideFlags: 0
