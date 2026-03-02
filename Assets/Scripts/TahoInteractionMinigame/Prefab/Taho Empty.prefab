@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 156318746298370298}
   - component: {fileID: 1039995202514036191}
   m_Layer: 5
-  m_Name: Cups
+  m_Name: Taho Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,4 +91,4 @@ MonoBehaviour:
   _FillPercent: 0
   _CupImage: {fileID: 156318746298370298}
   _EmptySprite: {fileID: -626373544, guid: 168b9292339e777478cc7f91645ba7b4, type: 3}
-  _PouringSprite: {fileID: 979548878, guid: 46c06e863aedf014d85d1019023019e0, type: 3}
+  _PouringSprite: {fileID: 1779638334, guid: b31295b2ced031f4f8d8eca105951dea, type: 3}
