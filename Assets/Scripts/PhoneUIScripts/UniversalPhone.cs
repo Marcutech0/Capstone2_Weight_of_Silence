@@ -16,12 +16,19 @@ public class UniversalPhone : MonoBehaviour
         _MessagesUI.SetActive(true);
     }
 
-    public void ClosePhone()
+    public void Update()
     {
-        if (_HomeUI.activeSelf || _MessagesUI.activeSelf)
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            _HomeUI.SetActive(false);
-            _MessagesUI.SetActive(false);
+            if (_MessagesUI.activeSelf)
+            {
+                _MessagesUI.SetActive(false);
+            }
+
+            else if (_HomeUI.activeSelf)
+            {
+                _HomeUI.SetActive(false);
+            }
         }
     }
 

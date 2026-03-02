@@ -23,7 +23,6 @@ public class LiamsDoorInteraction : MonoBehaviour
             if (_Desk._HasInteracted && _Mirror._HasInteracted)
             {
                 _PhoneButtonsOpenUI.SetActive(true);
-                _PhoneButtonsCloseUI.SetActive(true);
                 _PhoneNotif.text = "You may now access your phone";
 
                 if (_Phone._HasInteractedPhone && _Desk._HasInteracted && _Mirror._HasInteracted)

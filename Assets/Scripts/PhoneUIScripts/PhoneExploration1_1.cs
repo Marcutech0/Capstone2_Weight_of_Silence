@@ -24,6 +24,27 @@ public class PhoneExploration1_1 : MonoBehaviour
     public int _ChoiceResult;
     public bool _HasInteractedPhone;
     public GameObject _ReplyButton;
+
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (_ReplyChoice1.activeSelf)
+            {
+                _ReplyChoice1.SetActive(false);
+            }
+
+            else if (_MessagesUI.activeSelf)
+            {
+                _MessagesUI.SetActive(false);
+            }
+            else if (_HomeUI.activeSelf)
+            {
+                _HomeUI.SetActive(false);
+            }
+        }
+    }
     public void OpenPhone()
     {
         _HomeUI.SetActive(true);
@@ -100,15 +121,6 @@ public class PhoneExploration1_1 : MonoBehaviour
         _ReplyButton.SetActive(false);
 
 
-    }
-
-    public void ClosePhone() 
-    {
-        if (_HomeUI.activeSelf || _MessagesUI.activeSelf) 
-        {
-            _HomeUI.SetActive(false);
-            _MessagesUI.SetActive(false);
-        }
     }
 
     IEnumerator RayasReplyDelayChoice1()
