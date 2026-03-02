@@ -94,7 +94,7 @@ public class NewsScreenInteract : MonoBehaviour
             if (_HasInteracted)
                 _InteractText.text = "Interacted!";
             else
-                _InteractText.text = "Press F to Interact";
+                _InteractText.text = "Press F To Interact With News Screen";
         }
     }
 
