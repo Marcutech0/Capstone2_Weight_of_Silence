@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -626373544, guid: 168b9292339e777478cc7f91645ba7b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 168b9292339e777478cc7f91645ba7b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &1039995202514036191
 MonoBehaviour:
@@ -90,5 +90,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CupData
   _FillPercent: 0
   _CupImage: {fileID: 156318746298370298}
-  _EmptySprite: {fileID: -626373544, guid: 168b9292339e777478cc7f91645ba7b4, type: 3}
-  _PouringSprite: {fileID: 1779638334, guid: b31295b2ced031f4f8d8eca105951dea, type: 3}
+  _EmptySprite: {fileID: 21300000, guid: 168b9292339e777478cc7f91645ba7b4, type: 3}
+  _PouringSprite: {fileID: 21300000, guid: b31295b2ced031f4f8d8eca105951dea, type: 3}
