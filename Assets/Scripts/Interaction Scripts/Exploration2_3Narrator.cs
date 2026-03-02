@@ -53,9 +53,7 @@ public class Exploration2_3Narrator : MonoBehaviour
 
             else if (_DialogueIndex == 2)
             {
-                _PhonePanel.SetActive(true);
-                _DialoguePanelUI.sortingOrder = 10;
-                _ChoicePanelUI.sortingOrder = 11;
+                
                 int _Result = PlayerPrefs.GetInt("ChoiceResult", 0);
                 if (_Result == 1)
                 {
@@ -87,7 +85,6 @@ public class Exploration2_3Narrator : MonoBehaviour
             else if (_DialogueIndex == 5)
             {
                 StartCoroutine(ShowNarratorNewDialogue("The portal updates", true));
-
             }
 
             else if (_DialogueIndex == 6)

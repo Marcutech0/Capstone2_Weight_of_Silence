@@ -10,11 +10,12 @@ public class Phone3_1 : MonoBehaviour
     public GameObject _PhoneButtonUI;
     public GameObject _DialoguePanel;
     public GameObject _PhonePanel;
-    public TextMeshProUGUI _NpcName;
-    public TextMeshProUGUI _StoryText;
     public GameObject _RayaMessageBox;
     public GameObject _RayaMessageBox2;
+    public TextMeshProUGUI _NpcName;
+    public TextMeshProUGUI _StoryText;
     public PhoneExploration1_1 _Phone;
+    public Canvas _DialoguePanelUI;
 
     [TextArea] public string _Storyline;
 
@@ -44,6 +45,7 @@ public class Phone3_1 : MonoBehaviour
             if (_DialogueIndex == 1)
             {
                 _PhonePanel.SetActive(true);
+                _DialoguePanelUI.sortingOrder = 10;
                 int _Result = PlayerPrefs.GetInt("ChoiceResult", 0);
                 if (_Result == 1)
                 {
