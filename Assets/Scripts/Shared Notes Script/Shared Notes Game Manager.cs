@@ -64,11 +64,16 @@ public class Shared_Notes_Manager : MonoBehaviour
         public Vector2 originalPosition;
         public UnityEngine.UI.ColorBlock originalButtonColors;
         public bool isOnNotebook;
+        public int slotIndex;
     }
 
     private readonly Dictionary<TextFragment, FragmentState> fragmentStates = new();
     private int selectedCount = 0;
     private bool isLocked = false;
+    // Tracks which fragment occupies each notebook slot (null = free).
+    private TextFragment[] slotAssignments;
+    // Prevents rapid double‑clicks / overlaps while a fragment is animating.
+    private bool isAnimating = false;
 
     //Gameflow Variables
     public GameFlowLegendManager _LegendManager;
@@ -78,6 +83,7 @@ public class Shared_Notes_Manager : MonoBehaviour
         isLocked = false;
         selectedCount = 0;
         placedFragments.Clear();
+        slotAssignments = notebookSlots != null ? new TextFragment[notebookSlots.Length] : null;
 
         SetLectureVisible(true);
         SetStatus("");
@@ -151,6 +157,8 @@ public class Shared_Notes_Manager : MonoBehaviour
             Debug.LogError("SharedNotesGameController: notebookSlots must have exactly 5 slots.");
             return;
         }
+        // Ensure slot assignment array is in a valid state.
+        slotAssignments = new TextFragment[notebookSlots.Length];
 
         if (correctKeywords == null || correctKeywords.Length != 5)
         {
@@ -241,7 +249,7 @@ public class Shared_Notes_Manager : MonoBehaviour
 
     private void OnFragmentClicked(TextFragment fragment)
     {
-        if (isLocked || fragment == null)
+        if (isLocked || fragment == null || isAnimating)
             return;
 
         // If this fragment is already on the notebook, send it back to the blackboard.
@@ -253,16 +261,39 @@ public class Shared_Notes_Manager : MonoBehaviour
         }
 
         // Otherwise, move it from the blackboard into the next available notebook slot.
-        fragment.SetInteractable(false);
-
-        if (selectedCount >= 5)
+        if (notebookSlots == null || slotAssignments == null)
             return;
 
-        RectTransform slot = notebookSlots[selectedCount];
-        selectedCount++;
+        // Find the first free slot to prevent two fragments sharing the same slot.
+        int freeIndex = -1;
+        for (int i = 0; i < slotAssignments.Length; i++)
+        {
+            if (slotAssignments[i] == null)
+            {
+                freeIndex = i;
+                break;
+            }
+        }
+
+        // No free slot – do not lock the fragment; just ignore the click.
+        if (freeIndex == -1)
+            return;
+
+        RectTransform slot = notebookSlots[freeIndex];
+        if (slot == null)
+            return;
+
+        fragment.SetInteractable(false);
+
+        slotAssignments[freeIndex] = fragment;
+        selectedCount = Mathf.Min(slotAssignments.Length, selectedCount + 1);
         placedFragments.Add(fragment);
 
-        StartCoroutine(MoveFragmentToSlot(fragment, slot));
+        // Remember which slot this fragment is heading to.
+        if (state != null)
+            state.slotIndex = freeIndex;
+
+        StartCoroutine(MoveFragmentToSlot(fragment, slot, freeIndex));
 
     }
 
@@ -302,7 +333,7 @@ public class Shared_Notes_Manager : MonoBehaviour
             Fail();
     }
 
-    private IEnumerator MoveFragmentToSlot(TextFragment fragment, RectTransform slot)
+    private IEnumerator MoveFragmentToSlot(TextFragment fragment, RectTransform slot, int slotIndex)
     {
         if (fragment == null || slot == null)
             yield break;
@@ -310,6 +341,9 @@ public class Shared_Notes_Manager : MonoBehaviour
         RectTransform fragRT = fragment.GetComponent<RectTransform>();
         if (fragRT == null)
             yield break;
+
+        // Block additional clicks while any fragment is animating.
+        isAnimating = true;
 
         // Compute slot position in fragment parent's local space.
         Canvas rootCanvas = fragRT.GetComponentInParent<Canvas>();
@@ -375,8 +409,10 @@ public class Shared_Notes_Manager : MonoBehaviour
         if (fragmentStates.TryGetValue(fragment, out FragmentState state))
         {
             state.isOnNotebook = true;
+            state.slotIndex = slotIndex;
         }
         fragment.SetInteractable(true);
+        isAnimating = false;
     }
 
     /// <summary>
@@ -394,6 +430,9 @@ public class Shared_Notes_Manager : MonoBehaviour
         RectTransform fragRT = fragment.GetComponent<RectTransform>();
         if (fragRT == null)
             yield break;
+
+        // Block additional clicks while any fragment is animating.
+        isAnimating = true;
 
         // Work in the original parent's local space.
         RectTransform targetParent = state.originalParent;
@@ -432,6 +471,14 @@ public class Shared_Notes_Manager : MonoBehaviour
         // Mark as back on the blackboard.
         state.isOnNotebook = false;
 
+        // Free up the slot this fragment occupied so new fragments can't be placed on top of it.
+        if (slotAssignments != null && state.slotIndex >= 0 && state.slotIndex < slotAssignments.Length)
+        {
+            if (slotAssignments[state.slotIndex] == fragment)
+                slotAssignments[state.slotIndex] = null;
+        }
+        state.slotIndex = -1;
+
         // Restore original button tint so it behaves as it did on the blackboard.
         var buttonOnBoard = fragment.GetComponent<UnityEngine.UI.Button>();
         if (buttonOnBoard != null)
@@ -445,6 +492,7 @@ public class Shared_Notes_Manager : MonoBehaviour
 
         // Allow interaction again.
         fragment.SetInteractable(true);
+        isAnimating = false;
     }
 
     private void Win()
