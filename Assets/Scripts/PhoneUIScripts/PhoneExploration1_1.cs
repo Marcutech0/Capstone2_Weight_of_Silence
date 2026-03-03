@@ -25,26 +25,6 @@ public class PhoneExploration1_1 : MonoBehaviour
     public bool _HasInteractedPhone;
     public GameObject _ReplyButton;
 
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if (_ReplyChoice1.activeSelf)
-            {
-                _ReplyChoice1.SetActive(false);
-            }
-
-            else if (_MessagesUI.activeSelf)
-            {
-                _MessagesUI.SetActive(false);
-            }
-            else if (_HomeUI.activeSelf)
-            {
-                _HomeUI.SetActive(false);
-            }
-        }
-    }
     public void OpenPhone()
     {
         _HomeUI.SetActive(true);

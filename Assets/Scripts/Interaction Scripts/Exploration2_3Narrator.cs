@@ -73,7 +73,7 @@ public class Exploration2_3Narrator : MonoBehaviour
                     _Phone._RayaMessageBox.SetActive(false);
                     _RayaMessageBox.transform.localPosition = new Vector3(-68f, -87f, 0);
                 }
-                _CanContinue = true;
+                StartCoroutine(ShowNarratorNewDialogue("Ingat Ka", true));
             }
 
             else if (_DialogueIndex == 3)
@@ -89,10 +89,11 @@ public class Exploration2_3Narrator : MonoBehaviour
 
             else if (_DialogueIndex == 6)
             {
+                _DialoguePanelUI.sortingOrder = 10;
                 _PhonePanel.SetActive(true);
-               _HomeUI.SetActive(true);
+                _HomeUI.SetActive(true);
                 _MessagesApp.SetActive(false);
-               _MessagesUI.SetActive(false);
+                _MessagesUI.SetActive(false);
                 StartCoroutine(PhoneNotifRoutine());
             }
 
@@ -231,6 +232,9 @@ public class Exploration2_3Narrator : MonoBehaviour
     {
         if (other.CompareTag("Door")) 
         {
+            _PlayerAnimator.enabled = false;
+            _PlayerControls.enabled = false;
+            _PlayerController.enabled = false;
             StartCoroutine(CallNextScene());
             
         }

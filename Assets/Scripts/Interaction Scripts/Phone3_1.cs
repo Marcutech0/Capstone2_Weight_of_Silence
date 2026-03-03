@@ -12,6 +12,8 @@ public class Phone3_1 : MonoBehaviour
     public GameObject _PhonePanel;
     public GameObject _RayaMessageBox;
     public GameObject _RayaMessageBox2;
+    public GameObject _InteractIndicator;
+    public TextMeshProUGUI _InteractText;
     public TextMeshProUGUI _NpcName;
     public TextMeshProUGUI _StoryText;
     public PhoneExploration1_1 _Phone;
@@ -33,6 +35,8 @@ public class Phone3_1 : MonoBehaviour
     {
         if (!_PhoneButtonOn && _BulletinBoard._HasInteracted && _Locker._HasInteracted && _Locker._DialogueFinished) 
         {
+            _InteractIndicator.SetActive(true);
+            _InteractText.text = "Please Check your Phone now";
             _PhoneButtonUI.SetActive(true);
             _PhoneButtonOn = true;
         }
@@ -123,6 +127,7 @@ public class Phone3_1 : MonoBehaviour
         _PlayerController.enabled = false;
         _PlayerControls.enabled = false;
         _PlayerAnimator.enabled = false;
+        _InteractIndicator.SetActive(false);
 
         _StoryText.text = "";
         _NpcName.text = string.Empty;

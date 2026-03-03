@@ -1589,8 +1589,6 @@ Transform:
   - {fileID: 1103851033}
   - {fileID: 1401476556}
   - {fileID: 414652651}
-  - {fileID: 369002587}
-  - {fileID: 1653689712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &77248336
@@ -3212,51 +3210,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &369002586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 369002587}
-  - component: {fileID: 369002588}
-  m_Layer: 0
-  m_Name: RayasMessages
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &369002587
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369002586}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 70153230}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &369002588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369002586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 433b345454d4af7459b4a6f1250ae1c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RayasMessages
-  _RayasMessages: []
 --- !u!1 &388578468
 GameObject:
   m_ObjectHideFlags: 0
@@ -5643,13 +5596,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609228035}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.72172856, z: -0, w: 0.6921763}
-  m_LocalPosition: {x: -3.092, y: 2.539, z: 1.069}
-  m_LocalScale: {x: 0.0896, y: 0.0896, z: 0.0896}
+  m_LocalRotation: {x: 0.2340907, y: 0.30367184, z: 0.60552555, w: 0.6973692}
+  m_LocalPosition: {x: -3.572, y: 1.7, z: 2.109}
+  m_LocalScale: {x: 0.29754734, y: 0.29754734, z: 0.29754734}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 92.395, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.365, y: 45.043, z: 80.955}
 --- !u!1 &620355593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7027,7 +6980,7 @@ MonoBehaviour:
   m_margin: {x: -488.37848, y: 0, z: -848.161, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &772411355
@@ -11816,6 +11769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458365485}
   - component: {fileID: 1458365484}
+  - component: {fileID: 1458365486}
   m_Layer: 0
   m_Name: Phone Panel
   m_TagString: Untagged
@@ -11849,8 +11803,8 @@ MonoBehaviour:
   _DormDoor: {fileID: 1283513770}
   _PlayerController: {fileID: 1283513760}
   _PlayerControls: {fileID: 1283513758}
-  _LiamsMessages: {fileID: 1653689713}
-  _RayasMessages: {fileID: 369002588}
+  _LiamsMessages: {fileID: 0}
+  _RayasMessages: {fileID: 0}
   _ChoiceResult: 0
   _HasInteractedPhone: 0
   _ReplyButton: {fileID: 1975359298}
@@ -11875,6 +11829,21 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1458365486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458365483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb958551b883a04ca42840608ebda95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClosePhone
+  _HomeUI: {fileID: 820809220}
+  _MessagesUI: {fileID: 172454008}
+  _ReplyChoice1: {fileID: 222659321}
 --- !u!1 &1478865076
 GameObject:
   m_ObjectHideFlags: 0
@@ -13260,51 +13229,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634591417}
   m_CullTransparentMesh: 1
---- !u!1 &1653689711
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1653689712}
-  - component: {fileID: 1653689713}
-  m_Layer: 0
-  m_Name: LiamsMessages
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1653689712
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653689711}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 70153230}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1653689713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653689711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d718abcae7d6b499ba51c3d54249a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiamsMessages
-  _LiamMessages: []
 --- !u!1 &1660958967
 GameObject:
   m_ObjectHideFlags: 0

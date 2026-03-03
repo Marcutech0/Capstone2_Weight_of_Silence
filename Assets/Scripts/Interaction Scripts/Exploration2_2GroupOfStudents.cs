@@ -198,7 +198,7 @@ public class Exploration2_2GroupOfStudents : MonoBehaviour
             if (_HasInteracted)
                 _InteractText.text = "Interacted!";
             else
-                _InteractText.text = "Press F to Interact";
+                _InteractText.text = "Press F to Interact With Your Group";
         }
     }
 
