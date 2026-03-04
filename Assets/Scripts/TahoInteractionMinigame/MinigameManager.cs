@@ -119,7 +119,7 @@ public class MinigameManager : MonoBehaviour
     {
         if (!_GameActive) return;
         _OverfillManager._OverfillCount++;
-        _OverfillText.text = $"Overfilled Taho: {_OverfillManager._OverfillCount}";
+        _OverfillText.text = $"Underfilled Taho: {_OverfillManager._OverfillCount}";
     }
 
     public void AddRelease() 
@@ -135,7 +135,7 @@ public class MinigameManager : MonoBehaviour
         _GameActive = false;
         if (_OverfillManager._OverfillCount >= 3) // Lose
         {
-            _GameStatusText.text = "Game over! spilled to many cups!";
+            _GameStatusText.text = "Game over! to many underfilled cups!";
             _GameStatus.SetActive(true);
             _WinLoseScreen.SetActive(true);
             
