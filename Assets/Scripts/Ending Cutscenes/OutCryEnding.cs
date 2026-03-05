@@ -53,7 +53,7 @@ public class OutCryEnding : MonoBehaviour
 
             else if (_DialogueIndex == 6)
             {
-                StartCoroutine(ShowNewDialogueNarrator("Silence as Compliance: Student Expression in Institutional Spaces."));
+                StartCoroutine(ShowNewDialogueNarrator("When Speaking Becomes Risk: Student Voices Under Constitutional Pressure."));
             }
 
             else if (_DialogueIndex == 7)
