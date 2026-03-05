@@ -55,7 +55,6 @@ public class Phone3_1 : MonoBehaviour
                 {
                     _Phone._ReplyText.text = "I’m alive, promise.";
                     _Phone._RayaReplyText.text = "Good. Don’t disappear on me today, okay?";
-                    _RayaMessageBox.SetActive(true);
                     _RayaMessageBox2.SetActive(true);
                 }
 
@@ -63,7 +62,6 @@ public class Phone3_1 : MonoBehaviour
                 {
                     _Phone._ReplyText.text = "Sure. We’ll talk later.";
                     _Phone._RayaReplyText.text = "Later, then.";
-                    _RayaMessageBox.SetActive(true);
                     _RayaMessageBox2.SetActive(true);
                 }
 
@@ -71,9 +69,7 @@ public class Phone3_1 : MonoBehaviour
                 {
                     _Phone._LiamMessageBox.SetActive(false);
                     _Phone._RayaMessageBox.SetActive(false);
-                    _RayaMessageBox.transform.localPosition = new Vector3(-62f, -85f, 0);
                     _RayaMessageBox2.transform.localPosition = new Vector3(-62f, -146f, 0);
-                    _RayaMessageBox.SetActive(true);
                     _RayaMessageBox2.SetActive(true);
                 }
                 _CanContinue = true;
