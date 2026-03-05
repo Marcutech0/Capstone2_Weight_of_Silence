@@ -16,6 +16,8 @@ public class Cutscene2 : MonoBehaviour
     [SerializeField] private int _DialogueIndex;
     [SerializeField] bool _CanContinue;
     public Fade _FadeTransition;
+    public bool _DialogueFinished;
+    public Canvas _FadePanel;
 
     private void Start()
     {
@@ -40,22 +42,29 @@ public class Cutscene2 : MonoBehaviour
 
             }
 
-            else if (_DialogueIndex == 5)
+            else if (_DialogueIndex == 4)
             {
                 StartCoroutine(ShowNewDialogueTextRayaTaho("Let’s get taho first."));
                 _NpcName.text = "Liam";
 
             }
 
-            else if (_DialogueIndex == 6)
+            else if (_DialogueIndex == 5)
             {
                 StartCoroutine(ShowNewDialogueTextRayaTaho("Yeah. Before the day ruins it."));
                 _NpcName.text = "Raya";
-                _FadeTransition.FadeOut();
-                StartCoroutine(CallNextScene());
+                _DialogueFinished = true;
             }
-            else
-                StartCoroutine(EndDialogueLoadScene());
+
+            else 
+            {
+                if (_DialogueFinished)
+                {
+                    _FadeTransition.FadeOut();
+                    _FadePanel.sortingOrder = 10;
+                    StartCoroutine(EndDialogueLoadScene());
+                }
+            }
         }
     }
 
@@ -111,6 +120,7 @@ public class Cutscene2 : MonoBehaviour
         _LegendManager._Fear.SetActive(false);
         _LegendManager._Courage.SetActive(false);
         _LegendManager._Guilt.SetActive(false);
+        StartCoroutine(CallNextScene());
     }
 
     IEnumerator CallNextScene()
@@ -125,7 +135,7 @@ public class Cutscene2 : MonoBehaviour
         PlayerPrefs.SetInt("Reputation Count", _LegendManager._ReputationCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
-        _DialogueIndex = 1;
+        _DialogueIndex++;
         _CanContinue = false;
         _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Wow. New record."));
@@ -137,7 +147,7 @@ public class Cutscene2 : MonoBehaviour
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
-        _DialogueIndex = 1;
+        _DialogueIndex++;
         _CanContinue = false;
         _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("You and that paper. One day it’s gonna thank you back."));
@@ -149,7 +159,7 @@ public class Cutscene2 : MonoBehaviour
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.Save();
         _Choice2Panel.SetActive(false);
-        _DialogueIndex = 1;
+        _DialogueIndex++;
         _CanContinue = false;
         _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Didn’t sleep much."));

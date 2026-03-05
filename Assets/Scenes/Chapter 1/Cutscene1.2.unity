@@ -2418,6 +2418,8 @@ MonoBehaviour:
   _DialogueIndex: 0
   _CanContinue: 0
   _FadeTransition: {fileID: 1377868268}
+  _DialogueFinished: 0
+  _FadePanel: {fileID: 1377868265}
 --- !u!1001 &1108261084
 PrefabInstance:
   m_ObjectHideFlags: 0
