@@ -9,7 +9,6 @@ public class LiamsDoorInteraction : MonoBehaviour
     public GameObject _InteractIndicator;
     public PhoneExploration1_1 _Phone;
     public GameObject _PhoneButtonsOpenUI;
-    public GameObject _PhoneButtonsCloseUI;
     public Deskinteraction _Desk;
     public MirrorInteraction _Mirror;
 

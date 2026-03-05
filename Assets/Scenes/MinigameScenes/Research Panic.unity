@@ -767,15 +767,15 @@ RectTransform:
   m_GameObject: {fileID: 135115974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.466, y: 10.466, z: 10.466}
+  m_LocalScale: {x: 3.3741946, y: 3.3741946, z: 3.3741946}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1413549032}
+  m_Father: {fileID: 1754188974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.1089478, y: -12.706299}
-  m_SizeDelta: {x: 184.5834, y: 106.5539}
+  m_AnchoredPosition: {x: 1.504, y: 7.716}
+  m_SizeDelta: {x: 567.388, y: 584.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135115976
 MonoBehaviour:
@@ -1089,7 +1089,6 @@ GameObject:
   - component: {fileID: 199163418}
   - component: {fileID: 199163417}
   - component: {fileID: 199163416}
-  - component: {fileID: 199163419}
   m_Layer: 0
   m_Name: Education Title
   m_TagString: Education
@@ -1170,33 +1169,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199163414}
   m_CullTransparentMesh: 1
---- !u!54 &199163419
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199163414}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &215855934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,7 +2055,6 @@ GameObject:
   - component: {fileID: 440260951}
   - component: {fileID: 440260950}
   - component: {fileID: 440260949}
-  - component: {fileID: 440260952}
   m_Layer: 0
   m_Name: Culture Title
   m_TagString: Culture
@@ -2164,33 +2135,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440260947}
   m_CullTransparentMesh: 1
---- !u!54 &440260952
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440260947}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &507075315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2147,6 @@ GameObject:
   - component: {fileID: 507075319}
   - component: {fileID: 507075318}
   - component: {fileID: 507075317}
-  - component: {fileID: 507075320}
   m_Layer: 0
   m_Name: Politics Title 3
   m_TagString: Politics
@@ -2284,33 +2227,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507075315}
   m_CullTransparentMesh: 1
---- !u!54 &507075320
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507075315}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &584482722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,15 +2745,15 @@ RectTransform:
   m_GameObject: {fileID: 719681810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.466, y: 10.466, z: 10.466}
+  m_LocalScale: {x: 3.3741946, y: 3.3741946, z: 3.3741946}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1413549032}
+  m_Father: {fileID: 1754188974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.1089478, y: -12.706299}
-  m_SizeDelta: {x: 184.5834, y: 106.5539}
+  m_AnchoredPosition: {x: 1.504, y: 7.716}
+  m_SizeDelta: {x: 567.388, y: 584.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719681812
 MonoBehaviour:
@@ -3042,6 +2958,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1754188974}
   - {fileID: 1211276567}
   - {fileID: 1413549032}
   m_Father: {fileID: 0}
@@ -3200,7 +3117,6 @@ GameObject:
   - component: {fileID: 891205010}
   - component: {fileID: 891205009}
   - component: {fileID: 891205008}
-  - component: {fileID: 891205011}
   m_Layer: 0
   m_Name: Politics Title 2
   m_TagString: Politics
@@ -3281,33 +3197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891205006}
   m_CullTransparentMesh: 1
---- !u!54 &891205011
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891205006}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &900994693
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,7 +3417,6 @@ GameObject:
   - component: {fileID: 940359184}
   - component: {fileID: 940359183}
   - component: {fileID: 940359182}
-  - component: {fileID: 940359185}
   m_Layer: 0
   m_Name: Education Title 3
   m_TagString: Education
@@ -3609,33 +3497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940359180}
   m_CullTransparentMesh: 1
---- !u!54 &940359185
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940359180}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &944789203
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,7 +3700,6 @@ GameObject:
   - component: {fileID: 963909206}
   - component: {fileID: 963909205}
   - component: {fileID: 963909207}
-  - component: {fileID: 963909208}
   m_Layer: 0
   m_Name: Politics Title
   m_TagString: Politics
@@ -3920,33 +3780,6 @@ MonoBehaviour:
   _TextTransform: {fileID: 0}
   _MinigameScreen: {fileID: 1413549035}
   _Spawner: {fileID: 2058573663}
---- !u!54 &963909208
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963909203}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &984853116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3959,7 +3792,6 @@ GameObject:
   - component: {fileID: 984853120}
   - component: {fileID: 984853119}
   - component: {fileID: 984853118}
-  - component: {fileID: 984853121}
   m_Layer: 0
   m_Name: Education Title 2
   m_TagString: Education
@@ -4040,33 +3872,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984853116}
   m_CullTransparentMesh: 1
---- !u!54 &984853121
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984853116}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1006686959
 GameObject:
   m_ObjectHideFlags: 0
@@ -5176,7 +4981,6 @@ GameObject:
   - component: {fileID: 1320050678}
   - component: {fileID: 1320050677}
   - component: {fileID: 1320050676}
-  - component: {fileID: 1320050679}
   m_Layer: 0
   m_Name: Culture Title 2
   m_TagString: Culture
@@ -5257,33 +5061,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320050674}
   m_CullTransparentMesh: 1
---- !u!54 &1320050679
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320050674}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1394359458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,7 +5073,6 @@ GameObject:
   - component: {fileID: 1394359462}
   - component: {fileID: 1394359461}
   - component: {fileID: 1394359460}
-  - component: {fileID: 1394359463}
   m_Layer: 0
   m_Name: Culture Title 3
   m_TagString: Culture
@@ -5377,33 +5153,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394359458}
   m_CullTransparentMesh: 1
---- !u!54 &1394359463
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394359458}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1413549031
 GameObject:
   m_ObjectHideFlags: 0
@@ -5444,10 +5193,6 @@ RectTransform:
   - {fileID: 1426565549}
   - {fileID: 114106126}
   - {fileID: 900994694}
-  - {fileID: 719681811}
-  - {fileID: 135115975}
-  - {fileID: 2056171302}
-  - {fileID: 1642781377}
   - {fileID: 944789204}
   m_Father: {fileID: 846278972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6017,9 +5762,7 @@ MonoBehaviour:
   _LoseScreen: {fileID: 135115974}
   _WinScreen: {fileID: 719681810}
   _Continue: {fileID: 1642781376}
-  _ImagePopper: {fileID: 944789203}
-  _Distractions: {fileID: 1878683894}
-  _TitleHolder: {fileID: 2058573663}
+  _EndMinigameScreen: {fileID: 1754188977}
 --- !u!1 &1627635592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6221,15 +5964,15 @@ RectTransform:
   m_GameObject: {fileID: 1642781376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.0039997, y: 5.0039997, z: 5.0039997}
+  m_LocalScale: {x: 1.6132686, y: 1.6132686, z: 1.6132686}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1714982468}
-  m_Father: {fileID: 1413549032}
+  m_Father: {fileID: 1754188974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -43}
+  m_AnchoredPosition: {x: 0.000030517578, y: -13.863007}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642781378
@@ -6360,8 +6103,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: -0.000030518}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -0.000061035, y: -0.009119}
+  m_SizeDelta: {x: 1920, y: 1978.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702439044
 MonoBehaviour:
@@ -6569,6 +6312,111 @@ Transform:
   - {fileID: 1602082867}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1754188973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1754188974}
+  - component: {fileID: 1754188977}
+  - component: {fileID: 1754188976}
+  - component: {fileID: 1754188975}
+  m_Layer: 0
+  m_Name: EndMiniGameScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1754188974
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754188973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 719681811}
+  - {fileID: 135115975}
+  - {fileID: 1642781377}
+  - {fileID: 2056171302}
+  m_Father: {fileID: 846278972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1754188975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754188973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1754188976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754188973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1754188977
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754188973}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1804311686
 GameObject:
   m_ObjectHideFlags: 0
@@ -7289,8 +7137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0036621094, y: 0.004760742}
-  m_SizeDelta: {x: 530.96, y: 298.67}
+  m_AnchoredPosition: {x: 0.0036621094, y: -0.0032177}
+  m_SizeDelta: {x: 530.96, y: 547.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997391494
 MonoBehaviour:
@@ -7393,10 +7241,10 @@ RectTransform:
   m_GameObject: {fileID: 2056171301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.38936, y: 1.38936, z: 1.38936}
+  m_LocalScale: {x: 1.3893601, y: 1.3893601, z: 1.3893601}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1413549032}
+  m_Father: {fileID: 1754188974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

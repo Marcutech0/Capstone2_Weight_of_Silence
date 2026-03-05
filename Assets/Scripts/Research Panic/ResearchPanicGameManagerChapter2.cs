@@ -19,16 +19,13 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
     public TextMeshProUGUI _WrongPointsText;
     public TextMeshProUGUI _GameStatus;
     public GameObject _GameStatusObject;
-    public ResearchTitleSpawner _CurrentTitleActivePolitics, _CurrentTitleActiveCulture, _CurrentTitleActiveEducation;
 
     public GameObject _TutorialPanel;
     public GameFlowLegendManager _LegendManager;
     public GameObject _LoseScreen;
     public GameObject _WinScreen;
     public GameObject _Continue;
-    public GameObject _ImagePopper;
-    public GameObject _Distractions;
-    public ResearchTitleSpawner _TitleHolder;
+    public Canvas _EndMinigameScreen;
     void Start()
     {
         _StopTimer = false;
@@ -112,9 +109,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _GameStatusObject.SetActive(true);
             _LoseScreen.SetActive(true);
             _Continue.SetActive(true);
-            _ImagePopper.SetActive(false);
-            _Distractions.SetActive(false);
-            _TitleHolder._CurrentTitle.SetActive(false);
+            _EndMinigameScreen.sortingOrder = 3;
         }
 
         else if (_StopTimer && _CorrectPoints == 0) // Lose
@@ -130,9 +125,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _GameStatusObject.SetActive(true);
             _LoseScreen.SetActive(true);
             _Continue.SetActive(true);
-            _ImagePopper.SetActive(false);
-            _Distractions.SetActive(false);
-            _TitleHolder._CurrentTitle.SetActive(false);
+            _EndMinigameScreen.sortingOrder = 3;
         }
 
         else if (_StopTimer && _WrongPoints < 3)// Win
@@ -148,9 +141,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _GameStatusObject.SetActive(true);
             _WinScreen.SetActive(true);
             _Continue.SetActive(true);
-            _ImagePopper.SetActive(false);
-            _Distractions.SetActive(false);
-            _TitleHolder._CurrentTitle.SetActive(false);
+            _EndMinigameScreen.sortingOrder = 3;
         }
     }
 

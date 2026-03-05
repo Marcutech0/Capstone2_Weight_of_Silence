@@ -3663,9 +3663,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1458365484}
-        m_TargetAssemblyTypeName: PhoneExploration1_1, Assembly-CSharp
-        m_MethodName: OpenPhone
+      - m_Target: {fileID: 1458365486}
+        m_TargetAssemblyTypeName: ClosePhone, Assembly-CSharp
+        m_MethodName: TogglePhone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10690,7 +10690,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1282765799
@@ -10957,7 +10957,6 @@ MonoBehaviour:
   _InteractIndicator: {fileID: 1401476552}
   _Phone: {fileID: 1458365484}
   _PhoneButtonsOpenUI: {fileID: 411654496}
-  _PhoneButtonsCloseUI: {fileID: 0}
   _Desk: {fileID: 1283513764}
   _Mirror: {fileID: 1283513763}
 --- !u!65 &1283513771

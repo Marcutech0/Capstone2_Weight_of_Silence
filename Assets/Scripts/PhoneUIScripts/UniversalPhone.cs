@@ -6,30 +6,29 @@ public class UniversalPhone : MonoBehaviour
     public GameObject _HomeUI;
     public GameObject _MessagesUI;
     public PhoneExploration1_1 _Phone;
-    public void OpenPhone()
+   
+
+
+    public void TogglePhone()
     {
-        _HomeUI.SetActive(true);
+        bool _IsOpen = _HomeUI.activeSelf || _MessagesUI.activeSelf;
+
+        if (_IsOpen)
+        {
+            _HomeUI.SetActive(false);
+            _MessagesUI.SetActive(false);
+        }
+
+        else
+        {
+            _HomeUI.SetActive(true);
+        }
     }
 
     public void OpenMessages()
     {
         _MessagesUI.SetActive(true);
-    }
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            if (_MessagesUI.activeSelf)
-            {
-                _MessagesUI.SetActive(false);
-            }
-
-            else if (_HomeUI.activeSelf)
-            {
-                _HomeUI.SetActive(false);
-            }
-        }
+        _HomeUI.SetActive(false);
     }
 
     public void Start()
