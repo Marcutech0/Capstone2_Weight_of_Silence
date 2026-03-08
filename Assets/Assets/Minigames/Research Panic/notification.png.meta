@@ -113,10 +113,10 @@ TextureImporter:
       name: notification_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 1375
-        width: 425
-        height: 541
+        x: 558
+        y: 1409
+        width: 233
+        height: 442
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,9 +136,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 556
-        y: 1375
-        width: 504
-        height: 474
+        y: 1377
+        width: 502
+        height: 472
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

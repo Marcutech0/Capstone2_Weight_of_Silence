@@ -23,6 +23,7 @@ public class CutScene2_3 : MonoBehaviour
     {
         _NpcName.text = "";
         StartCoroutine(ShowNarratorDialogue());
+        _DialogueIndex = 0;
     }
 
     public void Update()
@@ -33,45 +34,32 @@ public class CutScene2_3 : MonoBehaviour
             _DialogueIndex++;
 
             if (_DialogueIndex == 1)
-            {
-                StartCoroutine(PhoneTypeRoutine());
-                _PhonePanel.SetActive(true);
-                int _Result = PlayerPrefs.GetInt("ChoiceResult", 0);
-                if (_Result == 1)
-                {
-                    _Phone._ReplyText.text = "I’m alive, promise.";
-                    _Phone._RayaReplyText.text = "Good. Don’t disappear on me today, okay?";
-                }
-
-                else if (_Result == 2)
-                {
-                    _Phone._ReplyText.text = "Sure. We’ll talk later.";
-                    _Phone._RayaReplyText.text = "Later, then.";
-                }
-
-                else if (_Result == 3)
-                {
-                    _Phone._LiamMessageBox.SetActive(false);
-                    _Phone._RayaMessageBox.SetActive(false);
-                    _RayaMessageBox.transform.localPosition = new Vector3(-99.93086f, 159, 0);
-                }
-
-                StartCoroutine(ShowNewDialogueNarrator("A message is typed in phone. Deleted. Typed again."));
+            {               
+                StartCoroutine(ShowNewDialogueNarrator("A message is typed in phone."));
             }
 
             else if (_DialogueIndex == 2)
-            {
-                StartCoroutine(ShowNewDialogueNarrator("The cursor blinks."));
-                _PhonePanel.SetActive(false);
+            {               
+                StartCoroutine(ShowNewDialogueNarrator("Deleted."));
             }
 
             else if (_DialogueIndex == 3)
-            {
-                StartCoroutine(ShowNewDialogueNarrator("Campus noise fades."));
+            {               
+                StartCoroutine(ShowNewDialogueNarrator("Typed again."));
             }
 
             else if (_DialogueIndex == 4)
-            {
+            {               
+                StartCoroutine(ShowNewDialogueNarrator("The cursor blinks."));
+            }
+
+            else if (_DialogueIndex == 5)
+            {               
+                StartCoroutine(ShowNewDialogueNarrator("Campus noise fades."));
+            }
+
+            else if (_DialogueIndex == 6)
+            {               
                 StartCoroutine(ShowNewDialogueNarrator("The screen goes dark."));
             }
 

@@ -25,6 +25,7 @@ public class CutScene2_2 : MonoBehaviour
     {
         _NpcName.text = "";
         StartCoroutine(ShowNarratorDialogue());
+        _DialogueIndex = 0;
     }
 
     // Update is called once per frame
@@ -37,33 +38,42 @@ public class CutScene2_2 : MonoBehaviour
 
             if (_DialogueIndex == 1) 
             {
-                _DialoguePanel.SetActive(false);
-                StartCoroutine(PhoneNotifRoutine());
+                StartCoroutine(ShowNarratorNewDialogue("CAPSTONE PROGRESS REVIEW"));
+            }
+
+            else if (_DialogueIndex == 2)
+            {
+                StartCoroutine(ShowNarratorNewDialogue("Midterm submission required."));
             }
 
             else if (_DialogueIndex == 3)
+            {
+                StartCoroutine(ShowNarratorNewDialogue("All groups must present updated scope and documentation."));
+            }
+
+            else if (_DialogueIndex == 4)
             {
                 StartCoroutine(ShowNarratorNewDialogue("You scroll."));
                 _HomeUI.SetActive(false);
             }
 
-            else if (_DialogueIndex == 4)
+            else if (_DialogueIndex == 5)
             {
                 StartCoroutine(ShowNarratorNewDialogue("Raya’s name is still there."));
                 _HomeUI.SetActive(false);
             }
 
-            else if (_DialogueIndex == 5)
+            else if (_DialogueIndex == 6)
             {
                 StartCoroutine(ShowNarratorNewDialogue("No explanation. Just a deadline."));
                 _HomeUI.SetActive(false);
             }
 
-            else 
+            else
             {
-                 EndDialogue();
+                EndDialogue();
                 _FadeTransition.FadeOut();
-                 StartCoroutine(CallNextScene());
+                StartCoroutine(CallNextScene());
             }
         }
     }

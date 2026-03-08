@@ -33,7 +33,6 @@ public class ImagePopout : MonoBehaviour
                 _Rect.sizeDelta = _TitlePos.sizeDelta;
                 _Rect.localScale = Vector3.one * 1.2f;
                 _Rect.SetAsLastSibling();
-                _Rect.localRotation = Quaternion.Euler(0, 0, Random.Range(-15f, 15f));
                 _Image.SetActive(true);
                 yield return new WaitForSeconds(_ActiveDuration);
                 _Image.SetActive(false);
