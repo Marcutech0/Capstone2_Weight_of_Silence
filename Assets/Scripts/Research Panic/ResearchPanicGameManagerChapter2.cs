@@ -112,7 +112,7 @@ public class ResearchPanicGameManagerChapter2 : MonoBehaviour
             _EndMinigameScreen.sortingOrder = 3;
         }
 
-        else if (_StopTimer && _CorrectPoints == 0) // Lose
+        else if (_StopTimer && _CorrectPoints == 0) // Lose if time runs out without any correct points just in case player did not categorize anything
         {
             _LegendManager._CourageCount--;
             _LegendManager._FearCount += 2;
