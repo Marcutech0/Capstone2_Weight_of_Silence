@@ -42,14 +42,14 @@ public class Cutscene2 : MonoBehaviour
 
             }
 
-            else if (_DialogueIndex == 4)
+            else if (_DialogueIndex == 5)
             {
                 StartCoroutine(ShowNewDialogueTextRayaTaho("Let’s get taho first."));
                 _NpcName.text = "Liam";
 
             }
 
-            else if (_DialogueIndex == 5)
+            else if (_DialogueIndex == 6)
             {
                 StartCoroutine(ShowNewDialogueTextRayaTaho("Yeah. Before the day ruins it."));
                 _NpcName.text = "Raya";
@@ -171,7 +171,6 @@ public class Cutscene2 : MonoBehaviour
         PlayerPrefs.SetInt("Courage Count", _LegendManager._CourageCount);
         PlayerPrefs.Save();
         _DialogueIndex++;
-        _CanContinue = false;
         _Choice3Panel.SetActive(false);
         _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Later. I promise."));
@@ -182,7 +181,6 @@ public class Cutscene2 : MonoBehaviour
         PlayerPrefs.SetInt("Fear Count", _LegendManager._FearCount);
         PlayerPrefs.Save();
         _DialogueIndex++;
-        _CanContinue = false;
         _Choice3Panel.SetActive(false);
         _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Yeah. After class."));
@@ -193,7 +191,6 @@ public class Cutscene2 : MonoBehaviour
         PlayerPrefs.SetInt("Guilt Count", _LegendManager._GuiltCount);
         PlayerPrefs.Save();
         _DialogueIndex++;
-        _CanContinue = false;
         _Choice3Panel.SetActive(false);
         _NpcName.text = "Raya";
         StartCoroutine(ShowNewDialogueText("Sorry. I didn’t mean to."));
