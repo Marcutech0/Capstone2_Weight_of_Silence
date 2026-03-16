@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 1089286050208562865, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2468651488589959240, guid: ba5fd5b96a405a6488c4e2954eda6107, type: 3}
       propertyPath: m_LocalPosition.x
       value: 786.8382
@@ -2761,8 +2765,8 @@ SceneRoots:
   - {fileID: 363821183}
   - {fileID: 1377868266}
   - {fileID: 1826617704}
+  - {fileID: 272642765}
   - {fileID: 435885777}
   - {fileID: 1402940292}
   - {fileID: 1161037969}
   - {fileID: 771444972}
-  - {fileID: 272642765}

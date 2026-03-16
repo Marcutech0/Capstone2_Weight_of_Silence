@@ -23,6 +23,7 @@ public class Cutscene4 : MonoBehaviour
     [SerializeField] private string[] _CurrentSpeakers;
     [SerializeField] private int _CurrentLineIndex;
     [SerializeField] private bool _DialougeEnd;
+    [SerializeField] private bool _ShowChoiceAfterLine;
 
     void Start()
     {
@@ -97,7 +98,7 @@ public class Cutscene4 : MonoBehaviour
                 new string[] { "Tita Liza" }
             );
 
-            _Choice1Panel.SetActive(true);
+            _ShowChoiceAfterLine = true;
         }
     }
 
@@ -120,7 +121,12 @@ public class Cutscene4 : MonoBehaviour
             _StoryText.text += c;
             yield return new WaitForSeconds(0.05f);
         }
-
+        
+        if (_ShowChoiceAfterLine)
+        {
+            _ShowChoiceAfterLine = false;
+            _Choice1Panel.SetActive(true);
+        }
         _CanContinue = true;
     }
 
