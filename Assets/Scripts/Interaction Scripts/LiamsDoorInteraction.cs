@@ -12,33 +12,49 @@ public class LiamsDoorInteraction : MonoBehaviour
     public Deskinteraction _Desk;
     public MirrorInteraction _Mirror;
 
-    public void OnTriggerEnter(Collider other)
+    [SerializeField] private bool _IsNearDoor;
+    [SerializeField] private bool _IsTriggered;
+
+    private void Update()
+    {
+        if (_IsNearDoor && _Desk._HasInteracted && _Mirror._HasInteracted) 
+        {
+           _PhoneButtonsOpenUI.SetActive(true);
+
+            if (!_IsTriggered) 
+            {
+                _PhoneNotif.text = "Reply to Raya";
+            }
+
+            if (_Phone._HasInteractedPhone)
+            { 
+                _PhoneNotif.text = "Press F to go to Campus Courtyard";
+
+                if (Input.GetKeyDown(KeyCode.F) && !_IsTriggered)
+                {
+                    _IsTriggered = true;
+                    _PhoneNotif.text = "Going to Campus Courtyard...";
+                    StartCoroutine(CallNextScene());
+                }
+            }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("LiamsDoor"))
         {
             _InteractIndicator.SetActive(true);
-            _PhoneNotif.text = "Please Interact with the Desk and Mirror to access your phone";
-
-            if (_Desk._HasInteracted && _Mirror._HasInteracted)
-            {
-                _PhoneButtonsOpenUI.SetActive(true);
-                _PhoneNotif.text = "You may now access your phone";
-
-                if (_Phone._HasInteractedPhone && _Desk._HasInteracted && _Mirror._HasInteracted)
-                {
-                    _PhoneNotif.text = "Going to Campus Courtyard";
-                    StartCoroutine(CallNextScene());
-                }
-            }
- 
+            _IsNearDoor = true;
+            _PhoneNotif.text = "Please interact with the desk and mirror first";
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("LiamsDoor"))
         {
             _InteractIndicator.SetActive(false);
+            _IsNearDoor = false;
         }
     }
 

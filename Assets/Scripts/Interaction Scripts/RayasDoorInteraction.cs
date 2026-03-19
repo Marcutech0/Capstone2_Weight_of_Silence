@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class RayasDoorInteraction : MonoBehaviour
 {
@@ -8,27 +9,50 @@ public class RayasDoorInteraction : MonoBehaviour
     public TextMeshProUGUI _InteractIndicator;
     public GameObject _Indicator;
 
-    public void OnTriggerEnter(Collider other)
+    [SerializeField] private bool _IsNearDoor;
+    [SerializeField] private bool _IsTriggered;
+
+
+    private void Update()
+    {
+        if (_IsNearDoor && _NoticeBoard._HasInteracted) 
+        {
+            if (!_IsTriggered) 
+            {
+                _InteractIndicator.text = "Press F to Continue";
+ 
+                if (Input.GetKeyDown(KeyCode.F) && !_IsTriggered)
+                {
+                    _IsTriggered = true;
+                    _InteractIndicator.text = string.Empty;
+                    StartCoroutine(CallNextScene());
+                }
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("RayasDoor"))
         {
-            if (_NoticeBoard._HasInteracted)
-            {
-                SceneManager.LoadScene("Cutscene1.6");
-            }
-            else
-            {
-                _InteractIndicator.text = "The notice board has not been interacted.";
-                _Indicator.SetActive(true);
-            }
-        }      
+            _Indicator.SetActive(true);
+            _IsNearDoor = true;
+            _InteractIndicator.text = "Please interact with the notice board first";
+        }
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("RayasDoor"))
         {
             _Indicator.SetActive(false);
+            _IsNearDoor = false;
         }
+    }
+
+    IEnumerator CallNextScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Cutscene1.6");
     }
 }
